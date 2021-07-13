@@ -1,1 +1,3 @@
-# QCB_Black_Kite
+# Occupancy modelling of Black Kite
+
+Quantitative conservation biogeography course
