@@ -1,13 +1,11 @@
 
-
-library(ggplot2)
 library(dplyr)
 
 
 
 variables <- raster::stack('data/environmental_data/variables_spain.grd')
 
-raster::plot(variables$grass_cover)
+#raster::plot(variables$landfills)
 
 
 
@@ -33,7 +31,7 @@ occ_var_std <- occ_var%>%
                      'bio7', 'bio8', 'bio9', 'bio10', 'bio11', 'bio12', 
                      'bio13', 'bio14', 'bio15', 'bio16', 'bio17', 
                      'bio18', 'bio19',
-                     'tree_cover', 'grass_cover', 'bare_soil'),
+                     'tree_cover', 'grass_cover', 'bare_soil', 'landfills'),
                    ~(scale(.) %>% as.vector))
 
 
@@ -54,7 +52,8 @@ occ_wide <- auk::format_unmarked_occu(
                'bio1', 'bio2', 'bio3', 'bio4', 'bio5', 'bio6', 
                'bio7', 'bio8', 'bio9', 'bio10', 'bio11', 'bio12', 
                'bio13', 'bio14', 'bio15', 'bio16', 'bio17', 
-               'bio18', 'bio19', 'tree_cover', 'grass_cover', 'bare_soil'), 
+               'bio18', 'bio19', 
+               'tree_cover', 'grass_cover', 'bare_soil', 'landfills'), 
   obs_covs =c('time_observations_started','duration_minutes', 
               'effort_distance_km','number_observers', 'protocol_type'))
 

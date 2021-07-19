@@ -1,6 +1,6 @@
 [general]
 creator=R package 'raster'
-created=2021-07-13 12:50:11
+created=2021-07-19 14:36:20
 [georeference]
 nrows=185
 ncols=301
@@ -12,14 +12,14 @@ projection=+proj=longlat +datum=WGS84 +no_defs
 [data]
 datatype=FLT4S
 byteorder=little
-nbands=22
+nbands=23
 bandorder=BIL
-minvalue=-7:58:30:3096:113:-104:149:-15:-25:64:-66:223:32:0:12:86:10:15:63:0:0:-0.302436798810959
-maxvalue=186:129:44:6998:364:87:335:206:268:268:130:1593:262:105:77:644:340:340:644:81.1294097900391:70.650749206543:59.1541976928711
+minvalue=-7:58:30:3096:113:-104:149:-15:-25:64:-66:223:32:0:12:86:10:15:63:0:0:-0.302436798810959:0
+maxvalue=186:129:44:6998:364:87:335:206:268:268:130:1593:262:105:77:644:340:340:644:81.1294097900391:70.650749206543:59.1541976928711:0.0985605269670486
 nodatavalue=-3.4e+38
 [legend]
 legendtype=
 values=
 color=
 [description]
-layername=bio1:bio2:bio3:bio4:bio5:bio6:bio7:bio8:bio9:bio10:bio11:bio12:bio13:bio14:bio15:bio16:bio17:bio18:bio19:tree_cover:grass_cover:bare_soil
+layername=bio1:bio2:bio3:bio4:bio5:bio6:bio7:bio8:bio9:bio10:bio11:bio12:bio13:bio14:bio15:bio16:bio17:bio18:bio19:tree_cover:grass_cover:bare_soil:landfills

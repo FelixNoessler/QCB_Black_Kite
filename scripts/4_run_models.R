@@ -1,27 +1,39 @@
 
+library(dplyr)
+library(ggplot2)
+library(unmarked)
 
-occ_wide_clean <- read.csv("results/milmig.csv")
-
-occ_um <- unmarked::formatWide(occ_wide_clean, type = "unmarkedFrameOccu")
+# Load data ---------------------------------------------------------------
+occ_um <- unmarked::formatWide(read.csv("results/milmig.csv"), type = "unmarkedFrameOccu")
 unmarked::summary(occ_um)
 
+# Model selection ---------------------------------------------------------
 
+## Null model
 occ_null <- unmarked::occu(~1~1, occ_um)
 unmarked::summary(occ_null)
 
-
+## Model only with the detection covariates
 detection_cov_model <- unmarked::occu(~duration_minutes
                                       + effort_distance_km
                                       + number_observers
                                       + protocol_type
                                       + time_observations_started
                                       ~1, data=occ_um)
-
 unmarked::summary(detection_cov_model)
 
-site_cov_model <-unmarked::occu(~1~bio2+bio1+bio12+tree_cover+grass_cover+bare_soil, data = occ_um)
+## Model only with site covariates
+site_cov_model <-unmarked::occu(~1
+                                ~bio1
+                                +bio2
+                                +bio12
+                                +tree_cover
+                                +grass_cover
+                                +bare_soil
+                                +landfills, data = occ_um)
 unmarked::summary(site_cov_model)
 
+## Full model
 full_model <- unmarked::occu(~ duration_minutes 
                              + number_observers
                              ~ poly(bio1, 2)
@@ -29,13 +41,12 @@ full_model <- unmarked::occu(~ duration_minutes
                              + bio12
                              + poly(tree_cover, 2)
                              + poly(grass_cover, 2)
-                             + poly(bare_soil, 2), data = occ_um)
+                             + poly(bare_soil, 2)
+                             + landfills, data = occ_um)
 unmarked::summary(full_model)
 
 
-
-
-
+## Model selection with AIC
 models_list <-list(Null = occ_null, 
                    detection = detection_cov_model,
                    site = site_cov_model,
@@ -45,15 +56,24 @@ un_models <- unmarked::fitList(fits = models_list)
 ModSelect <- unmarked::modSel(un_models, nullmod = "Null")
 ModSelect
 
-### AICc
+
+## Model selection with AICc
 AICcmodavg::aictab(models_list, second.ord = T)
 
-### Goodnis of fit
-GOF <-unmarked::parboot(full_model, nsim=100)
+rm(detection_cov_model, occ_null, site_cov_model, 
+   models_list, ModSelect, un_models)
+
+
+# Goodness of fit test of best model --------------------------------------
+GOF <-unmarked::parboot(full_model, nsim=99, ncores=12, report=T)
 GOF
 
-### Another goodnis of fit test
-AICcmodavg::mb.gof.test(full_model, nsim=100, plot.hist = F)
+### Another goodnes of fit test
+AICcmodavg::mb.gof.test(full_model, 
+                        nsim=99, 
+                        plot.hist = F, 
+                        parallel=T, 
+                        ncores=11)
 
 ### cHat, overdispersion 
 cHat <- GOF@t0 / mean(GOF@t.star)
@@ -64,211 +84,130 @@ cHat
 AICcmodavg::aictab(models_list, c.hat = 1)
 # --> it is the same as above, because the cHat value is below one
 
-######################### PREDICTION
-
-library(unmarked)
-library(here)
-library(auk)
-library(rnaturalearth)
-library(rnaturalearthdata)
-library(sf)
-library(ggplot2)
-library(readr)
-library(dplyr)
-library(purrr)
-library(knitr)
-library(raster)
-library(tidyr)
-library(psych)
-library(HH)
-library(pander)
-library(MuMIn)
-library(stringr)
-library(AICcmodavg) 
 
 
-### Average model
+# Build an average model --------------------------------------------------
+
+## Get the names of the detection covariates
 det_terms <- MuMIn::getAllTerms(full_model) %>% 
   purrr::discard(stringr::str_detect, pattern = "psi")
 
-# Get combination of models, detection covariates are alway present
+## Get combination of models, detection covariates are always present
 occ_dredge <- MuMIn::dredge(full_model, fixed = det_terms)
 
-# Get a subset with the best models 
-occ_dredge_999 <- get.models(occ_dredge, subset = cumsum(weight) <= 0.999)
+## Get the best models from the model list
+occ_dredge_999 <- MuMIn::get.models(occ_dredge, 
+                                    subset = cumsum(weight) <= 0.999)
 
-# Get the average model based on model weights
-occ_avg <- model.avg(occ_dredge_999, fit = TRUE, revised.var = TRUE)
+## Get the average model based on model weights
+occ_avg <- MuMIn::model.avg(occ_dredge_999, fit = TRUE, revised.var = TRUE)
 
-# AICc
+## Calculate the AICc for the average model
 sum(occ_avg$msTable$AICc * occ_avg$msTable$weight)
 
-# model coefficients
+## Model coefficients of the average model
 t(occ_avg$coefficients)
 
+MuMIn::importance(occ_avg)
+
+rm(occ_dredge, occ_dredge_999, det_terms)
 
 
-variables <- brick(stack("data/environmental_data/variables_spain.grd"))
+# Load environmental data for predictions ---------------------------------
+
+variables <- raster::brick("data/environmental_data/variables_spain.grd")
 variables_selection <- c("bio1",
                          "bio2",
                          "bio12",
                          "tree_cover",
                          "grass_cover", 
-                         "bare_soil")
+                         "bare_soil",
+                         "landfills")
 
 variables.sel <- variables[[variables_selection]]
 
-p_variables <- data.frame(rasterToPoints(variables.sel) )
+p_variables <- data.frame(raster::rasterToPoints(variables.sel) )
 p_variables <- p_variables %>%
-  drop_na(tree_cover, bio1)
+  tidyr::drop_na(tree_cover, bio1)
 
 pred_surface_std <- p_variables %>% 
-  mutate_at(c("bio1", "tree_cover", "bio2", "grass_cover", "bio12", "bare_soil"), ~(scale(.) %>% as.vector))
+  mutate_at(c("bio1", "bio2", "bio12",
+              "tree_cover", "grass_cover", "bare_soil", 
+              "landfills"), ~(scale(.) %>% as.vector))
 
-occ_pred <- predict(occ_avg, 
-                    newdata = as.data.frame(pred_surface_std[,c("bio1",
-                                                                         "bio2",
-                                                                         "bio12",
-                                                                         "tree_cover", 
-                                                                         "grass_cover", 
-                                                                         "bare_soil")]), 
+
+
+
+# Make predictions --------------------------------------------------------
+
+###### Predictions with average model
+occ_pred <- unmarked::predict(occ_avg,
+                              newdata = as.data.frame(
+                                pred_surface_std[,c("bio1",
+                                                    "bio2",
+                                                    "bio12",
+                                                    "tree_cover",
+                                                    "grass_cover",
+                                                    "bare_soil",
+                                                    "landfills")]), 
                     type = "state")
 
 
-pred_occ <- dplyr::bind_cols(pred_surface_std, 
-                      occ_prob = occ_pred$fit,
-                      occ_se = occ_pred$se.fit) %>%
-  dplyr::select(x, y, occ_prob, occ_se)
+pred_occ <- 
 
 
-map_proj <- "+init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+## Make a map
+data_avg_pred <- dplyr::bind_cols(pred_surface_std, 
+                   probability = occ_pred$fit,
+                   SE = occ_pred$se.fit) %>%
+  dplyr::select(x, y, probability, SE) %>%
+  tidyr::pivot_longer(cols = c(probability, SE)) 
 
-r_pred <- pred_occ %>% 
-  sf::st_as_sf(coords = c("x", "y"), crs = map_proj) %>% 
-  sf::st_transform(crs = raster::projection(variables.sel[[1]])) %>% 
-  raster::rasterize(variables.sel[[1]])
-
-
-# Select the prediction with the standard error
-r_pred <- r_pred[[c("occ_prob", "occ_se")]]
-
-
-r_pred_proj <- projectRaster(r_pred, crs = map_proj, method = "ngb")
-spain <- ne_countries(country = 'spain', scale = "medium", returnclass = "sf")
-r_pred_proj_crop <- crop(r_pred_proj, spain)
-r_pred_proj_SP  <- mask(r_pred_proj_crop,spain)
-
-r_pred_occu_SP <- subset(r_pred_proj_SP, 1, drop=TRUE)
-# Convert the landscape data RasterLayer objects to data frames for ggplot
-r_pred_occu_SP.df <- as.data.frame(r_pred_occu_SP, xy = TRUE, na.rm = TRUE)
-
-# Now, we can add the Standard error in the predictions
-r_pred_occuSE_SP<-subset(r_pred_proj_SP, 2, drop=TRUE)
-# Convert the landscape data RasterLayer objects to data frames for ggplot
-r_pred_occuSE_SP.df <- as.data.frame(r_pred_occuSE_SP, xy = TRUE, na.rm = TRUE)
-
-#add Statistic Colum and standardize column names
-r_pred_occu_SP.df$Statistic<-"Mean p(Occupancy)"
-colnames(r_pred_occu_SP.df)[3]<-"Probability"
-r_pred_occuSE_SP.df$Statistic<-"SE"
-colnames(r_pred_occuSE_SP.df)[3]<-"Probability"
-
-#combine data.frames
-r_pred_comb<-rbind(r_pred_occu_SP.df, r_pred_occuSE_SP.df)
-#make Statistic a factor
-r_pred_comb$Statistic<-as.factor(r_pred_comb$Statistic)
-
-# Plot the maps
-DEOccuMap<-ggplot()+
-  geom_tile(data=r_pred_comb, aes(x=x, y=y, fill=Probability, color=Probability))+
-  #geom_map(data=nh.poly, map=nh.poly, aes(y=lat, x=long, map_id=id),color="black",fill="transparent",alpha=0.8, inherit.aes = FALSE)+
-  scale_fill_viridis_c(name="p(occupancy)")+
-  scale_color_viridis_c(name="p(occupancy)")+
-  theme(panel.border=element_rect(color="black",fill="transparent"))+
+data_avg_pred %>%
+  ggplot(aes(x,y, fill=value))+
+  geom_raster()+
+  scale_fill_viridis_c(name="value")+
+  theme(panel.border=element_rect(color="black",fill="transparent"),
+        text = element_text(size=20))+
   labs(x="Longitude",y="Latitude")+
-  guides(alpha="none", color="none")+
-  coord_fixed()
-DEOccuMap.facet<-DEOccuMap+facet_grid(~Statistic)
-DEOccuMap.facet
-ggsave('results/average_model.png', DEOccuMap.facet, width = 16)
+  coord_fixed()+
+  facet_grid(~name)
 
-ggsave('facet.png', DEOccuMap.facet)
+ggsave('results/average_model.png', width = 16)
 
 
 
 
+###### Prediction with full model
+occ_pred_full <- unmarked::predict(full_model,
+                                   newdata = as.data.frame(
+                                     pred_surface_std[,c("bio1",
+                                                         "bio2",
+                                                         "bio12",
+                                                         "tree_cover",
+                                                         "grass_cover",
+                                                         "bare_soil",
+                                                         "landfills")]), 
+                              type = "state")
 
+## Make a map
+data_full_pred <- dplyr::bind_cols(pred_surface_std, 
+                                  probability = occ_pred_full$Predicted,
+                                  SE = occ_pred_full$SE) %>%
+  dplyr::select(x, y, probability, SE) %>%
+  tidyr::pivot_longer(cols = c(probability, SE)) 
 
-
-###### Full model prediction (without averaging)
-occ_full_model_prediction <- unmarked::predict(full_model, 
-                                     newdata = as.data.frame(pred_surface_std[,c("bio1",
-                                                                                 "bio2",
-                                                                                 "bio12",
-                                                                                 "tree_cover", 
-                                                                                 "grass_cover", 
-                                                                                 "bare_soil")]), 
-                                     type = "state")
-
-pred_full_model <- bind_cols(pred_surface_std, 
-                      occ_prob = occ_full_model_prediction$Predicted,
-                      occ_se = occ_full_model_prediction$SE) %>%
-  dplyr::select(x, y, occ_prob, occ_se)
-
-
-map_proj <- "+init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-
-r_pred <- pred_full_model %>% 
-  # convert to spatial features
-  st_as_sf(coords = c("x", "y"), crs = map_proj) %>% 
-  st_transform(crs = raster::projection(variables.sel[[1]])) %>% 
-  # rasterize
-  rasterize(variables.sel[[1]])
-# Select the prediction with the standard error
-r_pred <- r_pred[[c("occ_prob", "occ_se")]]
-
-
-
-# project predictions
-r_pred_proj <- projectRaster(r_pred, crs = map_proj, method = "ngb")
-spain <- ne_countries(country = 'spain', scale = "medium", returnclass = "sf")
-r_pred_proj_crop<- crop(r_pred_proj, spain)
-r_pred_proj_SP <-mask(r_pred_proj_crop,spain)
-
-#First, with occupancy
-r_pred_occu_SP <- subset(r_pred_proj_SP, 1, drop=TRUE)
-# Convert the landscape data RasterLayer objects to data frames for ggplot
-r_pred_occu_SP.df <- as.data.frame(r_pred_occu_SP, xy = TRUE, na.rm = TRUE)
-
-# Now, we can add the Standard error in the predictions
-r_pred_occuSE_SP<-subset(r_pred_proj_SP, 2, drop=TRUE)
-# Convert the landscape data RasterLayer objects to data frames for ggplot
-r_pred_occuSE_SP.df <- as.data.frame(r_pred_occuSE_SP, xy = TRUE, na.rm = TRUE)
-
-#add Statistic Colum and standardize column names
-r_pred_occu_SP.df$Statistic<-"Mean p(Occupancy)"
-colnames(r_pred_occu_SP.df)[3]<-"Probability"
-r_pred_occuSE_SP.df$Statistic<-"SE"
-colnames(r_pred_occuSE_SP.df)[3]<-"Probability"
-
-#combine data.frames
-r_pred_comb<-rbind(r_pred_occu_SP.df, r_pred_occuSE_SP.df)
-#make Statistic a factor
-r_pred_comb$Statistic<-as.factor(r_pred_comb$Statistic)
-
-# Plot the maps
-DEOccuMap<-ggplot()+
-  geom_tile(data=r_pred_comb, aes(x=x, y=y, fill=Probability, color=Probability))+
-  #geom_map(data=nh.poly, map=nh.poly, aes(y=lat, x=long, map_id=id),color="black",fill="transparent",alpha=0.8, inherit.aes = FALSE)+
-  scale_fill_viridis_c(name="p(occupancy)")+
-  scale_color_viridis_c(name="p(occupancy)")+
-  theme(panel.border=element_rect(color="black",fill="transparent"))+
+data_full_pred %>%
+  ggplot(aes(x,y, fill=value))+
+  geom_raster()+
+  scale_fill_viridis_c(name="value")+
+  theme(panel.border=element_rect(color="black",fill="transparent"),
+        text = element_text(size=20))+
   labs(x="Longitude",y="Latitude")+
-  guides(alpha="none", color="none")+
-  coord_fixed()
-DEOccuMap.facet<-DEOccuMap+facet_grid(~Statistic)
-DEOccuMap.facet
-ggsave('results/fullmodel.png', DEOccuMap.facet, width = 16)
+  coord_fixed()+
+  facet_grid(~name)
+
+ggsave('results/fullmodel.png', width = 16)
 
 
 
@@ -276,60 +215,147 @@ ggsave('results/fullmodel.png', DEOccuMap.facet, width = 16)
 
 
 ##### Effect of sites covariates
+variable_names <- c("bio1",
+                    "bio2",
+                    "bio12",
+                    "bare_soil",
+                    "tree_cover",
+                    "grass_cover",
+                    "landfills")
+x_lab_name <- c('Annual mean temperature in °C (bio1)',
+                'Mean diurnal range in °C (bio2)',
+                'Annual precipitation in mm (bio12)',
+                'Bare soil cover %',
+                'Tree cover %',
+                'Grass cover %',
+                'Landfills cover %')
 
-variable <- 'grass_cover'
-newdata <- data.frame(bio1= seq(0,0,length.out=100), # -7, 186
-                      bio2= seq(0,0,length.out=100), # 58, 129
-                      bio12= seq(0,0,length.out=100), # 223, 1539
-                      bare_soil = seq(0,0,length.out=100),  # 0, 60
-                      tree_cover= seq(0,0,length.out=100), # 0, 82
-                      grass_cover= seq(0,71,length.out=100)) # 0, 71
+lower_limits <- c(-7, 58, 223, 0,0,0,0)
+upper_limits <- c(186, 129, 1539, 60, 82, 71, 0.1)
 
 
-sd1 <- sd(newdata[, variable])
-mean1<- mean(newdata[, variable]/sd(newdata[, variable]))
+for (i in seq_along(variable_names)) {
+  variable_str <- variable_names[i]
+  print(variable_str)
+  
 
-
-newdata_std <- newdata
-newdata_std[, variable] <- as.numeric(scale(newdata[, variable]) )
-
-
-predict_newdataset <- unmarked::predict(occ_avg,
-                                        newdata = newdata_std,
-                                        type="state") 
-
-predict_newdataset_df <- bind_cols(newdata_std, 
-                                   occ_prob = predict_newdataset$fit,
-                                   occ_se = predict_newdataset$se.fit)
-
-ggplot(data=predict_newdataset_df)+
-  geom_line(aes(x=(grass_cover+mean1) *sd1, y=occ_prob),color="royalblue3")+
-  labs(x="Grass cover %", y="Occupancy Probability")+
-  theme(panel.border=element_rect(color="black",fill="transparent"),
-        panel.background = element_rect(fill="white"),
-        text = element_text(size=20))
-
-ggsave('results/grass_cover.png')
-
+  newdata <- setNames(data.frame(matrix(ncol = 7, nrow = 1000)), variable_names)
+  
+  newdata[, i] <- seq(lower_limits[i],
+                      upper_limits[i],
+                      length.out = 100)
+  
+  newdata[is.na(newdata)] <- 0
+  
+  sd1 <- sd(newdata[, variable_str])
+  mean1<- mean(newdata[, variable_str]/sd(newdata[, variable_str]))
+  
+  newdata[, variable_str] <- as.numeric(scale(newdata[, variable_str]) )
+  
+  
+  predict_newdataset <- unmarked::predict(occ_avg,
+                                          newdata = newdata,
+                                          type="state") 
+  
+  plotting_data <- bind_cols(newdata, 
+                             occ_prob = predict_newdataset$fit,
+                             occ_se = predict_newdataset$se.fit) %>%
+    select(matches(variable_str), occ_prob, occ_se) 
+  
+  plotting_data$x <- (plotting_data[, variable_str] + mean1)* sd1
+  
+  if (variable_str %in% c('bio1', 'bio2')) {
+    plotting_data$x <- plotting_data$x / 10
+  } else if (variable_str == 'landfills'){
+    plotting_data$x <- plotting_data$x * 100
+  }
+  
+  plotting_data %>%
+    mutate(lower_se = occ_prob - occ_se,
+           upper_se = occ_prob + occ_se) %>%
+    ggplot()+
+    geom_ribbon(aes(ymin = lower_se, 
+                    ymax = upper_se,
+                    x = x),
+                fill="gray", alpha=0.5) + 
+    geom_line(aes(x=x, y=occ_prob),
+              color="royalblue3", size=2)+
+    labs(x=x_lab_name[i], 
+         y="Occupancy Probability")+
+    theme(panel.border=element_rect(color="black",fill="transparent"),
+          panel.background = element_rect(fill="white"),
+          text = element_text(size=20),
+          plot.margin=unit(c(5.5, 15, 5.5, 5.5), "points"))+
+    scale_x_continuous(expand = expansion(mult = c(0, 0)))
+  
+  img_name <- paste('results/', variable_str, '.png', sep='')
+  ggsave(img_name, width = 7, height = 5)
+  
+}
 
 
 ##### Effect of detection covariates
+
+
+# Number of observers
 newdata_detection <- data.frame(number_observers = seq(1,5,length.out = 100), # 1,5
-                                duration_minutes = seq(0,0, lenght.out = 100)) # 1, 300
+                                duration_minutes = mean(occ_um@obsCovs$duration_minutes, na.rm=T))
 
 predict_newdataset <- unmarked::predict(occ_avg,
                               newdata = newdata_detection,
                               type="det") 
 
-predict_newdataset_df <- bind_cols(newdata_detection, 
+plotting_data <- bind_cols(newdata_detection, 
                                    occ_prob = predict_newdataset$fit,
                                    occ_se = predict_newdataset$se.fit)
 
-ggplot(data=predict_newdataset_df)+
-  geom_line(aes(x=number_observers, y=occ_prob),color="royalblue3")+
+plotting_data %>%
+  mutate(lower_se = occ_prob - occ_se,
+         upper_se = occ_prob + occ_se) %>%
+  ggplot()+
+  geom_ribbon(aes(ymin = lower_se, 
+                  ymax = upper_se,
+                  x = number_observers),
+              fill="gray", alpha=0.5) + 
+  geom_line(aes(x=number_observers, y=occ_prob),
+            color="royalblue3", size=2)+
   labs(x="Number of observers", y="Occupancy Probability")+
   theme(panel.border=element_rect(color="black",fill="transparent"),
         panel.background = element_rect(fill="white"),
-        text = element_text(size=20))
+        text = element_text(size=20),
+        plot.margin=unit(c(5.5, 15, 5.5, 5.5), "points"))+
+  scale_x_continuous(expand = expansion(mult = c(0, 0)))
 
-ggsave('results/observers.png')
+ggsave('results/observers.png', width = 10, height = 6)
+
+
+# Duration in minutes
+newdata_detection <- data.frame(number_observers = mean(occ_um@obsCovs$number_observers, na.rm=T),
+                                duration_minutes = seq(1,300)) # 1, 300
+
+predict_newdataset <- unmarked::predict(occ_avg,
+                                        newdata = newdata_detection,
+                                        type="det") 
+
+plotting_data <- bind_cols(newdata_detection, 
+                           occ_prob = predict_newdataset$fit,
+                           occ_se = predict_newdataset$se.fit)
+
+plotting_data %>%
+  mutate(lower_se = occ_prob - occ_se,
+         upper_se = occ_prob + occ_se) %>%
+  ggplot()+
+  geom_ribbon(aes(ymin = lower_se, 
+                  ymax = upper_se,
+                  x = duration_minutes),
+              fill="gray", alpha=0.5) + 
+  geom_line(aes(x=duration_minutes, y=occ_prob),
+            color="royalblue3", size=2)+
+  labs(x="Duration in minutes", y="Occupancy Probability")+
+  theme(panel.border=element_rect(color="black",fill="transparent"),
+        panel.background = element_rect(fill="white"),
+        text = element_text(size=20),
+        plot.margin=unit(c(5.5, 15, 5.5, 5.5), "points"))+
+  scale_x_continuous(expand = expansion(mult = c(0, 0)))
+
+ggsave('results/duration.png', width = 10, height = 6)
