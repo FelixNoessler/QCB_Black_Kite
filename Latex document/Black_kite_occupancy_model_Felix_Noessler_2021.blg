@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'Black_kite_occupancy_model_Felix_Noessler_2021.blg'
+[49] biber:322> INFO - === Sat Aug 14, 2021, 15:00:55
+[58] Biber.pm:415> INFO - Reading 'Black_kite_occupancy_model_Felix_Noessler_2021.bcf'
+[104] Biber.pm:943> INFO - Found 47 citekeys in bib section 0
+[113] Biber.pm:4256> INFO - Processing section 0
+[114] Utils.pm:75> INFO - Globbing data source 'lit/library.bib'
+[114] Utils.pm:91> INFO - Globbed data source 'lit/library.bib' to lit/library.bib
+[120] Biber.pm:4455> INFO - Looking for bibtex format file 'lit/library.bib' for section 0
+[126] bibtex.pm:1653> INFO - LaTeX decoding ...
+[230] bibtex.pm:1471> INFO - Found BibTeX data source 'lit/library.bib'
+[551] Utils.pm:293> WARN - BibTeX subsystem: /tmp/biber_tmp_GPmb/library.bib_10300.utf8, line 6, warning: 172 characters of junk seen at toplevel
+[615] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[615] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[615] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[615] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[660] bbl.pm:652> INFO - Writing 'Black_kite_occupancy_model_Felix_Noessler_2021.bbl' with encoding 'UTF-8'
+[734] bbl.pm:755> INFO - Output to Black_kite_occupancy_model_Felix_Noessler_2021.bbl
+[734] Biber.pm:128> INFO - WARNINGS: 1

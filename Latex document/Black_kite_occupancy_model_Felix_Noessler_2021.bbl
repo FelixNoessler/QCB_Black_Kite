@@ -1,0 +1,2946 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Araujo2006}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=72cdc90eaae746fb2fb0c53839072424}{%
+           family={Ara{ú}jo},
+           familyi={A\bibinitperiod},
+           given={Miguel\bibnamedelima B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb5bc36df5dcfbc457d32d0354351b22}{%
+           family={Rahbek},
+           familyi={R\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a52fad12ba016aeb5b5360e137d08d04}
+      \strng{fullhash}{a52fad12ba016aeb5b5360e137d08d04}
+      \strng{bibnamehash}{a52fad12ba016aeb5b5360e137d08d04}
+      \strng{authorbibnamehash}{a52fad12ba016aeb5b5360e137d08d04}
+      \strng{authornamehash}{a52fad12ba016aeb5b5360e137d08d04}
+      \strng{authorfullhash}{a52fad12ba016aeb5b5360e137d08d04}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{5792}
+      \field{title}{{How does climate change affect biodiversity?}}
+      \field{volume}{313}
+      \field{year}{2006}
+      \field{pages}{1396\bibrangedash 1397}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1126/science.1131758
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1396.full.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Barton2020}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b1303bc76600c94011a998d4d433e140}{%
+           family={Barto{ń}},
+           familyi={B\bibinitperiod},
+           given={Kamil},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b1303bc76600c94011a998d4d433e140}
+      \strng{fullhash}{b1303bc76600c94011a998d4d433e140}
+      \strng{bibnamehash}{b1303bc76600c94011a998d4d433e140}
+      \strng{authorbibnamehash}{b1303bc76600c94011a998d4d433e140}
+      \strng{authornamehash}{b1303bc76600c94011a998d4d433e140}
+      \strng{authorfullhash}{b1303bc76600c94011a998d4d433e140}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{R package version 1.43.17}
+      \field{title}{{MuMIn: Multi-Model Inference}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/package=MuMIn
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/package=MuMIn
+      \endverb
+    \endentry
+    \entry{Bellard2012}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5b94ce63ee695a41d2d76ff97ef7c2c6}{%
+           family={Bellard},
+           familyi={B\bibinitperiod},
+           given={C{é}line},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d7ae10beaeb2278c6e3050bb65e98ca}{%
+           family={Bertelsmeier},
+           familyi={B\bibinitperiod},
+           given={Cleo},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1618cf83318feef61cc7d12f9423b6a7}{%
+           family={Leadley},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8420a71ed1be07777ddccc3254bee18}{%
+           family={Thuiller},
+           familyi={T\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=36d3be18739aaf8ef00e03435052a2b7}{%
+           family={Courchamp},
+           familyi={C\bibinitperiod},
+           given={Franck},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{80c0294152ebcb418394c01ec62ad22a}
+      \strng{fullhash}{9922d5c827f62bb804c2eff246c115ce}
+      \strng{bibnamehash}{9922d5c827f62bb804c2eff246c115ce}
+      \strng{authorbibnamehash}{9922d5c827f62bb804c2eff246c115ce}
+      \strng{authornamehash}{80c0294152ebcb418394c01ec62ad22a}
+      \strng{authorfullhash}{9922d5c827f62bb804c2eff246c115ce}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many studies in recent years have investigated the effects of climate change on the future of biodiversity. In this review, we first examine the different possible effects of climate change that can operate at individual, population, species, community, ecosystem and biome scales, notably showing that species can respond to climate change challenges by shifting their climatic niche along three non-exclusive axes: time (e.g. phenology), space (e.g. range) and self (e.g. physiology). Then, we present the principal specificities and caveats of the most common approaches used to estimate future biodiversity at global and sub-continental scales and we synthesise their results. Finally, we highlight several challenges for future research both in theoretical and applied realms. Overall, our review shows that current estimates are very variable, depending on the method, taxonomic group, biodiversity loss metrics, spatial scales and time periods considered. Yet, the majority of models indicate alarming consequences for biodiversity, with the worst-case scenarios leading to extinction rates that would qualify as the sixth mass extinction in the history of the earth. © 2012 Blackwell Publishing Ltd/CNRS.}
+      \field{journaltitle}{Ecology Letters}
+      \field{number}{4}
+      \field{title}{{Impacts of climate change on the future of biodiversity}}
+      \field{volume}{15}
+      \field{year}{2012}
+      \field{pages}{365\bibrangedash 377}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/j.1461-0248.2011.01736.x
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Bellardetal.-2012-Impactsofclimatechangeonthefutureofbiodiversity.pdf:pdf
+      \endverb
+      \keyw{Biodiversity,Climate change,Species extinctions}
+    \endentry
+    \entry{BirdLife2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c822220c18a0a3d44c1ddeaa695faa9f}{%
+           family={{BirdLife International}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \strng{fullhash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \strng{bibnamehash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \strng{authorbibnamehash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \strng{authornamehash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \strng{authorfullhash}{c822220c18a0a3d44c1ddeaa695faa9f}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Species factsheet: Milvus migrans.}}
+      \field{urlday}{19}
+      \field{urlmonth}{7}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://datazone.birdlife.org/species/factsheet/black-kite-milvus-migrans/
+      \endverb
+      \verb{url}
+      \verb http://datazone.birdlife.org/species/factsheet/black-kite-milvus-migrans/
+      \endverb
+    \endentry
+    \entry{rgeos}{manual}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a48f5d015a48190e796b22a334e99aa1}{%
+           family={Bivand},
+           familyi={B\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a54be82e35c692037698036ae290c2b}{%
+           family={Rundel},
+           familyi={R\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6f483a96985aa3f0b8a34c554434a787}
+      \strng{fullhash}{6f483a96985aa3f0b8a34c554434a787}
+      \strng{bibnamehash}{6f483a96985aa3f0b8a34c554434a787}
+      \strng{authorbibnamehash}{6f483a96985aa3f0b8a34c554434a787}
+      \strng{authornamehash}{6f483a96985aa3f0b8a34c554434a787}
+      \strng{authorfullhash}{6f483a96985aa3f0b8a34c554434a787}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{R package version 0.5-5}
+      \field{title}{{rgeos: Interface to Geometry Engine - Open Source ('GEOS')}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/package=rgeos
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/package=rgeos
+      \endverb
+    \endentry
+    \entry{Blanco1994}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8b1534f3a11e99e9bb52c2967405c2ef}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={Guillermo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{fullhash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{bibnamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authorbibnamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authornamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authorfullhash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTI•CT.-This study describes the seasonal variations in number of black kites (Milvus migrans) foraging at the rubbish dump of Madrid, Spain. Seasonal changes in the abundance of kites using the dump showed two peaks corresponding to both pre-and post-breeding migratory passages. The autumn passage was more lengthy and produced the highest number of kites (847). During the breeding season the population of kites foraging in the dump showed no seasonal trends, suggesting that it consisted mainly of nonbreeding birds, both adults and subadults. Age-related differences were observed in the use of the dump by black kites during post-breeding which may simply reflect the existence of age-related differences in migration. A possible advantage for kites to forage in the dump is access to an abundant and predictable food supply. On the other hand, kites may face some dangers from entanglement in plastic materials and other rubbish in the dump. KEY WORDS: black kite; Madrid; Milvus migrans; rubbish dump; seasonal abundance; Spain. Abundancia estacional de Milanos Negros (Milvus migrans) asociados al basurero de Madrid, Espafia RESUMEN.-Este estudio describe las variaciones nfimgricas estacionales de Milanos Negros (Milvus migrans) en relaci6n a su periodo de permanencia y paso migratorio sobre el basurero de Madrid, Espafia. Los cambios estacionales en la abundancia de milanos reflejaron dos mlximos correspondientes a los pasos migratorios. E1 paso migratorio postreproductor fue mils prolongado yen el se alcanz6 el nfimero mas alto de milanos (847). Durante la gpoca de crla la poblaci6n de milanos asociada al basurero no mostr6 variaciones numgricas, sugiriendo que estuvo compuesta principalmente por individuos no repro-ductores, tanto adultos como subadultos. La proporci6n de cada clase de edad vari6 durante el paso postreproductor en el basurero, lo cual podrla estar relacionado con diferencias migratorias entre las distintas clases de edad. Se discuten las posibles ventajas y desventajas de alimentarse en basureros para los Milanos Negros. [Traducci6n Autor] Black kites (Milvus migrans) often gather in large communal roosts and breeding colonies. Large ag-gregations also occur where food is abundant and during migration (Bernis 1980, Cramp and Sim-mons 1980). Their highly gregarious and opportu-nlstic foraging behavior leads them to eat the most abundant and available prey, especially slow-moving and injured animals as well as food obtained by scavenging (Valverde 1967, Arroyo 1978, Cramp and Simmons 1980, Shiraishi et al. 1990). As scavengers , black kites have been recorded in large numbers on waste accumulations generated by human activities, including rubbish dumps, markets, fishing ports and abattoirs all over their world range (e.g., Bernis 1973, Pomeroy 1975, Roberts 1991, Shiraishi et al. 1990). Despite the widespread range and abundance of the black kite (Brown and Amadon 1968), limited information is available concerning the proportion of age classes in resident groups and in migration (Bernis 1980, Cramp and Simmons 1980). Knowledge about the age distribution of kites using rubbish dumps, and the timing of residency and migration associated with these sites is almost nonexistent (Pomeroy 1975, G6mez-Tejedor and De Lope 1993). The objective of this study was to determine the seasonal variations in numbers of black kites at the Madrid, Spain rubbish dump. I also present data concerning the age distribution of black kites associated with the dump through the summer, and discuss the possible advantages and disadvantages for black kites of foraging on refuse. 242}
+      \field{journaltitle}{Journal of Raptor Research}
+      \field{number}{4}
+      \field{title}{{Seasonal aboundance of Black kites associated with the rubbish dump of Madrid, Spain}}
+      \field{volume}{28}
+      \field{year}{1994}
+      \field{pages}{242\bibrangedash 245}
+      \range{pages}{4}
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/p00242-p00245.pdf:pdf
+      \endverb
+      \keyw{black kite,madrid,milvus migrans,rubbish}
+    \endentry
+    \entry{Blas2009}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=116d386f00d3ff8fd4008d3e62f74054}{%
+           family={Blas},
+           familyi={B\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ffc2be4ffc33ed75cfed9939952869d}{%
+           family={Sergio},
+           familyi={S\bibinitperiod},
+           given={Fabrizio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ce30711be8bd89ab8a8957bdfacb271}{%
+           family={Hiraldo},
+           familyi={H\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1012c34e342aca15e44f5e87e4dd2575}
+      \strng{fullhash}{77077ea883f1f07e861e33f2cc91a00c}
+      \strng{bibnamehash}{77077ea883f1f07e861e33f2cc91a00c}
+      \strng{authorbibnamehash}{77077ea883f1f07e861e33f2cc91a00c}
+      \strng{authornamehash}{1012c34e342aca15e44f5e87e4dd2575}
+      \strng{authorfullhash}{77077ea883f1f07e861e33f2cc91a00c}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In numerous iteroparous species, mean fecundity increases with age. Such improvement has been explained by: a) progressive removal of inferior breeders from the breeding population (selection-hypothesis); b) delayed breeding of higher-quality phenotypes (delayed-breeder-hypothesis); c) longitudinal enhancement of skills associated with age per se (age-hypothesis); d) progressive improvement in the capability to conduct specific tasks facilitated by accumulated experience (breeding-experience-hypothesis); and e) increasing parental investment promoted by declining residual reproductive values (restraint-hypothesis). To date, there have been few comprehensive tests of these hypotheses. Here, we provide such a study using a long-term dataset on a long-lived raptor, the black kite Milvus migrans (maximum lifespan 23 yr). Kites delayed breeding for 1-7 yr and all measures of breeding performance increased linearly or quadratically up to 11 yr of age. There was no support for the delayed-breeder-hypothesis: superior phenotypes did not delay breeding longer. Superior breeders were retained longer in the breeding population, consistent with the selection-hypothesis. All measures of breeding performance increased longitudinally within individuals, supporting the age-hypothesis, while some of them increased with accumulated previous experience, supporting the breeding-experience-hypothesis. Some analyses suggested the existence of trade-offs between reproduction in the early years of life and subsequent survival, partially supporting the restraint-hypothesis. The pattern of age-related improvements in breeding rates observed at the population-level could be ascribed to the combined effect of the progressive removal of inferior phenotypes from the breeding population and the individual-level lack of specific skills which are progressively acquired with time and experience. It was also compatible with a longitudinal increase in reproductive investment. Results from previous studies suggest that different mechanisms may operate in different species and that age-related improvements in reproduction may be frequently promoted by the complex interplay between longitudinal improvements and changes in the relative frequency of productive phenotypes in the breeding population. © 2009 Ecography.}
+      \field{journaltitle}{Ecography}
+      \field{number}{4}
+      \field{title}{{Age-related improvement in reproductive performance in a long-lived raptor: A cross-sectional and longitudinal study}}
+      \field{volume}{32}
+      \field{year}{2009}
+      \field{pages}{647\bibrangedash 657}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/j.1600-0587.2008.05700.x
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/j.1600-0587.2008.05700.x.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Buchhorn2020}{article}{}
+      \name{author}{6}{ul=2}{%
+        {{un=0,uniquepart=base,hash=a16bb94577f24232cc8790b5201e6422}{%
+           family={Buchhorn},
+           familyi={B\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5930872a4135827f65a222f32fb1f30}{%
+           family={Lesiv},
+           familyi={L\bibinitperiod},
+           given={Myroslava},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b62663645ae1a9095d4a05259808dc2}{%
+           family={Tsendbazar},
+           familyi={T\bibinitperiod},
+           given={Nandin-Erdene},
+           giveni={N\bibinithyphendelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cae6b16f762095f8108863bcba3c255}{%
+           family={Herold},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba75c830e889e5c89f0768f148765741}{%
+           family={Bertels},
+           familyi={B\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=21c143ae298f24c412e70714e58ddbc7}{%
+           family={Smets},
+           familyi={S\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7a61b8bd1afa5469c7fe37acdcdabceb}
+      \strng{fullhash}{fefae8d9d9d577eb1918c3dcdc2c663d}
+      \strng{bibnamehash}{7a61b8bd1afa5469c7fe37acdcdabceb}
+      \strng{authorbibnamehash}{7a61b8bd1afa5469c7fe37acdcdabceb}
+      \strng{authornamehash}{7a61b8bd1afa5469c7fe37acdcdabceb}
+      \strng{authorfullhash}{fefae8d9d9d577eb1918c3dcdc2c663d}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing}
+      \field{number}{6}
+      \field{title}{{Copernicus Global Land Cover Layers: Collection 2}}
+      \field{volume}{12}
+      \field{year}{2020}
+      \field{pages}{1044}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/rs12061044
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/remotesensing-12-01044.pdf:pdf
+      \endverb
+    \endentry
+    \entry{land_cover_data}{dataset}{}
+      \name{author}{8}{ul=2}{%
+        {{un=0,uniquepart=base,hash=a16bb94577f24232cc8790b5201e6422}{%
+           family={Buchhorn},
+           familyi={B\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=21c143ae298f24c412e70714e58ddbc7}{%
+           family={Smets},
+           familyi={S\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba75c830e889e5c89f0768f148765741}{%
+           family={Bertels},
+           familyi={B\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0b2b50f502e2a75cbedc59e4da8312b}{%
+           family={Roo},
+           familyi={R\bibinitperiod},
+           given={Bert\bibnamedelima De},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5930872a4135827f65a222f32fb1f30}{%
+           family={Lesiv},
+           familyi={L\bibinitperiod},
+           given={Myroslava},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b62663645ae1a9095d4a05259808dc2}{%
+           family={Tsendbazar},
+           familyi={T\bibinitperiod},
+           given={Nandin-Erdene},
+           giveni={N\bibinithyphendelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cae6b16f762095f8108863bcba3c255}{%
+           family={Herold},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dca98d9c3ccad4b0b26d4ac078d7fb43}{%
+           family={Fritz},
+           familyi={F\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b9ddb7c50250ba764bbeed83d3cb1e0b}
+      \strng{fullhash}{b5cc1372258afca77c136be516051bdc}
+      \strng{bibnamehash}{b9ddb7c50250ba764bbeed83d3cb1e0b}
+      \strng{authorbibnamehash}{b9ddb7c50250ba764bbeed83d3cb1e0b}
+      \strng{authornamehash}{b9ddb7c50250ba764bbeed83d3cb1e0b}
+      \strng{authorfullhash}{b5cc1372258afca77c136be516051bdc}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Zenodo}
+      \field{title}{{Copernicus Global Land Service: Land Cover 100m: collection 3: epoch 2019: Globe}}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.5281/zenodo.3939050
+      \endverb
+    \endentry
+    \entry{clc2018}{dataset}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=08ddcf3a4cf1a8d7e47051bcc1c92d26}{%
+           family={{Copernicus Land Monitoring Service}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {European Union, European Environment Agency (EEA)}%
+      }
+      \strng{namehash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \strng{fullhash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \strng{bibnamehash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \strng{authorbibnamehash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \strng{authornamehash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \strng{authorfullhash}{08ddcf3a4cf1a8d7e47051bcc1c92d26}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Corine Land Cover (CLC) 2018}}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://land.copernicus.eu/pan-european/corine-land-cover/clc2018
+      \endverb
+      \verb{url}
+      \verb https://land.copernicus.eu/pan-european/corine-land-cover/clc2018
+      \endverb
+    \endentry
+    \entry{ebirdData}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bfa4cea98a2094fec36ba0070966983e}{%
+           family={{Cornell Lab of Ornithology}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Ithaca, New York}%
+      }
+      \strng{namehash}{bfa4cea98a2094fec36ba0070966983e}
+      \strng{fullhash}{bfa4cea98a2094fec36ba0070966983e}
+      \strng{bibnamehash}{bfa4cea98a2094fec36ba0070966983e}
+      \strng{authorbibnamehash}{bfa4cea98a2094fec36ba0070966983e}
+      \strng{authornamehash}{bfa4cea98a2094fec36ba0070966983e}
+      \strng{authorfullhash}{bfa4cea98a2094fec36ba0070966983e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{eBird Basic Dataset}}
+      \field{urlday}{1}
+      \field{urlmonth}{3}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ebird.org/data/download
+      \endverb
+      \verb{url}
+      \verb https://ebird.org/data/download
+      \endverb
+    \endentry
+    \entry{DeGiacomo2008}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7a63ca87223bebe06cf5aa91188c8702}{%
+           family={{De Giacomo}},
+           familyi={D\bibinitperiod},
+           given={Umberto},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b69201bc56e4cfc552853fd2358fff5b}{%
+           family={Guerrieri},
+           familyi={G\bibinitperiod},
+           given={Gaspare},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \strng{fullhash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \strng{bibnamehash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \strng{authorbibnamehash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \strng{authornamehash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \strng{authorfullhash}{a720d6312f1bcfac092b7d2d8bb5291a}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We studied the feeding behavior of Black Kites (Milvus migrans) in a rubbish dump in Rome, Italy, from April-September 2005. The earliest kites reached the rubbish dump at dawn and the last left just after dusk. The number of individuals foraging in the dump increased during the course of the day and also from April to August. The number of kites in the rubbish area of the dump was usually small and tended to show rapid increases and equally quick declines. Kites searched for food while directly standing on the rubbish or, more often, while flying low over the ground. The first strategy, which was never observed in April but was more common during the following months, was used when there were few foraging gulls or trucks in the dump. Cleptoparasitism. was the technique most frequently used to acquire food (76{\%} of all foraging events). It was directed toward conspecifics in 35{\%} of the observed cases, toward Yellow-legged Gulls (Larus cachinnans) in 57{\%} and toward Carrion Crows (Corvus corone) in 8{\%}. The success rate of cleptoparasitic attempts was 32{\%} against conspecifics, 73{\%} against Yellow-legged Gulls and 66{\%} against crows. The higher frequency of cleptoparasitic attempts against gulls may thus be explained by its higher success rate, although its efficiency declined with increasing gull numbers. The frequency of intraspecific cleptoparasitism paralleled variations in kite density and its effectiveness increased progressively from April-August. © 2008 The Raptor Research Foundation, Inc.}
+      \field{annotation}{rubbish dump of rome: black kites visit regularly the site, collecting carrion and clepoparasitism of conspecifics and from other species}
+      \field{journaltitle}{Journal of Raptor Research}
+      \field{number}{2}
+      \field{title}{{The feeding behavior of the Black Kite (Milvus migrans) in the rubbish dump of Rome}}
+      \field{volume}{42}
+      \field{year}{2008}
+      \field{pages}{110\bibrangedash 118}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.3356/JRR-07-09.1
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/JRR-07-09.1.pdf:pdf
+      \endverb
+      \keyw{Black Kite,Cleptoparasitism,Dump,Feeding behavior,Milvus migrans,Urban}
+    \endentry
+    \entry{Donazar2016}{article}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=52dfc4b5b234e03fb0329f03964fbdf5}{%
+           family={Don{á}zar},
+           familyi={D\bibinitperiod},
+           given={Jos{é}\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=76f34a97cc2eee8d834079b4f356fd10}{%
+           family={Cort{é}s-Avizanda},
+           familyi={C\bibinithyphendelim A\bibinitperiod},
+           given={Ainara},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d6569b6dabd749ad58f676d65ce666d}{%
+           family={Fargallo},
+           familyi={F\bibinitperiod},
+           given={Juan\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd4799fc37004f96d2feaf9050f445a7}{%
+           family={Margalida},
+           familyi={M\bibinitperiod},
+           given={Antoni},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa3d137ceadf14c4c1860df27e907f63}{%
+           family={Mole{ó}n},
+           familyi={M\bibinitperiod},
+           given={Marcos},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=599a12abb8216a3582e9fa7cf9a7bb22}{%
+           family={Morales-Reyes},
+           familyi={M\bibinithyphendelim R\bibinitperiod},
+           given={Zebensui},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acab72e8b7bd9d98ec97f9947813603d}{%
+           family={Moreno-Opo},
+           familyi={M\bibinithyphendelim O\bibinitperiod},
+           given={Rub{é}n},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ec6639583931a4bfc8cf2275933dd8a6}{%
+           family={P{é}rez-Garc{í}a},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Juan\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c3227396b23ad84291d8f85d71013fb5}{%
+           family={S{á}nchez-Zapata},
+           familyi={S\bibinithyphendelim Z\bibinitperiod},
+           given={Jos{é}\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc45645683083d602cf78c94c08a653c}{%
+           family={Zuberogoitia},
+           familyi={Z\bibinitperiod},
+           given={I{ñ}igo},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e5c9037a8305585e94a6a838d822303}{%
+           family={Serrano},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{349afaa30919c3e6f552b2366cede8ff}
+      \strng{fullhash}{90749dc73c54f4e77ab981011370c8ae}
+      \strng{bibnamehash}{349afaa30919c3e6f552b2366cede8ff}
+      \strng{authorbibnamehash}{349afaa30919c3e6f552b2366cede8ff}
+      \strng{authornamehash}{349afaa30919c3e6f552b2366cede8ff}
+      \strng{authorfullhash}{90749dc73c54f4e77ab981011370c8ae}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Birds of prey have been, in comparison to other avian groups, an uncommon study model, mainly due to the limitations imposed by their conservative life strategy (low population density and turnover). Nonetheless, they have attracted a strong interest from the point of view of conservation biology because many populations have been close to extinction and because of their recognised role in ecosystems as top predators and scavengers and as flagship species. Today, after more than a century of persecution, and with the exception of some vultures still very much affected by illegal poisoning, many populations of birds of prey have experienced significant recoveries in many regions of Spain and the European Mediterranean. These changes pose new challenges when addressing the conservation of raptors in the coming decades. On this basis, and from a preferentially Mediterranean perspective, we have focused our attention on the need of describing and quantifying the role of these birds as providers of both regulating (rodent pest control and removal of livestock carcasses) and cultural ecosystem services. Moreover, we revisited persisting conflicts with human interests (predation of game species) and call attention to the emergence of new conflicts with a strong social and media component such as the predation on live cattle by vultures. Also, the rampant humanization of the environment determines the need for new solutions to the growing, yet scarcely explored, problem of accidents in new infrastructures such as mortality in wind farms. Finally, we explored in depth the ecological response of birds of prey to large-scale habitat changes such as urbanisation and abandonment of marginal lands that are also expected to increase in the near future. We urgently need more scientific knowledge to provide adequate responses to the challenge of keeping healthy populations of avian predators and scavengers in a rapidly changing world.}
+      \field{journaltitle}{Ardeola}
+      \field{number}{1}
+      \field{title}{{Roles of Raptors in a Changing World: From Flagships to Providers of Key Ecosystem Services}}
+      \field{volume}{63}
+      \field{year}{2016}
+      \field{pages}{181\bibrangedash 234}
+      \range{pages}{54}
+      \verb{doi}
+      \verb 10.13157/arla.63.1.2016.rp8
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/arla.63.1.2016.rp8.pdf:pdf
+      \endverb
+      \keyw{animal ecology,birds of prey,conservation,cultural services,global change,humanwildlife conflicts,pest control,predation,regulating services,rewilding,supporting services,urban habitats}
+    \endentry
+    \entry{Fick2017}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a4d42fd952a01eab582d1d0891f1c613}{%
+           family={Fick},
+           familyi={F\bibinitperiod},
+           given={Stephen\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b0a2427b5a45d44474b8316d0d9aad7}{%
+           family={Hijmans},
+           familyi={H\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{44c9292ccbe4a0768a1f988273443f87}
+      \strng{fullhash}{44c9292ccbe4a0768a1f988273443f87}
+      \strng{bibnamehash}{44c9292ccbe4a0768a1f988273443f87}
+      \strng{authorbibnamehash}{44c9292ccbe4a0768a1f988273443f87}
+      \strng{authornamehash}{44c9292ccbe4a0768a1f988273443f87}
+      \strng{authorfullhash}{44c9292ccbe4a0768a1f988273443f87}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We created a new dataset of spatially interpolated monthly climate data for global land areas at a very high spatial resolution (approximately 1 km2). We included monthly temperature (minimum, maximum and average), precipitation, solar radiation, vapour pressure and wind speed, aggregated across a target temporal range of 1970–2000, using data from between 9000 and 60 000 weather stations. Weather station data were interpolated using thin-plate splines with covariates including elevation, distance to the coast and three satellite-derived covariates: maximum and minimum land surface temperature as well as cloud cover, obtained with the MODIS satellite platform. Interpolation was done for 23 regions of varying size depending on station density. Satellite data improved prediction accuracy for temperature variables 5–15{\%} (0.07–0.17 °C), particularly for areas with a low station density, although prediction error remained high in such regions for all climate variables. Contributions of satellite covariates were mostly negligible for the other variables, although their importance varied by region. In contrast to the common approach to use a single model formulation for the entire world, we constructed the final product by selecting the best performing model for each region and variable. Global cross-validation correlations were ≥ 0.99 for temperature and humidity, 0.86 for precipitation and 0.76 for wind speed. The fact that most of our climate surface estimates were only marginally improved by use of satellite covariates highlights the importance having a dense, high-quality network of climate station data.}
+      \field{journaltitle}{International Journal of Climatology}
+      \field{number}{12}
+      \field{title}{{WorldClim 2: new 1-km spatial resolution climate surfaces for global land areas}}
+      \field{volume}{37}
+      \field{year}{2017}
+      \field{pages}{4302\bibrangedash 4315}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1002/joc.5086
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/joc.5086.pdf:pdf
+      \endverb
+      \keyw{MODIS,WorldClim,climate surfaces,cloud cover,interpolation,land surface temperature,solar radiation,vapour pressure,wind speed}
+    \endentry
+    \entry{unmarked}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3b7ddefa9f800ef1b48f794a53ae374b}{%
+           family={Fiske},
+           familyi={F\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=472eef9b93420503e6fd379027c71a66}{%
+           family={Chandler},
+           familyi={C\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \strng{fullhash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \strng{bibnamehash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \strng{authorbibnamehash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \strng{authornamehash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \strng{authorfullhash}{c2d7dcc70f7365c4e5c4eaab17c2df91}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{number}{10}
+      \field{title}{{unmarked: An R Package for Fitting Hierarchical Models of Wildlife Occurrence and Abundance}}
+      \field{volume}{43}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 23}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.18637/jss.v043.i10
+      \endverb
+    \endentry
+    \entry{Garcia2014}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c807d1ae9071874cd58c1ff1099bda43}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Raquel\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=deb0d58fdc465bd672af7390dc034ad7}{%
+           family={Cabeza},
+           familyi={C\bibinitperiod},
+           given={Mar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb5bc36df5dcfbc457d32d0354351b22}{%
+           family={Rahbek},
+           familyi={R\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72cdc90eaae746fb2fb0c53839072424}{%
+           family={Ara{ú}jo},
+           familyi={A\bibinitperiod},
+           given={Miguel\bibnamedelima B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6b2bcd8294a167c8cd0241a7cc30c39d}
+      \strng{fullhash}{7f1286c3bc48e7bb7f06999245db0fc8}
+      \strng{bibnamehash}{7f1286c3bc48e7bb7f06999245db0fc8}
+      \strng{authorbibnamehash}{7f1286c3bc48e7bb7f06999245db0fc8}
+      \strng{authornamehash}{6b2bcd8294a167c8cd0241a7cc30c39d}
+      \strng{authorfullhash}{7f1286c3bc48e7bb7f06999245db0fc8}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The 21st century is projected to witness unprecedented climatic changes, with greater warming often reported for high latitudes. Yet, climate change can be measured in a variety of ways, reflecting distinct dimensions of change with unequal spatial patterns across the world. Polar climates are projected to not only warm, but also to shrink in area. By contrast, today's hot and arid climates are expected to expand worldwide and to reach climate states with no current analog. Although rarely appreciated in combination, these multiple dimensions of change convey complementary information. We review existing climate change metrics and discuss how they relate to threats and opportunities for biodiversity. Interpreting climate change metrics is particularly useful for unknown or poorly described species, which represent most of Earth's biodiversity.}
+      \field{journaltitle}{Science}
+      \field{number}{6183}
+      \field{title}{{Multiple dimensions of climate change and their implications for biodiversity}}
+      \field{volume}{344}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1126/science.1247579
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1247579.full.pdf:pdf
+      \endverb
+    \endentry
+    \entry{numpy}{article}{}
+      \name{author}{26}{}{%
+        {{un=0,uniquepart=base,hash=db2b4761cc46be347b418e68660c9554}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={Charles\bibnamedelima R},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b053969d2c6a9ec8689980fb6463cd56}{%
+           family={Millman},
+           familyi={M\bibinitperiod},
+           given={K\bibnamedelima Jarrod},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a5a65a789013a8d1e8035ec28df9b6e}{%
+           family={Walt},
+           familyi={W\bibinitperiod},
+           given={St{é}fan\bibnamedelima J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=646fbfe08374cc41c2f9bd971d8c4725}{%
+           family={Gommers},
+           familyi={G\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18703a2bb6a62484483c193a212da2f8}{%
+           family={Virtanen},
+           familyi={V\bibinitperiod},
+           given={Pauli},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fd9ed8466bbb96364ae008f2a665e6e}{%
+           family={Cournapeau},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4321feefe3d5715c6fe12639d2a1f7f1}{%
+           family={Wieser},
+           familyi={W\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8d1b0c2bff88b6bf54e2e934e2853f6}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=265437a4424f0b845118651d7d04ab93}{%
+           family={Berg},
+           familyi={B\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e4d23819637a961e0e598e1c82a8f10d}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Nathaniel\bibnamedelima J},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ad1d38817acd2f00cb7f324ec7d37ea}{%
+           family={Kern},
+           familyi={K\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8ae844f84614690134ff5d8252fdc430}{%
+           family={Picus},
+           familyi={P\bibinitperiod},
+           given={Matti},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a22828b76006f42d747b699d2ef5167}{%
+           family={Hoyer},
+           familyi={H\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10aba85d08ce22d724b21878b93f590a}{%
+           family={Kerkwijk},
+           familyi={K\bibinitperiod},
+           given={Marten\bibnamedelima H},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=626cc151613864abeb653c0d8172d98c}{%
+           family={Brett},
+           familyi={B\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a989405517bbf67ae7b16be1d03c0081}{%
+           family={Haldane},
+           familyi={H\bibinitperiod},
+           given={Allan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9517b38a3050d34c03ac479ee122f64a}{%
+           family={R{í}o},
+           familyi={R\bibinitperiod},
+           given={Jaime\bibnamedelima Fern{á}ndez},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0,
+           prefix={del},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=76256cb9e4c31e0a4744b1b49a6199f4}{%
+           family={Wiebe},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3d6efaaa3d9682e20787eb06ff70a3d7}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Pearu},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aac4486f60accb8b7db22ef300423e11}{%
+           family={G{é}rard-Marchant},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22fcbc93c38819e962968aad3e3cba7f}{%
+           family={Sheppard},
+           familyi={S\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fbb0c40f5d70be8ce47ce9daafdf5749}{%
+           family={Reddy},
+           familyi={R\bibinitperiod},
+           given={Tyler},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c7e4c94b846fa41e2fc0a88e0dc656d}{%
+           family={Weckesser},
+           familyi={W\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c588b2e35e75bba896fc5677afb52fa9}{%
+           family={Abbasi},
+           familyi={A\bibinitperiod},
+           given={Hameer},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=52e2684c111b194e1f15fa06b0ce4544}{%
+           family={Gohlke},
+           familyi={G\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d500f4849030f34359cdb3e1513acf83}{%
+           family={Oliphant},
+           familyi={O\bibinitperiod},
+           given={Travis\bibnamedelima E},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media {\{}LLC\}}%
+      }
+      \strng{namehash}{754b3dec5e203c19b9a5798bbb902222}
+      \strng{fullhash}{bba1ae456b2655ba67cf6cee2d142dfc}
+      \strng{bibnamehash}{754b3dec5e203c19b9a5798bbb902222}
+      \strng{authorbibnamehash}{754b3dec5e203c19b9a5798bbb902222}
+      \strng{authornamehash}{754b3dec5e203c19b9a5798bbb902222}
+      \strng{authorfullhash}{bba1ae456b2655ba67cf6cee2d142dfc}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7825}
+      \field{title}{{Array programming with NumPy}}
+      \field{volume}{585}
+      \field{year}{2020}
+      \field{pages}{357\bibrangedash 362}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1038/s41586-020-2649-2
+      \endverb
+    \endentry
+    \entry{Heiberger2020}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2227b8d7bd707ba59dee577a94b72c4b}{%
+           family={Heiberger},
+           familyi={H\bibinitperiod},
+           given={Richard\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \strng{fullhash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \strng{bibnamehash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \strng{authorbibnamehash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \strng{authornamehash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \strng{authorfullhash}{2227b8d7bd707ba59dee577a94b72c4b}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{R package version 3.1-43}
+      \field{title}{{HH: Statistical Analysis and Data Display: Heiberger and Holland.}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/package=HH
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/package=HH
+      \endverb
+    \endentry
+    \entry{raster}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b0a2427b5a45d44474b8316d0d9aad7}{%
+           family={Hijmans},
+           familyi={H\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{fullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{bibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorbibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authornamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorfullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{R package version 3.4-10}
+      \field{title}{{raster: Geographic Data Analysis and Modeling}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/package=raster
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/package=raster
+      \endverb
+    \endentry
+    \entry{Ho1995}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bd8f33685f26fc02be5f9e5ffb9fe0ed}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Tin\bibnamedelima Kam},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \strng{fullhash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \strng{bibnamehash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \strng{authorbibnamehash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \strng{authornamehash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \strng{authorfullhash}{bd8f33685f26fc02be5f9e5ffb9fe0ed}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Decision trees are attractive classifiers due to their high execution speed. But trees derived with traditional methods often cannot be grown to arbitrary complexity for possible loss of generalization accuracy on unseen data. The limitation on complexity usually means suboptimal accuracy on training data. Following the principles of stochastic modeling, we propose a method to construct tree-based classifiers whose capacity can be arbitrarily expanded for increases in accuracy for both training and unseen data. The essence of the method is to build multiple trees in randomly selected subspaces of the feature space. Trees in different subspaces generalize their classification in complementary ways, and their combined classification can be monotonically improved. The validity of the method is demonstrated through experiments on the recognition of handwritten digits.}
+      \field{journaltitle}{Proceedings of the International Conference on Document Analysis and Recognition, ICDAR}
+      \field{title}{{Random decision forests}}
+      \field{volume}{1}
+      \field{year}{1995}
+      \field{pages}{278\bibrangedash 282}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICDAR.1995.598994
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/odt.pdf:pdf
+      \endverb
+    \endentry
+    \entry{matplotlib}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a27d092a3c70c59360ac990a48514314}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={J\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE COMPUTER SOC}%
+      }
+      \strng{namehash}{a27d092a3c70c59360ac990a48514314}
+      \strng{fullhash}{a27d092a3c70c59360ac990a48514314}
+      \strng{bibnamehash}{a27d092a3c70c59360ac990a48514314}
+      \strng{authorbibnamehash}{a27d092a3c70c59360ac990a48514314}
+      \strng{authornamehash}{a27d092a3c70c59360ac990a48514314}
+      \strng{authorfullhash}{a27d092a3c70c59360ac990a48514314}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Matplotlib is a 2D graphics package used for Python for application development, interactive scripting, and publication-quality image generation across user interfaces and operating systems.}
+      \field{journaltitle}{Computing in Science {\&} Engineering}
+      \field{number}{3}
+      \field{title}{{Matplotlib: A 2D graphics environment}}
+      \field{volume}{9}
+      \field{year}{2007}
+      \field{pages}{90\bibrangedash 95}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/MCSE.2007.55
+      \endverb
+    \endentry
+    \entry{ipcc}{misc}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=2aaaf9bb752ad08bc4dd2b1a4a254c7b}{%
+           family={Iturbide},
+           familyi={I\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3e46e77e2f0e41a63d1e2a701b2ccec}{%
+           family={Fern{á}ndez},
+           familyi={F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=229c818e74f119df69fc332e30cc6088}{%
+           family={Guti{é}rrez},
+           familyi={G\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27bccc92ec12863e089db892ff0248a3}{%
+           family={Bedia},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d5014c3c6b223ec9736c1c6f78ce9fb}{%
+           family={Cimadevilla},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc448b2206fb1b8ed442d156c803b36a}{%
+           family={D{í}ez-Sierra},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8940d7d87899f04abf02bde4335f11cd}{%
+           family={Manzanas},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=729ff0f8c5ed4fb697fb0ecac6b135f5}{%
+           family={Casanueva},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=24c1a81f01a45b8fc2042995b2b0e1a7}{%
+           family={Ba{ñ}o-Medina},
+           familyi={B\bibinithyphendelim M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=69a4f7d370e9ea362f2363739702d6d4}{%
+           family={Milovac},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d6a97f80624f5e42dd444f173ce8f74}{%
+           family={Herrera},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=794f56b8b94c95d37af9a55c4004a092}{%
+           family={Cofi{ñ}o},
+           familyi={C\bibinitperiod},
+           given={A.S.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e0e061a48a68a3ba087da6dde0bafb7}{%
+           family={{San Mart{í}n}},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc966b33b00e7f955a464967fd1b997e}{%
+           family={Garc{í}a-D{í}ez},
+           familyi={G\bibinithyphendelim D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a99078337bb4e4903eb7b6367ed810c4}{%
+           family={Hauser},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=725b0b9bd127efbb26497b7f8a3aa404}{%
+           family={Huard},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29979c8b7e8e40b0c98bfeaa1d518fb1}{%
+           family={Yelekci},
+           familyi={Y\bibinitperiod},
+           given={{Ö}.},
+           giveni={Ö\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5107facb061620f1e2f380fd8a31bb4d}
+      \strng{fullhash}{416fecf2c14470edbdce8bd4c1919269}
+      \strng{bibnamehash}{5107facb061620f1e2f380fd8a31bb4d}
+      \strng{authorbibnamehash}{5107facb061620f1e2f380fd8a31bb4d}
+      \strng{authornamehash}{5107facb061620f1e2f380fd8a31bb4d}
+      \strng{authorfullhash}{416fecf2c14470edbdce8bd4c1919269}
+      \field{sortinit}{I}
+      \field{sortinithash}{9417e9a1288a9371e2691d999083ed39}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Zenodo}
+      \field{title}{{Repository supporting the implementation of FAIR principles in the IPCC-WG1 Atlas.}}
+      \field{urlday}{13}
+      \field{urlmonth}{8}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5281/zenodo.3691645
+      \endverb
+      \verb{urlraw}
+      \verb https://github.com/IPCC-WG1/Atlas
+      \endverb
+      \verb{url}
+      \verb https://github.com/IPCC-WG1/Atlas
+      \endverb
+    \endentry
+    \entry{Imbalanced-learn}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=781d41794e363edaf811a97df6ec0bcc}{%
+           family={Lema{î}tre},
+           familyi={L\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f945a9261b3f3da4e3890d52a239ebf9}{%
+           family={Nogueira},
+           familyi={N\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb30326373010a04c92d57f4b0d63ebe}{%
+           family={Aridas},
+           familyi={A\bibinitperiod},
+           given={Christos\bibnamedelima K},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6a1e8015f8278954c4a6e5623eb2f2a8}
+      \strng{fullhash}{c56aface77a37dd46bd4d9851b1c5453}
+      \strng{bibnamehash}{c56aface77a37dd46bd4d9851b1c5453}
+      \strng{authorbibnamehash}{c56aface77a37dd46bd4d9851b1c5453}
+      \strng{authornamehash}{6a1e8015f8278954c4a6e5623eb2f2a8}
+      \strng{authorfullhash}{c56aface77a37dd46bd4d9851b1c5453}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{number}{17}
+      \field{title}{{Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning}}
+      \field{volume}{18}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/16-365.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://jmlr.org/papers/v18/16-365
+      \endverb
+      \verb{url}
+      \verb http://jmlr.org/papers/v18/16-365
+      \endverb
+    \endentry
+    \entry{MacKenzie2004}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5277766ae4476f886a65cb1aa84dd70c}{%
+           family={MacKenzie},
+           familyi={M\bibinitperiod},
+           given={Darryl\bibnamedelima I.},
+           giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e7f6bd80ad8a3773240d1c2d1a51e21}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={Larissa\bibnamedelima L.},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9288083f5d58827682c25556509b5909}
+      \strng{fullhash}{9288083f5d58827682c25556509b5909}
+      \strng{bibnamehash}{9288083f5d58827682c25556509b5909}
+      \strng{authorbibnamehash}{9288083f5d58827682c25556509b5909}
+      \strng{authornamehash}{9288083f5d58827682c25556509b5909}
+      \strng{authorfullhash}{9288083f5d58827682c25556509b5909}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Few species are likely to be so evident that they will always be detected at a site when present. Recently a model has been developed that enables estimation of the proportion of area occupied, when the target species is not detected with certainty. Here we apply this modeling approach to data collected on terrestrial salamanders in the Plethodon glutinosus complex in the Great Smoky Mountains National Park, USA, and wish to address the question "how accurately does the fitted model represent the data?" The goodness-of-fit of the model needs to be assessed in order to make accurate inferences. This article presents a method where a simple Pearson chi-square statistic is calculated and a parametric bootstrap procedure is used to determine whether the observed statistic is unusually large. We found evidence that the most global model considered provides a poor fit to the data, hence estimated an overdispersion factor to adjust model selection procedures and inflate standard errors. Two hypothetical datasets with known assumption violations are also analyzed, illustrating that the method may be used to guide researchers to making appropriate inferences. The results of a simulation study are presented to provide a broader view of the methods properties. © 2004 American Statistical Association and the International Biometric Society.}
+      \field{journaltitle}{Journal of Agricultural, Biological, and Environmental Statistics}
+      \field{number}{3}
+      \field{title}{{Assessing the fit of site-occupancy models}}
+      \field{volume}{9}
+      \field{year}{2004}
+      \field{pages}{300\bibrangedash 318}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1198/108571104X3361
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/MacKenzie-Bailey2004{\_}Article{\_}AssessingTheFitOfSite-occupanc.pdf:pdf
+      \endverb
+      \keyw{Goodness-of-fit,Model fit,Patch occupancy,Plethodon glutinosus,Plethodon oconluftee}
+    \endentry
+    \entry{MacKenzie2002}{article}{}
+      \name{author}{6}{ul=2}{%
+        {{un=0,uniquepart=base,hash=5277766ae4476f886a65cb1aa84dd70c}{%
+           family={MacKenzie},
+           familyi={M\bibinitperiod},
+           given={Darryl\bibnamedelima I.},
+           giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d538dc8da4c4610776320efc8fe043b}{%
+           family={Nichols},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0451b6e16639d4ff14f6c241bff62668}{%
+           family={Lachman},
+           familyi={L\bibinitperiod},
+           given={Gideon\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4322bda1fae855ad353e08f1a4d7a162}{%
+           family={Droege},
+           familyi={D\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f2d39bfd2c44554de35837a7f233ab3}{%
+           family={Royle},
+           familyi={R\bibinitperiod},
+           given={Andrew\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=222ff5a45b8fdd1395b3709d0e2f496a}{%
+           family={Langtimm},
+           familyi={L\bibinitperiod},
+           given={Catherine\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{57add435a73b16ebbdbab7156f742224}
+      \strng{fullhash}{cc107786d64bb5b91206949efa0c141b}
+      \strng{bibnamehash}{57add435a73b16ebbdbab7156f742224}
+      \strng{authorbibnamehash}{57add435a73b16ebbdbab7156f742224}
+      \strng{authornamehash}{57add435a73b16ebbdbab7156f742224}
+      \strng{authorfullhash}{cc107786d64bb5b91206949efa0c141b}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Nondetection of a species at a site does not imply that the species is absent unless the probability of detection is 1. We propose a model and likelihood-based method for estimating site occupancy rates when detection probabilities are <1. The model provides a flexible framework enabling covariate information to be included and allowing for missing observations. Via computer simulation, we found that the model provides good estimates of the occupancy rates, generally unbiased for moderate detection probabilities (>0.3). We estimated site occupancy rates for two anuran species at 32 wetland sites in Maryland, USA, from data collected during 2000 as part of an amphibian monitoring program, Frog-watch USA. Site occupancy rates were estimated as 0.49 for American toads (Bufo americanus), a 44{\%} increase over the proportion of sites at which they were actually observed, and as 0.85 for spring peepers (Pseudacris crucifer), slightly above the observed proportion of 0.83.}
+      \field{journaltitle}{Ecology}
+      \field{number}{8}
+      \field{title}{{Estimating site occupancy rates when detection probabilities are less than one}}
+      \field{volume}{83}
+      \field{year}{2002}
+      \field{pages}{2248\bibrangedash 2255}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/mackenzie 2002.pdf:pdf
+      \endverb
+      \keyw{Anurans,Bootstrap,Bufo americanus,Detection probability,Maximum likelihood,Metapopulation,Monitoring,Patch occupancy,Pseudacris crucifer,Site occupancy}
+    \endentry
+    \entry{AICcmodavg}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=60ceab031045e50fbafb238c0f0ccace}{%
+           family={Mazerolle},
+           familyi={M\bibinitperiod},
+           given={Marc\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{60ceab031045e50fbafb238c0f0ccace}
+      \strng{fullhash}{60ceab031045e50fbafb238c0f0ccace}
+      \strng{bibnamehash}{60ceab031045e50fbafb238c0f0ccace}
+      \strng{authorbibnamehash}{60ceab031045e50fbafb238c0f0ccace}
+      \strng{authornamehash}{60ceab031045e50fbafb238c0f0ccace}
+      \strng{authorfullhash}{60ceab031045e50fbafb238c0f0ccace}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{R package version 2.3-1}
+      \field{title}{{AICcmodavg: Model selection and multimodel inference based on (Q)AIC(c)}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/package=AICcmodavg
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/package=AICcmodavg
+      \endverb
+    \endentry
+    \entry{pandas}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=27ca77940a5e8c07c5d89d0f3fb11d75}{%
+           family={McKinney},
+           familyi={M\bibinitperiod},
+           given={Wes},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=761c92228af626556dc841a203fcd005}{%
+           family={Walt},
+           familyi={W\bibinitperiod},
+           given={St{é}fan},
+           giveni={S\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=eca9aeefdc8563b0e153fbedf08bc1a1}{%
+           family={Millman},
+           familyi={M\bibinitperiod},
+           given={Jarrod},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{fullhash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{bibnamehash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{authorbibnamehash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{authornamehash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{authorfullhash}{27ca77940a5e8c07c5d89d0f3fb11d75}
+      \strng{editorbibnamehash}{07817129a96c7184fd96e5b40e4ff059}
+      \strng{editornamehash}{07817129a96c7184fd96e5b40e4ff059}
+      \strng{editorfullhash}{07817129a96c7184fd96e5b40e4ff059}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 9th Python in Science Conference}
+      \field{title}{{Data Structures for Statistical Computing in Python}}
+      \field{year}{2010}
+      \field{pages}{56\bibrangedash 61}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.25080/Majora-92bf1922-00a
+      \endverb
+    \endentry
+    \entry{Nagelkerke1991}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8391f51c8c040c6558aba0f883fbc980}{%
+           family={Nagelkerke},
+           familyi={N\bibinitperiod},
+           given={N.\bibnamedelimi J.\bibnamedelimi D.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8391f51c8c040c6558aba0f883fbc980}
+      \strng{fullhash}{8391f51c8c040c6558aba0f883fbc980}
+      \strng{bibnamehash}{8391f51c8c040c6558aba0f883fbc980}
+      \strng{authorbibnamehash}{8391f51c8c040c6558aba0f883fbc980}
+      \strng{authornamehash}{8391f51c8c040c6558aba0f883fbc980}
+      \strng{authorfullhash}{8391f51c8c040c6558aba0f883fbc980}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A generalization of the coefficient of determination R 2 to general regression models is discussed. A modification of an earlier definition to allow for discrete models is proposed. The use of R 2 , the coefficient of determination, also called the multiple correlation coefficient, is well established in classical regression analysis (Rao, 1973). Its definition as the proportion of variance 'explained' by the regression model makes it useful as a measure of success of predicting the dependent variable from the independent variables. It is desirable to generalize the definition of R 2 to more general models, for which the concept of residual variance cannot be easily defined, and maximum likelihood is the criterion of fit. The following generalization, but with misprint $\backslash$/n replaced by 2/n here in (la) and (lb), was proposed by Cox {\&} Snell (1989, pp. 208-9) and, apparently independently, by Magee (1990); but had been suggested earlier for binary response models by Maddala (1983),-log (1-K 2) =-{\{}/(/?)-/(0)\} (la) n or K 2 = 1-exp [-{\^}{\{}/(/ §)-1(0)\}j = 1-{\{}L(O)/L(0)\} 2/ ", (lb) where 1(0) = log L(0) and 1(0) = log L(0) denote the log likelihoods of the fitted and the 'null' model respectively. It is easily found that this definition of R 2 has the following properties. (i) It is consistent with classical R 2 , that is the general definition applied to e.g. linear regression yields the classical R 2. (ii) It is consistent with maximum likelihood as an estimation method, i.e. the maximum likelihood estimates of the model parameters maximize R 2. (iii) It is asymptotically independent of the sample size n. (iv) It has an interpretation as the proportion of explained 'variation', or rather, 1-R 2 has the interpretation of the proportion of unexplained 'variation'. Variation should be construed very generally as any measure of the extent to which a distribution is not degenerate. To clarify, let M, be a model nested under M 2 which is nested under M,, for example model M, contains only covariable x,, for example a constant, while M 2 contains x 2 and x, and M, contains x,, x 2 and}
+      \field{journaltitle}{Biometrika}
+      \field{number}{3}
+      \field{title}{{A note on a general definition of the coefficient of determination}}
+      \field{volume}{78}
+      \field{year}{1991}
+      \field{pages}{691\bibrangedash 692}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1093/biomet/78.3.691
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/78-3-691.pdf:pdf
+      \endverb
+      \keyw{Log likelihood,Multiple correlation coefficient,Regression model,Residual variation,Some key words: Discrete probability}
+    \endentry
+    \entry{Panuccio2014}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=0b108a320f624e9061014cd06f088f59}{%
+           family={Panuccio},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c78366b7594c681a7f223291104311f}{%
+           family={Agostini},
+           familyi={A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d7603bf65f2bfe91396afa9ecdd717b}{%
+           family={Mellone},
+           familyi={M\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b3879659fa17b53d5a09394c6eea684}{%
+           family={Bogliani},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor {\&} Francis}%
+      }
+      \strng{namehash}{5b67b3ea77c43dec3554854b315be3dc}
+      \strng{fullhash}{511cc16f759988f133a76ff6ea4d7dbc}
+      \strng{bibnamehash}{511cc16f759988f133a76ff6ea4d7dbc}
+      \strng{authorbibnamehash}{511cc16f759988f133a76ff6ea4d7dbc}
+      \strng{authornamehash}{5b67b3ea77c43dec3554854b315be3dc}
+      \strng{authorfullhash}{511cc16f759988f133a76ff6ea4d7dbc}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The nominal subspecies of the Black Kite is a summer resident in Europe and Asia that winters mostly in western Africa, although numbers of birds wintering in the Mediterranean area are increasing. During migrations, tens of thousands are observed migrating through the Strait of Gibraltar between Spain and Morocco, along the eastern side of the Black Sea, and in the Middle East, while substantial numbers cross the central Mediterranean and the Bosphorus. This paper provides a review of research concerning migration and its relationship with foraging behaviour in a circannual perspective. In particular, research made both by satellite tracking and by visual observations suggests a more evident time-selected migration during autumn rather than spring. Moreover, differences in timing occurring among different flyways could be explained either by different rates of intra-specific competition in areas with different breeding density and/or by different distances between wintering and breeding grounds. © 2013 Dipartimento di Biologia, Universit{à} di Firenze, Italia.}
+      \field{annotation}{migratory patterns}
+      \field{journaltitle}{Ethology Ecology and Evolution}
+      \field{number}{1}
+      \field{title}{{Circannual variation in movement patterns of the Black Kite (Milvus migrans migrans): A review}}
+      \field{volume}{26}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1080/03949370.2013.812147
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Circannual variation in movement patterns of the Black Kite Milvus migrans migrans a review.pdf:pdf
+      \endverb
+      \keyw{Black Kite,Mediterranean Sea,Milvus migrans migrans,dispersal behaviour,migration}
+    \endentry
+    \entry{sklearn}{article}{}
+      \name{author}{16}{}{%
+        {{un=0,uniquepart=base,hash=6e96fec0d63277626bb324bd28cdecb7}{%
+           family={Pedregosa},
+           familyi={P\bibinitperiod},
+           given={F},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b99c2df2144dc5ee09317a7833dea42d}{%
+           family={Varoquaux},
+           familyi={V\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=955f19cea89ae97bb7936078898e6255}{%
+           family={Gramfort},
+           familyi={G\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2787869c9954c1d4e9891098995feb75}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86d47ab9ca1a9dae108b4d4a0418c679}{%
+           family={Thirion},
+           familyi={T\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d42f9e9cec95da1dad2232eac74982ab}{%
+           family={Grisel},
+           familyi={G\bibinitperiod},
+           given={O},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8bd8ef25258dd2311f92df23fe71ecf7}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a5ee41fa92b9e425806e1773853f1932}{%
+           family={Prettenhofer},
+           familyi={P\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c808557734e8929976d1f06f99c4ff2}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9662a6ea01596c6dd450817ccac81c4a}{%
+           family={Dubourg},
+           familyi={D\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39e81a3e2193b954680a0ab847a0bb55}{%
+           family={Vanderplas},
+           familyi={V\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=14c4a498c032f77d0b83f86c710dd50e}{%
+           family={Passos},
+           familyi={P\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc075b18fb4710a1a37b258804c57efe}{%
+           family={Cournapeau},
+           familyi={C\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=67ec0e8add781665a43010c9559111e9}{%
+           family={Brucher},
+           familyi={B\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dcb3918f09eb8785e6b212a907cc37cf}{%
+           family={Perrot},
+           familyi={P\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab20fcf381cd45daa82417c6fc595051}{%
+           family={Duchesnay},
+           familyi={D\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{fullhash}{7a67607c66e4af944b5f16461d6d0a87}
+      \strng{bibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorbibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authornamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorfullhash}{7a67607c66e4af944b5f16461d6d0a87}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{{Scikit-learn: Machine Learning in Python}}
+      \field{volume}{12}
+      \field{year}{2011}
+      \field{pages}{2825\bibrangedash 2830}
+      \range{pages}{6}
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/pedregosa11a.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://jmlr.org/papers/v12/pedregosa11a.html
+      \endverb
+      \verb{url}
+      \verb http://jmlr.org/papers/v12/pedregosa11a.html
+      \endverb
+    \endentry
+    \entry{QGIS_software}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=87a6547ad0a49e77c9adf891d4365979}{%
+           family={{QGIS Development Team}},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {QGIS Association}%
+      }
+      \strng{namehash}{87a6547ad0a49e77c9adf891d4365979}
+      \strng{fullhash}{87a6547ad0a49e77c9adf891d4365979}
+      \strng{bibnamehash}{87a6547ad0a49e77c9adf891d4365979}
+      \strng{authorbibnamehash}{87a6547ad0a49e77c9adf891d4365979}
+      \strng{authornamehash}{87a6547ad0a49e77c9adf891d4365979}
+      \strng{authorfullhash}{87a6547ad0a49e77c9adf891d4365979}
+      \field{sortinit}{Q}
+      \field{sortinithash}{c54e16deb53fc904a621fa8fd8703b5a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{QGIS Geographic Information System}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.qgis.org
+      \endverb
+      \verb{url}
+      \verb https://www.qgis.org
+      \endverb
+    \endentry
+    \entry{R_lang}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dcdebb6b35bff7c0568bf8c50ef8626d}{%
+           family={{R Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {R Foundation for Statistical Computing}%
+      }
+      \strng{namehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{fullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{bibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorbibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authornamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorfullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{R: A Language and Environment for Statistical Computing}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.r-project.org/
+      \endverb
+      \verb{url}
+      \verb https://www.r-project.org/
+      \endverb
+    \endentry
+    \entry{Reich2018}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=07e2b57b1d5830aa04444bd2a4cba3d6}{%
+           family={Reich},
+           familyi={R\bibinitperiod},
+           given={Brian\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=87ee8b3e654352826e6fcbb5254ddd13}{%
+           family={Pacifici},
+           familyi={P\bibinitperiod},
+           given={Krishna},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=36ebb9bbdfc19ec49d78288c9714fa18}{%
+           family={Stallings},
+           familyi={S\bibinitperiod},
+           given={Jonathan\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{de865f176f54e3a39034154f65c3d914}
+      \strng{fullhash}{1abc039670eaa9fff69956c4e65acc51}
+      \strng{bibnamehash}{1abc039670eaa9fff69956c4e65acc51}
+      \strng{authorbibnamehash}{1abc039670eaa9fff69956c4e65acc51}
+      \strng{authornamehash}{de865f176f54e3a39034154f65c3d914}
+      \strng{authorfullhash}{1abc039670eaa9fff69956c4e65acc51}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Traditional surveys used to create species distribution maps and estimate ecological relationships are expensive and time consuming. Citizen science offers a way to collect a massive amount of data at negligible cost and has been shown to be a useful supplement to traditional analyses. However, there remains a need to conduct formal surveys to firmly establish ecological relationships and trends. In this paper, we investigate the use of auxiliary (e.g. citizen science) data as a guide to designing more efficient ecological surveys. Our aim is to explore the use of opportunistic data to inform spatial survey design through a novel objective function that minimizes misclassificaton rate (i.e. false positives and false negatives) of the estimated occupancy maps. We use an initial occupancy estimate from auxiliary data as the prior in a Bayesian spatial occupancy model, and an efficient posterior approximation that accounts for spatial dependence, covariate effects, and imperfect detection in an exchange algorithm to search for the optimal set of sampling locations to minimize misclassification rate. We examine the optimal design as a function of the detection rate and quality of the citizen-science data, and compare this optimal design with several common ad hoc designs via an extensive simulation study. We then apply our method to eBird data for the brown-headed nuthatch in the Southeast US. We argue that planning a survey with the use of auxiliary data improves estimation accuracy and may significantly reduce the costs of sampling.}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{number}{6}
+      \field{title}{{Integrating auxiliary data in optimal spatial design for species distribution modelling}}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{1626\bibrangedash 1637}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1111/2041-210X.13002
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/2041-210X.13002.pdf:pdf
+      \endverb
+      \keyw{Bayesian inference,citizen science,exchange algorithm,geostatistics,imperfect detection,occupancy}
+    \endentry
+    \entry{Riahi2017}{article}{}
+      \name{author}{46}{}{%
+        {{un=0,uniquepart=base,hash=ef7fb7bd657b997bf4b6987b69b22e1f}{%
+           family={Riahi},
+           familyi={R\bibinitperiod},
+           given={Keywan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=740acd230506dda7b17acb6cc4f1ce63}{%
+           family={Vuuren},
+           familyi={V\bibinitperiod},
+           given={Detlef\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=bcdcace45890a4870c73c0056ce51931}{%
+           family={Kriegler},
+           familyi={K\bibinitperiod},
+           given={Elmar},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9798996981982f9903ab35d3ca78162a}{%
+           family={Edmonds},
+           familyi={E\bibinitperiod},
+           given={Jae},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ac05024e65a25a1db8c873e7b6316f8}{%
+           family={O'Neill},
+           familyi={O\bibinitperiod},
+           given={Brian\bibnamedelima C.},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05e9615b45dabbaea655b84220f15f41}{%
+           family={Fujimori},
+           familyi={F\bibinitperiod},
+           given={Shinichiro},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d9b0c52f0364c07862e259522ce41f6}{%
+           family={Bauer},
+           familyi={B\bibinitperiod},
+           given={Nico},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a199d2c5300b48b1da4168691cbf005}{%
+           family={Calvin},
+           familyi={C\bibinitperiod},
+           given={Katherine},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e02fa3bbe60064a37acedb9dd7420998}{%
+           family={Dellink},
+           familyi={D\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=90356d18bcb1f9c43fee46005dcd8ab5}{%
+           family={Fricko},
+           familyi={F\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc2d17565135fbf8c2ed924a74d9ffac}{%
+           family={Lutz},
+           familyi={L\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65682d34647c824487b310840331b69b}{%
+           family={Popp},
+           familyi={P\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1325bb747241591fb45c1269ec39221d}{%
+           family={Cuaresma},
+           familyi={C\bibinitperiod},
+           given={Jesus\bibnamedelima Crespo},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e755818a781b7493339c9049b498864e}{%
+           family={KC},
+           familyi={K\bibinitperiod},
+           given={Samir},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edf22ef95a16d3b96eef0fc2f64031de}{%
+           family={Leimbach},
+           familyi={L\bibinitperiod},
+           given={Marian},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e28067ef9f07bc713da816279582795d}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Leiwen},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b810c813d12e7c4e7d163ce4a99a3242}{%
+           family={Kram},
+           familyi={K\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=12a17c55ea1c86985fbe79c4f1824e87}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={Shilpa},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b35d458ed2dbc7b7fc74dd5f7bee749d}{%
+           family={Emmerling},
+           familyi={E\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cfcd14ce76b9f7297196e955e407a508}{%
+           family={Ebi},
+           familyi={E\bibinitperiod},
+           given={Kristie},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5b954b7f3f8900f38c47e8d37d6ccb8}{%
+           family={Hasegawa},
+           familyi={H\bibinitperiod},
+           given={Tomoko},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6975539d20f867d101e9ba05cb895511}{%
+           family={Havlik},
+           familyi={H\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05990c8aa4907b76f6b9b4e8ad944170}{%
+           family={Humpen{ö}der},
+           familyi={H\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=068aca9ec15c2866f603e5fad77c9f81}{%
+           family={{Da Silva}},
+           familyi={D\bibinitperiod},
+           given={Lara\bibnamedelima Aleluia},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=46e7f86b11ade65e293413c9b9884dcf}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de59fe5511a91d3a138ef967230a5a2c}{%
+           family={Stehfest},
+           familyi={S\bibinitperiod},
+           given={Elke},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d73e7724f0290f90b17bbf8a75420f9c}{%
+           family={Bosetti},
+           familyi={B\bibinitperiod},
+           given={Valentina},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07449e33c64282700b860463365d2e60}{%
+           family={Eom},
+           familyi={E\bibinitperiod},
+           given={Jiyong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27596da9c48e1569486b9a1c0e4a4e38}{%
+           family={Gernaat},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf77a2da885f0b82505bc2f9130dcf12}{%
+           family={Masui},
+           familyi={M\bibinitperiod},
+           given={Toshihiko},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8fd237558997509f5318c2325e86c25a}{%
+           family={Rogelj},
+           familyi={R\bibinitperiod},
+           given={Joeri},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2b92e81e73278fe1ca72850cfc63a3c}{%
+           family={Strefler},
+           familyi={S\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=182b8b4598ee69e047de30f92d40da26}{%
+           family={Drouet},
+           familyi={D\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b26b24389c2d2b52ba4207852443c3a6}{%
+           family={Krey},
+           familyi={K\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=189165c2070fd57c09431d293f48fd9a}{%
+           family={Luderer},
+           familyi={L\bibinitperiod},
+           given={Gunnar},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0faf6e5ab90d4e12f6c2e4b7c561bb2}{%
+           family={Harmsen},
+           familyi={H\bibinitperiod},
+           given={Mathijs},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3fcd2f3c4420c1f487fcf014e59b55b}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={Kiyoshi},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ec23af21d9754086f5ba3089dfe0217e}{%
+           family={Baumstark},
+           familyi={B\bibinitperiod},
+           given={Lavinia},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c157e35022ee74f2dd366a10e789b4a0}{%
+           family={Doelman},
+           familyi={D\bibinitperiod},
+           given={Jonathan\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a67e9479f87af2dd5a9ff95fd8fbd34f}{%
+           family={Kainuma},
+           familyi={K\bibinitperiod},
+           given={Mikiko},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eeb480e9c2750746d67ce8664a7f9d9c}{%
+           family={Klimont},
+           familyi={K\bibinitperiod},
+           given={Zbigniew},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=266f12a4b559c3adcec049ef91fb2d40}{%
+           family={Marangoni},
+           familyi={M\bibinitperiod},
+           given={Giacomo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6871de9f86cbf69fbe151e59df38971a}{%
+           family={Lotze-Campen},
+           familyi={L\bibinithyphendelim C\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6039b7668c5102126e12d322f5407274}{%
+           family={Obersteiner},
+           familyi={O\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e89ea6c460d98c22c4cafbb7ca4dcaf}{%
+           family={Tabeau},
+           familyi={T\bibinitperiod},
+           given={Andrzej},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e66347ef4e8ddde12fb7e4041aaa9864}{%
+           family={Tavoni},
+           familyi={T\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{581963f96d25c2a54b541a2a84e04e9b}
+      \strng{fullhash}{06ec250119264eaf6bddf0afa9fb989e}
+      \strng{bibnamehash}{581963f96d25c2a54b541a2a84e04e9b}
+      \strng{authorbibnamehash}{581963f96d25c2a54b541a2a84e04e9b}
+      \strng{authornamehash}{581963f96d25c2a54b541a2a84e04e9b}
+      \strng{authorfullhash}{06ec250119264eaf6bddf0afa9fb989e}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents the overview of the Shared Socioeconomic Pathways (SSPs) and their energy, land use, and emissions implications. The SSPs are part of a new scenario framework, established by the climate change research community in order to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The pathways were developed over the last years as a joint community effort and describe plausible major global developments that together would lead in the future to different challenges for mitigation and adaptation to climate change. The SSPs are based on five narratives describing alternative socio-economic developments, including sustainable development, regional rivalry, inequality, fossil-fueled development, and middle-of-the-road development. The long-term demographic and economic projections of the SSPs depict a wide uncertainty range consistent with the scenario literature. A multi-model approach was used for the elaboration of the energy, land-use and the emissions trajectories of SSP-based scenarios. The baseline scenarios lead to global energy consumption of 400–1200 EJ in 2100, and feature vastly different land-use dynamics, ranging from a possible reduction in cropland area up to a massive expansion by more than 700 million hectares by 2100. The associated annual CO2 emissions of the baseline scenarios range from about 25 GtCO2 to more than 120 GtCO2 per year by 2100. With respect to mitigation, we find that associated costs strongly depend on three factors: (1) the policy assumptions, (2) the socio-economic narrative, and (3) the stringency of the target. The carbon price for reaching the target of 2.6 W/m2 that is consistent with a temperature change limit of 2 °C, differs in our analysis thus by about a factor of three across the SSP marker scenarios. Moreover, many models could not reach this target from the SSPs with high mitigation challenges. While the SSPs were designed to represent different mitigation and adaptation challenges, the resulting narratives and quantifications span a wide range of different futures broadly representative of the current literature. This allows their subsequent use and development in new assessments and research projects. Critical next steps for the community scenario process will, among others, involve regional and sectoral extensions, further elaboration of the adaptation and impacts dimension, as well as employing the SSP scenarios with the new generation of earth system models as part of the 6th climate model intercomparison project (CMIP6).}
+      \field{journaltitle}{Global Environmental Change}
+      \field{title}{{The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications: An overview}}
+      \field{volume}{42}
+      \field{year}{2017}
+      \field{pages}{153\bibrangedash 168}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.gloenvcha.2016.05.009
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1-s2.0-S0959378016300681-main.pdf:pdf
+      \endverb
+      \keyw{Adaptation,Climate change,Community scenarios,Mitigation,RCP,SSP,Shared Socioeconomic Pathways}
+    \endentry
+    \entry{Robinson2018}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d3c16fb5c9d6f9c9c320d046508b7e77}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Orin\bibnamedelima J.},
+           giveni={O\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=477517109db4cc3b0230a864aa526669}{%
+           family={Ruiz-Gutierrez},
+           familyi={R\bibinithyphendelim G\bibinitperiod},
+           given={Viviana},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7b839a822e2d965311274b4623951a4}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2255822e3ee68085e16f3b4fffc3aacb}
+      \strng{fullhash}{1697b441a277a53db06d673157f66d03}
+      \strng{bibnamehash}{1697b441a277a53db06d673157f66d03}
+      \strng{authorbibnamehash}{1697b441a277a53db06d673157f66d03}
+      \strng{authornamehash}{2255822e3ee68085e16f3b4fffc3aacb}
+      \strng{authorfullhash}{1697b441a277a53db06d673157f66d03}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Aim: To improve the accuracy of inferences on habitat associations and distribution patterns of rare species by combining machine-learning, spatial filtering and resampling to address class imbalance and spatial bias of large volumes of citizen science data. Innovation: Modelling rare species' distributions is a pressing challenge for conservation and applied research. Often, a large number of surveys are required before enough detections occur to model distributions of rare species accurately, resulting in a data set with a high proportion of non-detections (i.e. class imbalance). Citizen science data can provide a cost-effective source of surveys but likely suffer from class imbalance. Citizen science data also suffer from spatial bias, likely from preferential sampling. To correct for class imbalance and spatial bias, we used spatial filtering to under-sample the majority class (non-detection) while maintaining all of the limited information from the minority class (detection). We investigated the use of spatial under-sampling with randomForest models and compared it to common approaches used for imbalanced data, the synthetic minority oversampling technique (SMOTE), weighted random forest and balanced random forest models. Model accuracy was assessed using kappa, Brier score and AUC. We demonstrate the method by evaluating habitat associations and seasonal distribution patterns using citizen science data for a rare species, the tricoloured blackbird (Agelaius tricolor). Main Conclusions: Spatial under-sampling increased the accuracy of each model and outperformed the approach typically used to direct under-sampling in the SMOTE algorithm. Our approach is the first to characterize winter distribution and movement of tricoloured blackbirds. Our results show that tricoloured blackbirds are positively associated with grassland, pasture and wetland habitats, and negatively associated with high elevations or evergreen forests during both winter and breeding seasons. The seasonal differences in distribution indicate that individuals move to the coast during the winter, as suggested by historical accounts.}
+      \field{journaltitle}{Diversity and Distributions}
+      \field{number}{4}
+      \field{title}{{Correcting for bias in distribution modelling for rare species using citizen science data}}
+      \field{volume}{24}
+      \field{year}{2018}
+      \field{pages}{460\bibrangedash 472}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/ddi.12698
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ddi.12698.pdf:pdf
+      \endverb
+      \keyw{citizen science,class imbalance,random forest,spatial bias,species distribution model,tricoloured blackbird}
+    \endentry
+    \entry{Sergio1999}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1ffc2be4ffc33ed75cfed9939952869d}{%
+           family={Sergio},
+           familyi={S\bibinitperiod},
+           given={Fabrizio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a11d7eef7e1e94c323d1c32e1b7e18d}{%
+           family={Boto},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{96fce5ab7c0070e126476d422b2cfee2}
+      \strng{fullhash}{96fce5ab7c0070e126476d422b2cfee2}
+      \strng{bibnamehash}{96fce5ab7c0070e126476d422b2cfee2}
+      \strng{authorbibnamehash}{96fce5ab7c0070e126476d422b2cfee2}
+      \strng{authornamehash}{96fce5ab7c0070e126476d422b2cfee2}
+      \strng{authorfullhash}{96fce5ab7c0070e126476d422b2cfee2}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We studied a population of Black Kites (Milvus migrans) from 1992-96 in a 100-km2 study area in the Italian pre-Alps around Lake Lugano. Population density increased from 24 territorial pairs per 100 km2 in 1992 to 38 in 1996. Nearest neighbor distances were variable, averaging 1288 m for solitary pairs (N = 24) and 306 m for colonial ones (N = 151). Regular spacing of nest sites was the rule within colonies, but inter-nest distance for solitary breeders increased as new pairs settled in the area. Nests occurred both in trees (58{\%}, N = 84) and on cliffs (42{\%}); 23{\%} and 5{\%} (N = 84) of the nests were originally built by Common Buzzards (Buteo buteo) and Ravens (Corvus corax), respectively. Mean laying date was 25 April (N = 42), mean clutch size was 2.29 eggs (N = 42) and mean number of fledged young was 0.97, 1.11, and 1.78 young per territorial, reproductive, and successful pairs, respectively (N = 143, 95, 78). The percentage of successful territorial pairs was 55{\%} (N = 143). Diet was dominated by fish and birds, which accounted for 62{\%} and 28{\%} of 307 identified prey items, respectively. Compared with other European populations, this population showed an intermediate density and an average clutch size but the lowest fledging and breeding success ever recorded for the species. Reasons for the low success were unclear, but may have been related to low food availability or water pollution and consequent pesticide contamination.}
+      \field{journaltitle}{Journal of Raptor Research}
+      \field{number}{3}
+      \field{title}{{Nest dispersion, diet, and breeding success of Black Kites (Milvus migrans) in the Italian pre-Alps}}
+      \field{volume}{33}
+      \field{year}{1999}
+      \field{pages}{207\bibrangedash 217}
+      \range{pages}{11}
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/BlackkitebreedingecologyAlpsJRR1999.pdf:pdf
+      \endverb
+      \keyw{Black Kite,Breeding success,Coloniality,Density,Diet,Italy,Milvus migrans}
+    \endentry
+    \entry{aemet}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8f87232c308d262109944580dab05d71}{%
+           family={{State Meteorological Agency (AEMET)}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f87232c308d262109944580dab05d71}
+      \strng{fullhash}{8f87232c308d262109944580dab05d71}
+      \strng{bibnamehash}{8f87232c308d262109944580dab05d71}
+      \strng{authorbibnamehash}{8f87232c308d262109944580dab05d71}
+      \strng{authornamehash}{8f87232c308d262109944580dab05d71}
+      \strng{authorfullhash}{8f87232c308d262109944580dab05d71}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Climate projections for the XXI Century}}
+      \field{urlday}{2}
+      \field{urlmonth}{8}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.aemet.es/en/serviciosclimaticos/cambio{\_}climat/
+      \endverb
+      \verb{url}
+      \verb http://www.aemet.es/en/serviciosclimaticos/cambio%7B%5C_%7Dclimat/
+      \endverb
+    \endentry
+    \entry{Steen2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=aeb31dc2df794878dd55be0e97a7a270}{%
+           family={Steen},
+           familyi={S\bibinitperiod},
+           given={Valerie\bibnamedelima A.},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8200026155d927e27bd8f135827d00be}{%
+           family={Elphick},
+           familyi={E\bibinitperiod},
+           given={Chris\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44de494df4d263d20ff2a75aa9afee10}{%
+           family={Tingley},
+           familyi={T\bibinitperiod},
+           given={Morgan\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{175ccb407740b2a55898f948c1d60561}
+      \strng{fullhash}{87c87f021badc9c6b2f8560b809a81c4}
+      \strng{bibnamehash}{87c87f021badc9c6b2f8560b809a81c4}
+      \strng{authorbibnamehash}{87c87f021badc9c6b2f8560b809a81c4}
+      \strng{authornamehash}{175ccb407740b2a55898f948c1d60561}
+      \strng{authorfullhash}{87c87f021badc9c6b2f8560b809a81c4}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Aim: Citizen science data are increasingly used for modelling species distributions because they offer broad spatiotemporal coverage of local observations. However, such data are often collected without experimental design or set survey methods, raising the risk that bias and noise will compromise modelled predictions. We tested the ability of species distribution models (SDMs) built from these low-structure citizen science data to match the quality of SDMs from systematically collected data and tested whether stringent data filtering improved predictions. Location: Northeastern USA. Methods: We evaluated models built from a rapidly growing dataset of avian occurrences reported by birders—eBird—against models built from four independent, systematically collected datasets. We developed SDMs for 96 species using both data sources and compared their predictive abilities. We also tested whether culling eBird data by applying stringent data filters on survey effort or observer expertise improved predictions. Results: We found that SDMs built from low-structure citizen science data matched or exceeded performance of SDMs from systematically collected datasets for 12{\%}–31{\%} of species ((Formula presented.) = 22{\%}), depending on the dataset. At least one culling option produced equivalent or better performance for 40{\%}–70{\%} of species ((Formula presented.) = 49{\%}). Data culling by restricting survey effort improved predictions more than restricting by observer expertise. The optimal effort restriction differed by dataset, and for three of the datasets was further informed by species traits. Main conclusions: Species distribution models developed using low-structure citizen science data sometimes performed as well as those from systematic data. Culling generally improved models, but results were heterogeneous, prohibiting clear recommendations for how to cull. Our results indicate that the growing availability of citizen science data holds potential for creating high-quality spatial predictions, but that time should be invested in determining how best to cull datasets and that one-size-fits-all solutions beyond basic outlier filtering may be hard to find.}
+      \field{journaltitle}{Diversity and Distributions}
+      \field{number}{12}
+      \field{title}{{An evaluation of stringent filtering to improve species distribution models from citizen science data}}
+      \field{volume}{25}
+      \field{year}{2019}
+      \field{pages}{1857\bibrangedash 1869}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/ddi.12985
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ddi.12985.pdf:pdf
+      \endverb
+      \keyw{citizen science,culling,data filtering,eBird,model evaluation,observer expertise,occurrence data,species distribution models,survey effort}
+    \endentry
+    \entry{Sullivan2009}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=e3919adc9e794d4247a48835b87ee312}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={Brian\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2f36aa1241bd8a53ca9425c7f85dd158}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Christopher\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22efc264c861244c291bdf724680bf4d}{%
+           family={Iliff},
+           familyi={I\bibinitperiod},
+           given={Marshall\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=87263a6031b3eba0b6684a9e08b43070}{%
+           family={Bonney},
+           familyi={B\bibinitperiod},
+           given={Rick\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7b839a822e2d965311274b4623951a4}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5aef78816cbac670ca941965da0fc804}{%
+           family={Kelling},
+           familyi={K\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Ltd}%
+      }
+      \strng{namehash}{9269c350447f075c8c8eca432f4442e7}
+      \strng{fullhash}{04ea359381ff9efb82a7187a8d023bdd}
+      \strng{bibnamehash}{9269c350447f075c8c8eca432f4442e7}
+      \strng{authorbibnamehash}{9269c350447f075c8c8eca432f4442e7}
+      \strng{authornamehash}{9269c350447f075c8c8eca432f4442e7}
+      \strng{authorfullhash}{04ea359381ff9efb82a7187a8d023bdd}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{New technologies are rapidly changing the way we collect, archive, analyze, and share scientific data. For example, over the next several years it is estimated that more than one billion autonomous sensors will be deployed over large spatial and temporal scales, and will gather vast quantities of data. Networks of human observers play a major role in gathering scientific data, and whether in astronomy, meteorology, or observations of nature, they continue to contribute significantly. In this paper we present an innovative use of the Internet and information technologies that better enhances the opportunity for citizens to contribute their observations to science and the conservation of bird populations. eBird is building a web-enabled community of bird watchers who collect, manage, and store their observations in a globally accessible unified database. Through its development as a tool that addresses the needs of the birding community, eBird sustains and grows participation. Birders, scientists, and conservationists are using eBird data worldwide to better understand avian biological patterns and the environmental and anthropogenic factors that influence them. Developing and shaping this network over time, eBird has created a near real-time avian data resource producing millions of observations per year. © 2009 Elsevier Ltd. All rights reserved.}
+      \field{journaltitle}{Biological Conservation}
+      \field{number}{10}
+      \field{title}{{eBird: A citizen-based bird observation network in the biological sciences}}
+      \field{volume}{142}
+      \field{year}{2009}
+      \field{pages}{2282\bibrangedash 2292}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.biocon.2009.05.006
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/22Sullivanetal.2009BiologicalCons.pdf:pdf
+      \endverb
+      \keyw{Bird observations,Citizen-science,Observation network,Scale-dependent analysis,eBird}
+    \endentry
+    \entry{Tanferna2013}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=301c077ec23a550eba102783a48b6a9f}{%
+           family={Tanferna},
+           familyi={T\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a6dd9a206740cdef5f410247727230e}{%
+           family={L{ó}pez-Jim{é}nez},
+           familyi={L\bibinithyphendelim J\bibinitperiod},
+           given={Lidia},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=116d386f00d3ff8fd4008d3e62f74054}{%
+           family={Blas},
+           familyi={B\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ce30711be8bd89ab8a8957bdfacb271}{%
+           family={Hiraldo},
+           familyi={H\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ffc2be4ffc33ed75cfed9939952869d}{%
+           family={Sergio},
+           familyi={S\bibinitperiod},
+           given={Fabrizio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Ltd}%
+      }
+      \strng{namehash}{6f3b462ef8672f484b0aba14ccca9d04}
+      \strng{fullhash}{326bbb02ddccf4fa6317f71fca083851}
+      \strng{bibnamehash}{326bbb02ddccf4fa6317f71fca083851}
+      \strng{authorbibnamehash}{326bbb02ddccf4fa6317f71fca083851}
+      \strng{authornamehash}{6f3b462ef8672f484b0aba14ccca9d04}
+      \strng{authorfullhash}{326bbb02ddccf4fa6317f71fca083851}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Preserving large predators is important but challenging because these species are typically wide-ranging, select multiple habitats at different scales and often present spatial or habitat separation between the breeder and floater sectors of a population. In addition, most of our knowledge on raptor floaters' habitat requirements comes from large solitary species, whose floaters often occupy temporary settlement areas spatially separate from breeding locations. Here, we examine space and habitat use by a loosely colonial, wetland-dependent raptor, the Black kite (Milvus migrans), in a population where floaters co-exist with territory holders, enabling a direct comparison of their habitat preferences. The study was conducted in Do{ñ}ana National Park (South-Western Spain), a seasonally drying marshland currently surrounded by intensive agriculture and rice-fields. Intensive radio-tracking revealed that breeders and floaters selected and avoided the same habitats despite a radical, four-to-eight fold difference in their home-range dimensions: all kites over-selected open habitats suitable for their aerial foraging modes and avoided woodland and farmland. These results suggest a continuum of raptor population structures ranging from solitary species whose floaters select different habitats than breeders and are concentrated in spatially separate settlement areas, to colonial and semi-social species whose floaters fully coexist with breeders with shared habitat preferences. Both extremes of this continuum will pose challenges for conservation management. In solitary species, special conservation efforts may be required to identify and manage temporary settlement areas, while in gregarious species, the larger ranges of floaters may expose them to different threats than breeders, whose occurrence and consequences may be subtle to identify. © 2013 Elsevier Ltd.}
+      \field{journaltitle}{Biological Conservation}
+      \field{title}{{Habitat selection by Black kite breeders and floaters: Implications for conservation management of raptor floaters}}
+      \field{volume}{160}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.biocon.2012.12.031
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1-s2.0-S0006320712005307-main.pdf:pdf
+      \endverb
+      \keyw{Black kite,Habitat restoration,Habitat selection,Milvus migrans,Non-breeders,Radio-tracking}
+    \endentry
+    \entry{Urban2016}{article}{}
+      \name{author}{22}{}{%
+        {{un=0,uniquepart=base,hash=ba0abd087d88627bc68c0646d90d788f}{%
+           family={Urban},
+           familyi={U\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=55cfa6daeaf749b7eb112fdcc83bb661}{%
+           family={Bocedi},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df50caca7964ce2535d5d7c005b24668}{%
+           family={Hendry},
+           familyi={H\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c772c0bb63e56e11e15dd6cc52e5c005}{%
+           family={Mihoub},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f34231eca87206ccf971bcf997ad850}{%
+           family={Pe'er},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d4e0d8655dba6a0d61260c97248cd5d}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f3e7c1811c321e26ccb60c01401d19e2}{%
+           family={Bridle},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ded3b0898646747475aa91dcd023718e}{%
+           family={Crozier},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4fdd4aeb2aeba6ec864a264a0a8610e3}{%
+           family={{De Meester}},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0afad9a7c79b0de935e9f0d2313a1b02}{%
+           family={Godsoe},
+           familyi={G\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1deb2942007bb9fe35e987c2a507055c}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1b58665fef55546ca130820fdc60070}{%
+           family={Hellmann},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=071fdf47f0e8058b70c2ad23d0e20fdc}{%
+           family={Holt},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1d40ad78436e8c822c61a836ffa8a72}{%
+           family={Huth},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f37d271122e9d2ac298f862a76d36276}{%
+           family={Johst},
+           familyi={J\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cc0db123c5e5b8169a2ff9cb305fd1dc}{%
+           family={Krug},
+           familyi={K\bibinitperiod},
+           given={C.\bibnamedelimi B.},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99735811c1c0b4f5871b01acfed83d42}{%
+           family={Leadley},
+           familyi={L\bibinitperiod},
+           given={P.\bibnamedelimi W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9183bbb51c58d795c94050462ca2a9e7}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={S.\bibnamedelimi C.F.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ef2a3efeae3a8909599c21a8e8832f7}{%
+           family={Pantel},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a6ff13f7a102987dc62991af1e46ab6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5caecb6eab76f824439b45130aaad739}{%
+           family={Zollner},
+           familyi={Z\bibinitperiod},
+           given={P.\bibnamedelimi A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d16419502a73c973488af1a9f4070495}{%
+           family={Travis},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi M.J.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{76f540646840885459d2e401844baa15}
+      \strng{fullhash}{76ebf204c13c7008f0fff01691870000}
+      \strng{bibnamehash}{76f540646840885459d2e401844baa15}
+      \strng{authorbibnamehash}{76f540646840885459d2e401844baa15}
+      \strng{authornamehash}{76f540646840885459d2e401844baa15}
+      \strng{authorfullhash}{76ebf204c13c7008f0fff01691870000}
+      \field{sortinit}{U}
+      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{New biological models are incorporating the realistic processes underlying biological responses to climate change and other human-caused disturbances. However, these more realistic models require detailed information, which is lacking for most species on Earth. Current monitoring efforts mainly document changes in biodiversity, rather than collecting the mechanistic data needed to predict future changes. We describe and prioritize the biological information needed to inform more realistic projections of species' responses to climate change. We also highlight how trait-based approaches and adaptive modeling can leverage sparse data to make broader predictions. We outline a global effort to collect the data necessary to better understand, anticipate, and reduce the damaging effects of climate change on biodiversity.}
+      \field{journaltitle}{Science}
+      \field{number}{6304}
+      \field{title}{{Improving the forecast for biodiversity under climate change}}
+      \field{volume}{353}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1126/science.aad8466
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/aad8466.full.pdf:pdf
+      \endverb
+    \endentry
+    \entry{python}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e504145eff12cd8803c227c919ccfacd}{%
+           family={{Van Rossum}},
+           familyi={V\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b735fb6ad359aa95b3bac4d5567af6f}{%
+           family={Drake},
+           familyi={D\bibinitperiod},
+           given={Fred\bibnamedelima L},
+           giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Scotts Valley, CA}%
+      }
+      \list{publisher}{1}{%
+        {CreateSpace}%
+      }
+      \strng{namehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{fullhash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{bibnamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authorbibnamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authornamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authorfullhash}{190e2e6e0d73bf5671d8927d221674e7}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{1441412697}
+      \field{title}{{Python 3 Reference Manual}}
+      \field{year}{2009}
+    \endentry
+    \entry{Veiga1990}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=62815635559a0291e035efebb8a4a797}{%
+           family={Veiga},
+           familyi={V\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a59957ec76d2e2fedc518ee248fbe9ac}{%
+           family={Hiraldo},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ca25b7317c521b73bee8477991e79a67}
+      \strng{fullhash}{ca25b7317c521b73bee8477991e79a67}
+      \strng{bibnamehash}{ca25b7317c521b73bee8477991e79a67}
+      \strng{authorbibnamehash}{ca25b7317c521b73bee8477991e79a67}
+      \strng{authornamehash}{ca25b7317c521b73bee8477991e79a67}
+      \strng{authorfullhash}{ca25b7317c521b73bee8477991e79a67}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A comparative study of the Red Kite and Black Kite was conducted in the Don̄ana National Park in southwestern Spain. Although the diets of both kites were similar, the Red Kite captured significantly more prey items from scrub habitats close to nesting areas than from marsh habitats, which were further away. Habitat differences in prey abundance and distance from breeding areas suggest that the Red Kite depended on a less abundant but more stable food supply. Nestling mortality from starvation was highest for the last hatched nestlings in both species. The growth rate of Black Kite nestlings was markedly higher than that of Red Kite nestlings. Moreover, growth rates increased with clutch size in the Red Kite, whereas they were constant in the Black Kite. Differences between species in reproductive traits are discussed mainly with regard to their feeding ecology. The slower growth and greater effect of sibling asymmetry on mortality of the Red Kite are consistent with our interpretation that the Red Kite's food supply is less abundant than the Black Kite's. Copyright © 1990, Wiley Blackwell. All rights reserved}
+      \field{journaltitle}{Ecography}
+      \field{number}{1}
+      \field{title}{{Food habits and the survival and growth of nestlings in two sympatric kites (Milvus milvus and Milvus migrans)}}
+      \field{volume}{13}
+      \field{year}{1990}
+      \field{pages}{62\bibrangedash 71}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1111/j.1600-0587.1990.tb00590.x
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/3682346.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Vinuela1992}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=585d489bf4a1fc5302bf77885d3cde4c}{%
+           family={Vinuela},
+           familyi={V\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=277289564a2be4bfcfc2d23ddf71ac24}{%
+           family={Veiga},
+           familyi={V\bibinitperiod},
+           given={Jose\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \strng{fullhash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \strng{bibnamehash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \strng{authorbibnamehash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \strng{authornamehash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \strng{authorfullhash}{c3dbb7f955fc5bb87f9de286e9e2a7dc}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Milvus migrans is a generalist predator, but in the study area eats mainly Oryctolagus cuniculus. There was considerable year to year variation in the proportions of the nine prey types examined in the diet. Abundance of young and sick rabbits seemed to determine the consumption rate of rabbits by black kites. Interannual variation in reproductive performance (chick starvation mortality, fledging weight and length of the nestling period) was related to the proportion of rabbits in the diet, a year of high performance coinciding with a high proportion of rabbits in the diet. -from Authors}
+      \field{journaltitle}{Ornis Scandinavica}
+      \field{number}{2}
+      \field{title}{{Importance of rabbits in the diet and reproductive success of black kites in southwestern Spain}}
+      \field{volume}{23}
+      \field{year}{1992}
+      \field{pages}{132\bibrangedash 138}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.2307/3676440
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/3676440.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Wagenmakers2004}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f5990ac4287fbfc7416775f3babd025f}{%
+           family={Wagenmakers},
+           familyi={W\bibinitperiod},
+           given={Eric\bibnamedelima Jan},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=060041b0a14bacfe8f64f0654fafaed4}{%
+           family={Farrell},
+           familyi={F\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bda5fce240f331ab608df8c8d7d234dd}
+      \strng{fullhash}{bda5fce240f331ab608df8c8d7d234dd}
+      \strng{bibnamehash}{bda5fce240f331ab608df8c8d7d234dd}
+      \strng{authorbibnamehash}{bda5fce240f331ab608df8c8d7d234dd}
+      \strng{authornamehash}{bda5fce240f331ab608df8c8d7d234dd}
+      \strng{authorfullhash}{bda5fce240f331ab608df8c8d7d234dd}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Psychonomic Bulletin and Review}
+      \field{number}{1}
+      \field{title}{{AIC model selection using Akaike weights}}
+      \field{volume}{11}
+      \field{year}{2004}
+      \field{pages}{192\bibrangedash 196}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.3758/BF03206482
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Wagenmakers-Farrell2004{\_}Article{\_}AICModelSelectionUsingAkaikeWe.pdf:pdf
+      \endverb
+    \endentry
+    \entry{ggplot2}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
+           family={Wickham},
+           familyi={W\bibinitperiod},
+           given={Hadley},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag New York}%
+      }
+      \strng{namehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{fullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{bibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorbibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authornamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorfullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-24277-4}
+      \field{title}{{ggplot2: Elegant Graphics for Data Analysis}}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+      \verb{url}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+    \endentry
+    \entry{Zurell2020}{article}{}
+      \name{author}{22}{}{%
+        {{un=0,uniquepart=base,hash=22d5edb62524bcc7808f73af5666144a}{%
+           family={Zurell},
+           familyi={Z\bibinitperiod},
+           given={Damaris},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c15b291550ec5d8aa5847c1fa663a6f}{%
+           family={Franklin},
+           familyi={F\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f8c251183b29f6fed320478a5b73fe4}{%
+           family={K{ö}nig},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e5bc9671f9de599d649d8449b076e2c4}{%
+           family={Bouchet},
+           familyi={B\bibinitperiod},
+           given={Phil\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e58ec5a72f2b79de033f264f720ad88c}{%
+           family={Dormann},
+           familyi={D\bibinitperiod},
+           given={Carsten\bibnamedelima F.},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22e158108d166fcb5d64aab03da6300f}{%
+           family={Elith},
+           familyi={E\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0f869c3af2750086d19ad9e7c09bde27}{%
+           family={Fandos},
+           familyi={F\bibinitperiod},
+           given={Guillermo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a7f2f5d5a9c1129818510492b914e6f}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f1a495648ba3bad5ada18ad5f02fa0f}{%
+           family={Guillera-Arroita},
+           familyi={G\bibinithyphendelim A\bibinitperiod},
+           given={Gurutzeta},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fd0180b461eae6ddbff6a39790e0bb5e}{%
+           family={Guisan},
+           familyi={G\bibinitperiod},
+           given={Antoine},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=039c23fb4b08573d813878c388cc3b4a}{%
+           family={Lahoz-Monfort},
+           familyi={L\bibinithyphendelim M\bibinitperiod},
+           given={Jos{é}\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13d0f0fd6f1c4854fb5cbed0b8228944}{%
+           family={Leit{ã}o},
+           familyi={L\bibinitperiod},
+           given={Pedro\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4db9c695c7b2eff82b0ed580851397a0}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Daniel\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=907af50ed6c6008b56a1c8e0597108ad}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={A.\bibnamedelimi Townsend},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fdbc8a9cbe2399553e9c2c6805a022d9}{%
+           family={Rapacciuolo},
+           familyi={R\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b93bccf60874e4b57ccbbe6d5a5cba88}{%
+           family={Schmatz},
+           familyi={S\bibinitperiod},
+           given={Dirk\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ee0107bf08c27fc0a3e192f04dbe6df}{%
+           family={Schr{ö}der},
+           familyi={S\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ea24a2b49dc43bfbcbb5d610ee345d9d}{%
+           family={Serra-Diaz},
+           familyi={S\bibinithyphendelim D\bibinitperiod},
+           given={Josep\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8420a71ed1be07777ddccc3254bee18}{%
+           family={Thuiller},
+           familyi={T\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c1f1f588d2f242cd0f44804d6be41317}{%
+           family={Yates},
+           familyi={Y\bibinitperiod},
+           given={Katherine\bibnamedelima L.},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=81daf64e46b81abb6f841138d926146f}{%
+           family={Zimmermann},
+           familyi={Z\bibinitperiod},
+           given={Niklaus\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a77b7cc86de721c9c2ff732721a6b9}{%
+           family={Merow},
+           familyi={M\bibinitperiod},
+           given={Cory},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{39e62b3180fce2dbedab5a503b2e3d4e}
+      \strng{fullhash}{c1e8797eb6af03a1ab48eac37c44db81}
+      \strng{bibnamehash}{39e62b3180fce2dbedab5a503b2e3d4e}
+      \strng{authorbibnamehash}{39e62b3180fce2dbedab5a503b2e3d4e}
+      \strng{authornamehash}{39e62b3180fce2dbedab5a503b2e3d4e}
+      \strng{authorfullhash}{c1e8797eb6af03a1ab48eac37c44db81}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Species distribution models (SDMs) constitute the most common class of models across ecology, evolution and conservation. The advent of ready-to-use software packages and increasing availability of digital geoinformation have considerably assisted the application of SDMs in the past decade, greatly enabling their broader use for informing conservation and management, and for quantifying impacts from global change. However, models must be fit for purpose, with all important aspects of their development and applications properly considered. Despite the widespread use of SDMs, standardisation and documentation of modelling protocols remain limited, which makes it hard to assess whether development steps are appropriate for end use. To address these issues, we propose a standard protocol for reporting SDMs, with an emphasis on describing how a study's objective is achieved through a series of modeling decisions. We call this the ODMAP (Overview, Data, Model, Assessment and Prediction) protocol, as its components reflect the main steps involved in building SDMs and other empirically-based biodiversity models. The ODMAP protocol serves two main purposes. First, it provides a checklist for authors, detailing key steps for model building and analyses, and thus represents a quick guide and generic workflow for modern SDMs. Second, it introduces a structured format for documenting and communicating the models, ensuring transparency and reproducibility, facilitating peer review and expert evaluation of model quality, as well as meta-analyses. We detail all elements of ODMAP, and explain how it can be used for different model objectives and applications, and how it complements efforts to store associated metadata and define modelling standards. We illustrate its utility by revisiting nine previously published case studies, and provide an interactive web-based application to facilitate its use. We plan to advance ODMAP by encouraging its further refinement and adoption by the scientific community.}
+      \field{journaltitle}{Ecography}
+      \field{number}{9}
+      \field{title}{{A standard protocol for reporting species distribution models}}
+      \field{volume}{43}
+      \field{year}{2020}
+      \field{pages}{1261\bibrangedash 1277}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/ecog.04960
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ecog.04960.pdf:pdf
+      \endverb
+      \keyw{Shiny,biodiversity assessment,ecological niche model,habitat suitability model,reproducibility,transparency}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

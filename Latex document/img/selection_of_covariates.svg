@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="153.41821mm"
+   height="141.59222mm"
+   viewBox="0 0 153.41821 141.59222"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   sodipodi:docname="selection_of_covariates.svg"
+   inkscape:export-filename="/home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/img/selection_of_cov.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0456808"
+     inkscape:cx="240.99132"
+     inkscape:cy="242.4258"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       id="ExperimentalArrow"
+       refX="5"
+       refY="3"
+       orient="auto-start-reverse"
+       inkscape:stockid="ExperimentalArrow"
+       inkscape:isstock="true">
+      <path
+         style="fill:context-stroke"
+         d="M 10,3 0,6 V 0 Z"
+         id="path56499" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutL"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path56388" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker98488"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path98486" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker98478"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path98476" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path56249" />
+    </marker>
+    <rect
+       x="404.70081"
+       y="501.14777"
+       width="140.3392"
+       height="48.494862"
+       id="rect70759" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path56246" />
+    </marker>
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="192.14263"
+       height="115.23211"
+       id="rect3598" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="186.52551"
+       height="106.53183"
+       id="rect3598-3" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="227.35687"
+       height="110.66202"
+       id="rect3598-8" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="182.21826"
+       height="124.2358"
+       id="rect3598-8-0" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="227.35687"
+       height="110.66202"
+       id="rect3598-8-3" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="372.8252"
+       height="81.306351"
+       id="rect3598-5" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="384.85529"
+       height="255.9789"
+       id="rect3598-2" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="384.85529"
+       height="255.9789"
+       id="rect3598-2-9" />
+    <rect
+       x="117.80302"
+       y="89.461563"
+       width="384.85529"
+       height="255.9789"
+       id="rect3598-2-3" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.5249594,-4.3507687)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-24.982347,5.8484324)"
+       id="text3596"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598);fill:#800000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="126.70094"
+         id="tspan6479"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6477">Ecological 
+</tspan></tspan><tspan
+         x="117.80273"
+         y="178.55032"
+         id="tspan6483"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6481">hypotheses</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-19.952113,47.754704)"
+       id="text3596-8"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-2);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="114.28764"
+         id="tspan6487"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6485">add
+</tspan></tspan><tspan
+         x="117.80273"
+         y="148.85393"
+         id="tspan6491"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6489">covariates</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,41.612067,67.507785)"
+       id="text3596-8-6"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-2-3);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="114.28764"
+         id="tspan6495"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6493">remove
+</tspan></tspan><tspan
+         x="117.80273"
+         y="148.85393"
+         id="tspan6499"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6497">covariates</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,73.402048,38.116011)"
+       id="text3596-8-7"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-2-9);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="114.28764"
+         id="tspan6503"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6501">add
+</tspan></tspan><tspan
+         x="117.80273"
+         y="148.85393"
+         id="tspan6507"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6505">covariates</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-2.0470469,-21.827354)"
+       id="text3596-9"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-5);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="126.70094"
+         id="tspan6511"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6509">potential covariates</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,77.583074,63.849425)"
+       id="text3596-7"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-8);fill:#ff7f2a;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="126.70094"
+         id="tspan6515"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6513">Tests for </tspan></tspan><tspan
+         x="117.80273"
+         y="178.55032"
+         id="tspan6519"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6517">collinearity 
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,7.785825,98.58514)"
+       id="text3596-7-7"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-8-3);fill:#008000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="126.70094"
+         id="tspan6523"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6521">final set of </tspan></tspan><tspan
+         x="117.80273"
+         y="178.55032"
+         id="tspan6527"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6525">covariates
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,56.66857,7.0475714)"
+       id="text3596-7-2"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3598-8-0);fill:#800000;fill-opacity:1;stroke:none"><tspan
+         x="117.80273"
+         y="126.70094"
+         id="tspan6531"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6529">Random
+</tspan></tspan><tspan
+         x="117.80273"
+         y="178.55032"
+         id="tspan6535"><tspan
+           style="font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '"
+           id="tspan6533">Forests</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 30.568353,57.712124 V 78.272768 H 102.23065 V 58.211557"
+       id="path56164" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.586732;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow)"
+       d="M 66.7904,78.133332 V 118.66314"
+       id="path56547" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text70757"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect70759);fill:#000000;fill-opacity:1;stroke:none" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow)"
+       d="M 66.624034,92.861192 H 104.06702"
+       id="path98545" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow)"
+       d="M 64.515433,16.319491 44.227461,28.032757"
+       id="path118385" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow)"
+       d="M 64.515433,16.319491 87.399004,29.531328"
+       id="path118387" />
+  </g>
+</svg>

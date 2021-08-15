@@ -1,0 +1,8 @@
+*
+
+# But not these files...
+!.gitignore
+!variables_spain.grd
+!variables_spain.gri
+!clim.grd
+!clim.gri
