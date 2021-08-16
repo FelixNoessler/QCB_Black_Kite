@@ -70,13 +70,6 @@ Land cover data was retrieved in vector format \parencite{clc2018} and cropped t
 \subsubsection*{Ecological justification of site covariates}
 The selection of covariates is based on existing ecological knowledge about the focal species. A list of all site covariates and a corresponding simplified hypothesis can be found in Table \ref{table:covariates}.
 
-The Black Kite uses a variety of feeding sources, for example birds, fish, crayfish, insects, carrion, vegetable matter and smaller mammals \parencite{Sergio1999,Vinuela1992, BirdLife2021}. Part of the prey is found in wetlands and marshes and it was proposed that the Black Kite has a habitat binding to wetlands and marshes \parencite{Veiga1990, Tanferna2013}. Accordingly, the minimal distance to lakes and river was calculated and used as a site covariate. The distance to the closed lake or river was used, because it is more important that lakes or rivers are nearby than that the Black Kite was actually observed in cell with a lake or a river. 
-
-It has been shown that Black Kites visit landfills for feeding \parencite{DeGiacomo2008, Blanco1994}. Therefore the distance to the closest landfill were analysed. The landfill cover was not used, because in most of the raster cells landfills are not present and therefore the model fitting will not be optimal.
-
-Black Kites breed in branches of trees. However, closed woodlands are avoided \parencite{Tanferna2013}. Therefore the hypothesis is that the occupancy of the Black Kite follows a unimodal distribution with regard to the tree cover, where the occupancy is high at low to intermediate tree cover. In contrast, there should be a positive relationship with the grass cover, because the Black Kite is searching for prey in open landscapes.  
-
-
 %\columnbreak
 \begin{center}
 	\captionof{table}{Site covariates and simplified hypothesized response of occupancy of the Black Kite, arrows symbolize the expected occupancy probability with higher values of the respective covariate}
@@ -94,6 +87,20 @@ Black Kites breed in branches of trees. However, closed woodlands are avoided \p
 	\end{tabular}
 	\label{table:covariates}
 \end{center}	
+
+% distance to rivers/lakes
+The Black Kite uses a variety of feeding sources, for example birds, fish, crayfish, insects, carrion, vegetable matter and smaller mammals \parencite{Sergio1999,Vinuela1992, BirdLife2021}. Part of the prey is found in wetlands and marshes and it was proposed that the Black Kite has a habitat binding to wetlands and marshes \parencite{Veiga1990, Tanferna2013}. Accordingly, the distance to the closest lake or river was calculated and used as a site covariate. The distance to the closed lake or river was used, because it is more important that lakes or rivers are nearby than that the Black Kite was actually observed in cell with a lake or a river. 
+
+% distance to landfill
+It has been shown that Black Kites visit landfills for feeding \parencite{DeGiacomo2008, Blanco1994}. Therefore the distance to the closest landfill were analysed. The landfill cover was not used, because in most of the raster cells landfills are not present and therefore the model fitting will not be optimal.
+
+% tree cover, grass cover
+Black Kites breed in branches of trees. However, closed woodlands are avoided \parencite{Tanferna2013}. Therefore the hypothesis is that the occupancy of the Black Kite follows a unimodal distribution with regard to the tree cover, where the occupancy is high at low to intermediate tree cover. In contrast, there should be a positive relationship with the grass cover, because the Black Kite is searching for prey in open landscapes. The bare soil cover is especially high in the mountains, the hypothesis is that the Black Kites is more a lowland species in Spain and avoids areas with high bare soil cover.
+
+% temperature, precipitation
+The annual mean temperature is added, because it is hypothesized that the Black Kite is negatively affected by too high annual mean temperatures. Additionally, a high annual precipitation may lead to more vegetation and more prey for the Black Kite. Both covariates are especially important for predicting the change of occupancy due to climate change.   
+
+
 
 \subsubsection*{Exploratory analysis of site and detection covariates}
 An exploratory analysis of the importance of the site and detection covariates was done using the machine learning method Random Forests \parencite{Ho1995}. All covariates as described before were used. These include all bioclim variables, land cover fractions, cover of water bodies, cover of landfills, distance to closest water body, distance to closest landfill and all detection covariates. From each grid cell one observation was selected and related to the site and detection covariates. Because of the higher number of non-detection an balanced Random Forest Classifier was used \parencite[with default parameters]{Imbalanced-learn}. Preparing the data, standardization of data and splitting in train and test data (80 \% and 20 \%) was done with \textcite{sklearn, numpy, pandas}. 500 simulation were done to account variability in the model fit to the different data sets (each time one of the up to ten observations per grill cell was chosen). The mean and the standard error of the importance of all covariates was calculated. The effect of the most important covariates on the detection probability was tested. Therefore all other covariates were set to the mean and only the focal covariate was changed. The python script for conducting the analysis can be found in the appendix. 
@@ -121,11 +128,11 @@ To compare the stability of the model an average model was build from the best m
 
 
 \subsection*{Model evaluation}
-The predictive power of the best model is evaluated with the $R^2$-value \parencite{Nagelkerke1991}. A parametric bootstrapping approach is used to access the goodness of fit \parencite["parboot" function as implemented in][]{unmarked}. From the test results the $\hat{c}$-value was calculated. If this values is noticeably larger than one, it indicates overdispersion of the model. With this $\hat{c}$-value a quasi-Akaike information criterion corrected for small sample size (qAICc) was calculated to see if there are big differences to the calculated AICc. Another goodness of fit as proposed by \textcite{MacKenzie2004} was carried out \parencite[implemented in][]{AICcmodavg}.
+The predictive power of the best model is evaluated with the $R^2$-value \parencite{Nagelkerke1991}. A parametric bootstrapping approach is used to access the goodness of fit \parencite["parboot" function as implemented in][]{unmarked}. From the test results the $\hat{c}$-value was calculated. If this values is noticeably larger than one, it indicates overdispersion of the model. With this $\hat{c}$-value a quasi-Akaike information criterion corrected for small sample size (qAICc) was retrieved to see if there are big differences to the calculated AICc. Another goodness of fit as proposed by \textcite{MacKenzie2004} was carried out \parencite[implemented in][]{AICcmodavg}.
 
 
 \subsection*{Prediction}
-Predictions were done with the best model for the mainland of Spain. A map was produced with the predicted occupancy and the standard error of the prediction.
+First, predictions were done first on the grid cells with observational data and secondly with the best model for the mainland of Spain. A map was produced with the predicted occupancy and the standard error of the prediction. The outcome of the best model were compared to the results from the average model. 
  
 Prediction of future climate conditions were done accordingly to existing knowledge about the climate change. The annual temperature will likely rise around 3 °C and the annual rainfall will decrease around 10 \% from 2020 to 2100 \parencite{aemet}. \textcite{ipcc} show under the SSP2 4.5 scenario \parencite{Riahi2017} an increase between 2 and 3 °C and a decrease of total precipitation between 5 \% and 20 \% in different areas of Spain (mean values of 32 models, 2081-2100, relative to 1995-2014). The model agreement is high for the temperature increase, however the signal is not robust for the decrease in total precipitation. These data set is used to model the future occupancy of the Black Kite. The interactive atlas provides regional predictions on a spatial scale of 95 km edge length of a raster cell. GeoTIFFs were downloaded for the change in annual mean temperature and the annual total precipitation (change from 1995-2014 to 2081-2100). These raster files were cropped to the mainland of Spain and resampled to the target resolution (2.5 minutes of a degree). Maps of the changes in the target resolution can be seen in the appendix (see Figure \ref{fig:climate_change}). The change in temperature and precipitation were applied to the respective bioclimatic variables \parencite{Fick2017}. 
 
@@ -147,7 +154,7 @@ A map with all filtered observation from the eBird data set is shown in Figure \
 \begin{figure*}[t]
 	\centering
 	\includegraphics[width=\linewidth]{img/site_covariates}
-	\caption{Predicted occupancy of the best model in response to site covariates, for each plot only the focal site covariate was varied, grey areas represent the standard error, the p values show the significance of the first and the second coefficient, created with \textcite{ggplot2}}
+	\caption{Predicted occupancy of the full model in response to site covariates, for each plot only the focal site covariate was varied, grey areas represent the standard error, the p values show the significance of the first and the second coefficient, created with \textcite{ggplot2}}
 	\label{fig:site}
 \end{figure*}
 
@@ -169,7 +176,7 @@ The four most important factor, namely the isothermality, temperature seasonalit
 \begin{figure*}[t]
 	\centering
 	\includegraphics[width=\linewidth]{img/best_model_map}
-	\caption{Occupancy map under actual and future climate conditions predicted with the best model, the occupancy probability is shown in the left maps, the corresponding standard error in the plots on the right side, created with \textcite{ggplot2}}	
+	\caption{Occupancy map under actual and future climate conditions predicted with the full model, the occupancy probability is shown in the left maps, the corresponding standard error in the plots on the right side, created with \textcite{ggplot2}}	
 	\label{fig:map}
 \end{figure*}
 
@@ -177,41 +184,36 @@ The four most important factor, namely the isothermality, temperature seasonalit
 \subsubsection*{Occupancy model}
 Seven site covariates were analysed from the ecological hypotheses and four were added from the Random Forests model. Because of the high collinearity temperature seasonality, temperature annual range and maximal temperature of warmest month were excluded from the final list of covariates. After that the variance inflation factor was for all covariates below 1.9. The highest correlation exists between the tree cover and the annual precipitation (Pearson $\rho = 0.62$). 
 
-The final best model consists of 20 parameters and has an AIC of 4578. The second best model with only the site covariates has an AIC that is 143 higher (delta AIC). The AICc gives roughly the same result. In the best model there are two detection covariates, namely the number of observers and the duration of observation. All site covariates are fitted as polynomials of two degrees. These are the annual mean temperature, the isothermality, the annual precipitation, the bare soil cover, the grass cover, the tree cover, the distance to closest river or lake and the distance to closest landfill. All estimated values of the site covariates are significant different from zero, except the first coefficients of the isothermality and the annual precipitation and both coefficients of the distance to the closest landfill (see Figure \ref{fig:site}). The coefficient of the duration of observation is significant different from zero, however the number of observers not (see Figure \ref{fig:det}).
+% full model
+The final best model is the full model and consists of 20 parameters and has an AIC of 4578. The second best model with only the site covariates has an AIC that is 143 higher (delta AIC). The AICc gives roughly the same result. In the full model there are two detection covariates, namely the number of observers and the duration of observation. The explained variance in the detection of the Black Kite is 35 \% ($R^2$-value). 
 
-The occupancy probability shows a positive relation with the grass cover and the annual precipitation. A unimodal relationship can be seen between the isothermality and the annual mean temperature and the occupancy probability of the Black Kite. Bare soil cover, distance to closest lake or river and a high tree cover have a negative influence on the occupancy probability. Both coefficients of the distance to the closest landfill are not significant that is why we cannot see any trend here (see Figure \ref{fig:site}). 
+% average model
+An average model was build from three single models. These are one model with all site covariates except the distance to closest landfill, the full model and a third model with all site covariates except the annual precipitation and the closest distance to landfills. 
 
-An average model was build from three single models. These are one model with all site covariates except the distance to closest landfill, a model with all site covariates and a third model with all site covariates except the annual precipitation and the closest distance to landfills. These results go inline with the non-significance of the coefficients of the covariates closest distance to landfills and annual precipitation in the full model.
+% site covariates
+All site covariates are fitted as polynomials of two degrees. These are in the full model the annual mean temperature, the isothermality, the annual precipitation, the bare soil cover, the grass cover, the tree cover, the distance to closest river or lake and the distance to closest landfill. All estimated values of the site covariates are significant different from zero, except the first coefficients of the isothermality and the annual precipitation and both coefficients of the distance to the closest landfill. The occupancy probability shows a positive relation with the grass cover and the annual precipitation. A unimodal relationship can be seen between the isothermality and the annual mean temperature and the occupancy probability of the Black Kite. Bare soil cover, distance to closest lake or river and a high tree cover have a negative influence on the occupancy probability (see Figure \ref{fig:site}). These results go inline with the outcome of the average model. The uncertainty is high in the site covariates annual precipitation and the distance to closest landfill, the occupancy probability shows the same clear response to all other site covariates as with the full model (see Figure \ref{fig:avg_site_covs} in the appendix). 
 
-The explained variance in the detection of the Black Kite is 35 \% ($R^2$-value).
+% detection covariates
+The duration of the observation has a positive influence on the occupancy probability and the coefficient is significant different from zero. In contrast, the number of observers does not show a significant result (see Figure \ref{fig:det}).     
 
-The model predicts that 522 out of 1032 grid cells with observations are occupied (51 \%, median best unbiased predictor from occurrence state). In 503 grid cells was the Black Kite detected (49 \%). The \textcite{MacKenzie2004} goodness-of-fit test shows that the model adequately fits the data ($\hat{c} = $ 0.83, $p$ = 1). Also the parametric bootstrap test does not indicate a lack of fit ($\hat{c} = $ 0.97, $p$ = 0.86). The $\hat{c}$-values are below zero, for this reason no QAIC and QAICc are calculated (they have the same values as the AIC and AICc when setting the $\hat{c}$-value to one). 
+% fit to observationl data
+The full model predicts for the grid cell with observational data that 522 out of 1032 grid cells are occupied (51 \%, median best unbiased predictor from occurrence state). In 503 grid cells was the Black Kite detected (49 \%). The \textcite{MacKenzie2004} goodness-of-fit test shows that the full model adequately fits the data ($\hat{c} = $ 0.83, $p$ = 1). Also the parametric bootstrap test does not indicate a lack of fit ($\hat{c} = $ 0.97, $p$ = 0.86). The $\hat{c}$-values are below zero, for this reason no QAIC and QAICc are calculated (they have the same values as the AIC and AICc when setting the $\hat{c}$-value to one). 
 
-The mean occupancy probability under actual climate conditions is 52.6 \% (16748 grid cells with occupancy probability $>= 0.5$). The mean occupancy probability decreases and is 37.8 \% under future climate conditions (10290 grid cells with occupancy probability $>= 0.5$). This decrease in occupancy is also visible in the map especially between Sevilla and Madrid (see Figure \ref{fig:map}). In 92 \% of all grid cells there is a lower occupancy probability under future climate conditions, in contrast in only 8 \% of all grid cells the occupancy probability is higher under future climate conditions.
-
-The duration of the observation has a positive influence on the occupancy probability. In contrast, the number of observers does not show a significant result (see Figure \ref{fig:det}).     
+% fit to the area of spain under actual and future conditions
+For the area of the mainland of Spain, the mean occupancy probability under actual climate conditions is 52.6 \% (16748 grid cells with occupancy probability $>= 0.5$). The mean occupancy probability decreases and is 37.8 \% under future climate conditions (10290 grid cells with occupancy probability $>= 0.5$). This decrease in occupancy is also visible in the map especially between Sevilla and Madrid (see Figure \ref{fig:map}). In 92 \% of all grid cells there is a lower occupancy probability under future climate conditions, in contrast in only 8 \% of all grid cells the occupancy probability is higher under future climate conditions. The average model predicts very similar results (see Figure \ref{fig:avg_map} in the appendix).  
 
 
 
 \section{Discussion}
-Our results imply that the climate change may negatively affect the occupancy of the Black Kite in Spain. 
+Our results imply that the climate change may negatively affect the occupancy of the Black Kite in Spain. However even if higher annual mean temperature has a clear negative effect on the occupancy of the Black Kite, the uncertainty for the annual precipitation is high. The climate predictions from the IPCC \parencite{ipcc} had a very coarse scale in comparison with the scale of the occupancy model (95 km versus 4.6 km edge length) and the models had no robust signal about the decrease in annual precipitation in Spain. Furthermore, the annual mean temperature and the annual precipitation are not the only factors that influence the occupancy of the Black Kite. Also changes in the habitat will affect the occurrence of the Black Kite. Additionally, many biological mechanisms of the Black Kite are not covered in this simple model.  
 
+\textcite{Tanferna2013} point out some challenges in the protection of birds of prey. These are the large home range sizes (especially for younger not breeding individuals), they uses different habitat types in different seasons of the year and they often need non-identical habitat characteristics on different spatial scales. That is why it is not so easy to derive conservation management measures from this study. Nevertheless, the grass cover and distance to closest river or lakes play an important role for the occupancy probability of the Black Kite in Spain as already mentioned in the literature \parencite{Tanferna2013, Veiga1990}. 
 
+However, no effect of the distance to closest landfill was detected here as proposed by \textcite{Blanco1997, Blanco1994}. It is unlikely that landfills really do not play a role. A possible explanations for this mismatch are that large landfills that are probably well visible in the Corine Land Cover data set \parencite{clc2018} are often covered in reality and not accessible to the Black Kite. It is also possible that the citizen scientist did not look often around landfills and therefore the data fit is not good. 
 
-annual mean temperature, Annual precipitation, bare soil cover, tree cover, grass cover, distance to closest river or lake in line with hypothesis
+The duration of observation the only significant detection covariate in this study. Maybe other detection covariate are more appropriate than the detection covariates already present in the eBird data set like the weather at the day of the observation.
 
-distance to closest landfill coefficients not significant, even opposite trend 
-large landfills have to be covered due to eu law
-
-
-duration of observation the only significant detection covariate --> maybe other detection covariate more appropriate like the weather at the day of the observation
-
-general reduction of occupancy of the black kite under future climate conditions, very coarse scale of climate prediction, climate is not the only factor that will change, ecology of species may also change.
-
-
-
-
-
+A possible extension of this static occupancy model is the dynamic occupancy model. A dynamic occupancy model with observations from more than one year can give more insights on the population trends \parencite{Green2019}. 
 
 
 \end{multicols}

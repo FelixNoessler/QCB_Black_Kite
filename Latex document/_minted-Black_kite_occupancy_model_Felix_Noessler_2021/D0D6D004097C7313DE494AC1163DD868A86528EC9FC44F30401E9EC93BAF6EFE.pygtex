@@ -1,0 +1,86 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Third script}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}  Selection of covariates:}
+\PYG{c+c1}{\PYGZsh{}     ... are based on ecological hypotheses and from}
+\PYG{c+c1}{\PYGZsh{}         from the explanatory analysis with a Random}
+\PYG{c+c1}{\PYGZsh{}         Forest model}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}     \PYGZhy{}\PYGZhy{}\PYGZgt{} here some covariates are excluded because of}
+\PYG{c+c1}{\PYGZsh{}         collinerarity}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+
+\PYG{c+c1}{\PYGZsh{} Load data \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{occ\PYGZus{}wide\PYGZus{}clean} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{read.csv}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}results/milmig.csv\PYGZdq{}}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Selected covariates \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{random\PYGZus{}forest\PYGZus{}selection} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}bio3\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio4\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio7\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio5\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{ecological\PYGZus{}selection} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}bio1\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio12\PYGZsq{}}\PYG{p}{,} 
+                          \PYG{l+s}{\PYGZsq{}tree\PYGZus{}cover\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}grass\PYGZus{}cover\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bare\PYGZus{}soil\PYGZsq{}}\PYG{p}{,} 
+                          \PYG{l+s}{\PYGZsq{}distance\PYGZus{}to\PYGZus{}landfill\PYGZsq{}}\PYG{p}{,}  \PYG{l+s}{\PYGZsq{}distance\PYGZus{}to\PYGZus{}water\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{selected\PYGZus{}covariates} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{random\PYGZus{}forest\PYGZus{}selection}\PYG{p}{,} \PYG{n}{ecological\PYGZus{}selection}\PYG{p}{)}
+\PYG{n}{selection} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{occ\PYGZus{}wide\PYGZus{}clean}\PYG{p}{[,} \PYG{n}{selected\PYGZus{}covariates}\PYG{p}{]}
+
+
+\PYG{c+c1}{\PYGZsh{} Exclude some covariates \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{selected\PYGZus{}names} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{names}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{)[}\PYG{o}{!} \PYG{n+nf}{names}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{)} \PYG{o}{\PYGZpc{}in\PYGZpc{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}bio7\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio4\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio5\PYGZsq{}}\PYG{p}{)]}
+
+
+\PYG{c+c1}{\PYGZsh{} Make a cluster dendrogram \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} cluster with all selected covariates}
+\PYG{n}{cor1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{abs}\PYG{p}{(}\PYG{n+nf}{as.dist}\PYG{p}{(}\PYG{n+nf}{cor}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{)))}
+\PYG{n}{clust1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{hclust}\PYG{p}{(}\PYG{l+m}{1}\PYG{o}{\PYGZhy{}} \PYG{n}{cor1}\PYG{p}{)}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{clust1}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} cluster with some covariates removed}
+\PYG{n}{cor1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{abs}\PYG{p}{(}\PYG{n+nf}{as.dist}\PYG{p}{(}\PYG{n+nf}{cor}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{[,} \PYG{n}{selected\PYGZus{}names}\PYG{p}{])))}
+\PYG{n}{clust1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{hclust}\PYG{p}{(}\PYG{l+m}{1}\PYG{o}{\PYGZhy{}} \PYG{n}{cor1}\PYG{p}{)}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{clust1}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Correlation plots \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Correlation plots with all covariates}
+\PYG{n}{psych}\PYG{o}{::}\PYG{n+nf}{pairs.panels}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Correlation plots with some covariates removed}
+\PYG{n}{psych}\PYG{o}{::}\PYG{n+nf}{pairs.panels}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{[,} \PYG{n}{selected\PYGZus{}names}\PYG{p}{])}
+
+
+\PYG{c+c1}{\PYGZsh{} Test for collinearity \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Test for collinearity with all covariates}
+\PYG{n}{HH}\PYG{o}{::}\PYG{n+nf}{vif}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Test for collinearity with some covariates removed}
+\PYG{n}{HH}\PYG{o}{::}\PYG{n+nf}{vif}\PYG{p}{(}\PYG{n}{selection}\PYG{p}{[,} \PYG{n}{selected\PYGZus{}names}\PYG{p}{])}
+
+
+\PYG{c+c1}{\PYGZsh{} Make maps of the final selected covariates \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{site\PYGZus{}covariates} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{raster}\PYG{o}{::}\PYG{n+nf}{brick}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}data/environmental\PYGZus{}data/variables\PYGZus{}spain.grd\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{site\PYGZus{}covariates} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{site\PYGZus{}covariates}\PYG{p}{[[}\PYG{n}{selected\PYGZus{}names}\PYG{p}{]]}
+
+\PYG{n+nf}{pdf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/site\PYGZus{}covs.pdf\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow}\PYG{o}{=}\PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),} 
+    \PYG{n}{oma} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{1}\PYG{p}{)} \PYG{o}{+} \PYG{l+m}{0.1}\PYG{p}{,}
+    \PYG{n}{mar} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{4}\PYG{p}{,} \PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)} \PYG{o}{+} \PYG{l+m}{0.1}\PYG{p}{)}
+\PYG{n}{raster}\PYG{o}{::}\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{site\PYGZus{}covariates}\PYG{p}{,} \PYG{n}{main}\PYG{o}{=}\PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Isothermality\PYGZsq{}}\PYG{p}{,} 
+                                      \PYG{l+s}{\PYGZsq{}Annual mean\PYGZbs{}ntemperature °C *10\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Annual mean\PYGZbs{}nprecipitation mm\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Tree cover \PYGZpc{}\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Grass cover \PYGZpc{}\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Bare soil cover \PYGZpc{}\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Distance to closest\PYGZbs{}nlandfill m\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{l+s}{\PYGZsq{}Distance to closest\PYGZbs{}nriver or lake m\PYGZsq{}}\PYG{p}{))}
+\PYG{n+nf}{dev.off}\PYG{p}{()}
+
+
+
+\PYG{c+c1}{\PYGZsh{} Clean up \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{rm}\PYG{p}{(}\PYG{n}{list} \PYG{o}{=} \PYG{n+nf}{ls}\PYG{p}{())} 
+\PYG{n+nf}{dev.off}\PYG{p}{(}\PYG{n+nf}{dev.list}\PYG{p}{()[}\PYG{l+s}{\PYGZdq{}RStudioGD\PYGZdq{}}\PYG{p}{])}
+\end{Verbatim}

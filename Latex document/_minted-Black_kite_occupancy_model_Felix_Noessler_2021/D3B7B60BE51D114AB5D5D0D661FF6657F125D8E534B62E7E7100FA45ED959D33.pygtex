@@ -1,0 +1,148 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Fourth script}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Build models with the unmarked package}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZgt{} Compare different models with }
+\PYG{c+c1}{\PYGZsh{}     information criterion}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZgt{} evaluate the best model}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZgt{} build an average model}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c+c1}{\PYGZsh{} }
+\PYG{n+nf}{setwd}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/R\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Load packages \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{dplyr}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{ggplot2}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{unmarked}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Load data \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{occ\PYGZus{}um} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{formatWide}\PYG{p}{(}\PYG{n+nf}{read.csv}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}results/milmig.csv\PYGZdq{}}\PYG{p}{),} \PYG{n}{type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}unmarkedFrameOccu\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{occ\PYGZus{}um}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Build models \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Null model}
+\PYG{n}{occ\PYGZus{}null} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{occu}\PYG{p}{(}\PYG{o}{\PYGZti{}} \PYG{l+m}{1} \PYG{o}{\PYGZti{}} \PYG{l+m}{1}\PYG{p}{,} \PYG{n}{occ\PYGZus{}um}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{occ\PYGZus{}null}\PYG{p}{)}
+\PYG{n+nf}{backTransform}\PYG{p}{(}\PYG{n}{occ\PYGZus{}null}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}state\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model only with detection covariates}
+\PYG{n}{detection\PYGZus{}cov\PYGZus{}model} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{occu}\PYG{p}{(}\PYG{o}{\PYGZti{}} \PYG{n}{duration\PYGZus{}minutes}
+                                      \PYG{o}{+} \PYG{n}{effort\PYGZus{}distance\PYGZus{}km}
+                                      \PYG{o}{\PYGZti{}} \PYG{l+m}{1}\PYG{p}{,} \PYG{n}{data}\PYG{o}{=}\PYG{n}{occ\PYGZus{}um}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{detection\PYGZus{}cov\PYGZus{}model}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model only with site covariates}
+\PYG{n}{site\PYGZus{}cov\PYGZus{}model} \PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{n+nf}{occu}\PYG{p}{(}\PYG{o}{\PYGZti{}} \PYG{l+m}{1}
+                                    \PYG{o}{\PYGZti{}} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio3}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio12}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{tree\PYGZus{}cover}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{grass\PYGZus{}cover}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bare\PYGZus{}soil}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{distance\PYGZus{}to\PYGZus{}water}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{distance\PYGZus{}to\PYGZus{}landfill}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                    \PYG{p}{,} \PYG{n}{data} \PYG{o}{=} \PYG{n}{occ\PYGZus{}um}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{site\PYGZus{}cov\PYGZus{}model}\PYG{p}{)}
+
+
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Full model with covariates}
+\PYG{n}{full\PYGZus{}model} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{occu}\PYG{p}{(}\PYG{o}{\PYGZti{}} \PYG{n}{duration\PYGZus{}minutes} 
+                                 \PYG{o}{+} \PYG{n}{number\PYGZus{}observers}
+                                 \PYG{o}{\PYGZti{}} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio3}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bio12}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{tree\PYGZus{}cover}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{grass\PYGZus{}cover}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{bare\PYGZus{}soil}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{distance\PYGZus{}to\PYGZus{}water}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)}
+                                 \PYG{o}{+} \PYG{n+nf}{poly}\PYG{p}{(}\PYG{n}{distance\PYGZus{}to\PYGZus{}landfill}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{),} \PYG{n}{data} \PYG{o}{=} \PYG{n}{occ\PYGZus{}um}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{full\PYGZus{}model}\PYG{p}{)}
+
+\PYG{n}{re} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{ranef}\PYG{p}{(}\PYG{n}{full\PYGZus{}model}\PYG{p}{)}
+\PYG{n+nf}{sum}\PYG{p}{(}\PYG{n+nf}{bup}\PYG{p}{(}\PYG{n}{re}\PYG{p}{,} \PYG{n}{stat}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mode\PYGZdq{}}\PYG{p}{))}
+\PYG{n+nf}{sum}\PYG{p}{(}\PYG{n+nf}{bup}\PYG{p}{(}\PYG{n}{re}\PYG{p}{,} \PYG{n}{stat}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}mean\PYGZdq{}}\PYG{p}{))}
+
+
+\PYG{c+c1}{\PYGZsh{} Model selection \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model selection with AIC}
+\PYG{n}{models\PYGZus{}list} \PYG{o}{\PYGZlt{}\PYGZhy{}}\PYG{n+nf}{list}\PYG{p}{(}\PYG{n}{Null} \PYG{o}{=} \PYG{n}{occ\PYGZus{}null}\PYG{p}{,} 
+                   \PYG{n}{detection} \PYG{o}{=} \PYG{n}{detection\PYGZus{}cov\PYGZus{}model}\PYG{p}{,}
+                   \PYG{n}{site} \PYG{o}{=} \PYG{n}{site\PYGZus{}cov\PYGZus{}model}\PYG{p}{,}
+                   \PYG{n}{full\PYGZus{}model} \PYG{o}{=} \PYG{n}{full\PYGZus{}model}\PYG{p}{)}
+
+\PYG{n}{un\PYGZus{}models} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{fitList}\PYG{p}{(}\PYG{n}{fits} \PYG{o}{=} \PYG{n}{models\PYGZus{}list}\PYG{p}{)}
+\PYG{n}{ModSelect} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{modSel}\PYG{p}{(}\PYG{n}{un\PYGZus{}models}\PYG{p}{,} \PYG{n}{nullmod} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Null\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{ModSelect}
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model selection with AICc}
+\PYG{n}{AICcmodavg}\PYG{o}{::}\PYG{n+nf}{aictab}\PYG{p}{(}\PYG{n}{models\PYGZus{}list}\PYG{p}{,} \PYG{n}{second.ord} \PYG{o}{=} \PYG{n+nb+bp}{T}\PYG{p}{)}
+
+
+\PYG{n}{best\PYGZus{}model} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{full\PYGZus{}model}
+
+
+
+\PYG{n+nf}{if }\PYG{p}{(}\PYG{o}{!}\PYG{n+nf}{file.exists}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}models.rda\PYGZsq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+
+\PYG{c+c1}{\PYGZsh{} Goodness of fit test of best model \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{GOF} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{parboot}\PYG{p}{(}\PYG{n}{best\PYGZus{}model}\PYG{p}{,} \PYG{n}{nsim}\PYG{o}{=}\PYG{l+m}{500}\PYG{p}{,} \PYG{n}{ncores}\PYG{o}{=}\PYG{l+m}{8}\PYG{p}{,} \PYG{n}{report}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}
+\PYG{n}{GOF}
+
+\PYG{n}{cHat} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{GOF}\PYG{o}{@}\PYG{n}{t0} \PYG{o}{/} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{GOF}\PYG{o}{@}\PYG{n}{t.star}\PYG{p}{)}
+\PYG{n}{cHat}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Another goodnes of fit test}
+\PYG{n}{AICcmodavg}\PYG{o}{::}\PYG{n+nf}{mb.gof.test}\PYG{p}{(}\PYG{n}{best\PYGZus{}model}\PYG{p}{,}
+                        \PYG{n}{nsim}\PYG{o}{=}\PYG{l+m}{500}\PYG{p}{,}
+                        \PYG{n}{plot.hist} \PYG{o}{=} \PYG{n+nb+bp}{F}\PYG{p}{,}
+                        \PYG{n}{parallel}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{,}
+                        \PYG{n}{ncores}\PYG{o}{=}\PYG{l+m}{8}\PYG{p}{)}
+
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} QAICc}
+\PYG{n}{GOF1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{AICcmodavg}\PYG{o}{::}\PYG{n+nf}{aictab}\PYG{p}{(}\PYG{n}{models\PYGZus{}list}\PYG{p}{,} \PYG{n}{c.hat} \PYG{o}{=} \PYG{l+m}{1}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZgt{} it is the same as above, because the cHat value is below one}
+
+
+\PYG{c+c1}{\PYGZsh{} Build an average model \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Get the names of the detection covariates}
+  \PYG{n}{det\PYGZus{}terms} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{MuMIn}\PYG{o}{::}\PYG{n+nf}{getAllTerms}\PYG{p}{(}\PYG{n}{best\PYGZus{}model}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+    \PYG{n}{purrr}\PYG{o}{::}\PYG{n+nf}{discard}\PYG{p}{(}\PYG{n}{stringr}\PYG{o}{::}\PYG{n}{str\PYGZus{}detect}\PYG{p}{,} \PYG{n}{pattern} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}psi\PYGZdq{}}\PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Get combination of models, detection covariates are always present}
+  \PYG{n}{occ\PYGZus{}dredge} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{MuMIn}\PYG{o}{::}\PYG{n+nf}{dredge}\PYG{p}{(}\PYG{n}{best\PYGZus{}model}\PYG{p}{,} \PYG{n}{fixed} \PYG{o}{=} \PYG{n}{det\PYGZus{}terms}\PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Get the best models from the model list}
+  \PYG{n}{occ\PYGZus{}dredge\PYGZus{}95} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{MuMIn}\PYG{o}{::}\PYG{n+nf}{get.models}\PYG{p}{(}\PYG{n}{occ\PYGZus{}dredge}\PYG{p}{,} 
+                                      \PYG{n}{subset} \PYG{o}{=} \PYG{n+nf}{cumsum}\PYG{p}{(}\PYG{n}{weight}\PYG{p}{)} \PYG{o}{\PYGZlt{}}  \PYG{l+m}{0.95}\PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Get the average model based on model weights}
+  \PYG{c+c1}{\PYGZsh{}occ\PYGZus{}avg \PYGZlt{}\PYGZhy{} MuMIn::model.avg(occ\PYGZus{}dredge, fit = TRUE, revised.var = TRUE)}
+  \PYG{n}{occ\PYGZus{}avg} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{MuMIn}\PYG{o}{::}\PYG{n+nf}{model.avg}\PYG{p}{(}\PYG{n}{occ\PYGZus{}dredge\PYGZus{}95}\PYG{p}{,} \PYG{n}{fit}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Calculate the AICc for the average model}
+  \PYG{n+nf}{sum}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{o}{\PYGZdl{}}\PYG{n}{msTable}\PYG{o}{\PYGZdl{}}\PYG{n}{AICc} \PYG{o}{*} \PYG{n}{occ\PYGZus{}avg}\PYG{o}{\PYGZdl{}}\PYG{n}{msTable}\PYG{o}{\PYGZdl{}}\PYG{n}{weight}\PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model coefficients of the average model}
+  \PYG{n+nf}{t}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{o}{\PYGZdl{}}\PYG{n}{coefficients}\PYG{p}{)}
+  
+  \PYG{n}{MuMIn}\PYG{o}{::}\PYG{n+nf}{importance}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{p}{)}
+  
+  \PYG{n+nf}{save}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{p}{,} \PYG{n}{best\PYGZus{}model}\PYG{p}{,} \PYG{n}{GOF}\PYG{p}{,} \PYG{n}{cHat}\PYG{p}{,} \PYG{n}{GOF1}\PYG{p}{,} \PYG{n}{file}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}models.rda\PYGZsq{}}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} Clean up \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{rm}\PYG{p}{(}\PYG{n}{list} \PYG{o}{=} \PYG{n+nf}{ls}\PYG{p}{())} 
+\end{Verbatim}

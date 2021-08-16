@@ -15,10 +15,21 @@
 #
 ##########################################################
 
+
+
+# Install required packages -----------------------------------------------
+packages <- c("ggplot2", "gridExtra", "dplyr", 
+              "tidyr", "purrr", "HH", "psych", "MuMIn",
+              "rnaturalearth", "rmapshaper",
+              "auk", "unmarked", "AICcmodavg",
+              "raster", "rgeos", "sp", "sf")
+
+install.packages(setdiff(packages, rownames(installed.packages())))
+
+
 # Loading packages --------------------------------------------------------
 library(ggplot2)
 library(dplyr)
-
 
 
 # Loading geometries for the mainland of Spain ----------------------------
@@ -519,6 +530,9 @@ change$y <- sprintf("%.20f",change$y)
 write.csv(change, "results/change_temp_prec.csv", row.names = FALSE)
 
 
+# Clean up ----------------------------------------------------------------
+rm(list = ls()) 
+
 ##########################################################
 # Second script
 #
@@ -528,9 +542,6 @@ write.csv(change, "results/change_temp_prec.csv", row.names = FALSE)
 #     4. Store the data frame in the unmarked format
 #
 ##########################################################
-
-rm(list = ls()) 
-.rs.restartR()
 
 
 # Loading packages --------------------------------------------------------
@@ -569,9 +580,8 @@ occ_var_std <- occ_var%>%
                      'bio7', 'bio8', 'bio9', 'bio10', 'bio11', 'bio12', 
                      'bio13', 'bio14', 'bio15', 'bio16', 'bio17', 
                      'bio18', 'bio19',
-                     'tree_cover', 'grass_cover', 'bare_soil', 'landfills',
-                     'distance_to_water', 'distance_to_landfill',
-                     'marshes'),
+                     'tree_cover', 'grass_cover', 'bare_soil',
+                     'distance_to_water', 'distance_to_landfill'),
                    ~(scale(.) %>% as.vector))
 
 
@@ -584,9 +594,8 @@ occ_wide <- auk::format_unmarked_occu(
                'bio7', 'bio8', 'bio9', 'bio10', 'bio11', 'bio12', 
                'bio13', 'bio14', 'bio15', 'bio16', 'bio17', 
                'bio18', 'bio19', 
-               'tree_cover', 'grass_cover', 'bare_soil', 'landfills',
-               'distance_to_water', 'distance_to_landfill',
-               'marshes'), 
+               'tree_cover', 'grass_cover', 'bare_soil',
+               'distance_to_water', 'distance_to_landfill'), 
   obs_covs =c('time_observations_started','duration_minutes', 
               'effort_distance_km','number_observers', 'protocol_type',
               'day_of_year'))
@@ -610,6 +619,8 @@ occ_wide_clean <- occ_wide[!duplicated(occ_wide$cells),]
 write.csv(occ_wide_clean, "results/milmig.csv", row.names = FALSE)
 
 
+# Clean up ----------------------------------------------------------------
+rm(list = ls()) 
 ##########################################################
 # Third script
 #
@@ -622,8 +633,7 @@ write.csv(occ_wide_clean, "results/milmig.csv", row.names = FALSE)
 #         collinerarity
 #
 ##########################################################
-rm(list = ls()) 
-.rs.restartR()
+
 
 # Load data ---------------------------------------------------------------
 occ_wide_clean <- read.csv("results/milmig.csv")
@@ -690,6 +700,11 @@ raster::plot(site_covariates, main=c('Isothermality',
                                       'Distance to closest\nriver or lake m'))
 dev.off()
 
+
+
+# Clean up ----------------------------------------------------------------
+rm(list = ls()) 
+dev.off(dev.list()["RStudioGD"])
 ##########################################################
 # Fourth script
 #
@@ -704,6 +719,8 @@ dev.off()
 #
 ##########################################################
 
+# 
+setwd("/home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/R")
 
 # Load packages -----------------------------------------------------------
 library(dplyr)
@@ -711,25 +728,25 @@ library(ggplot2)
 library(unmarked)
 
 # Load data ---------------------------------------------------------------
-occ_um <- unmarked::formatWide(read.csv("results/milmig.csv"), type = "unmarkedFrameOccu")
-unmarked::summary(occ_um)
+occ_um <- formatWide(read.csv("results/milmig.csv"), type = "unmarkedFrameOccu")
+summary(occ_um)
 
 
 # Build models ------------------------------------------------------------
 ## Null model
-occ_null <- unmarked::occu(~ 1 ~ 1, occ_um)
-unmarked::summary(occ_null)
-unmarked::backTransform(occ_null, "state")
+occ_null <- occu(~ 1 ~ 1, occ_um)
+summary(occ_null)
+backTransform(occ_null, "state")
 
 ## Model only with detection covariates
-detection_cov_model <- unmarked::occu(~ duration_minutes
+detection_cov_model <- occu(~ duration_minutes
                                       + effort_distance_km
                                       ~ 1, data=occ_um)
-unmarked::summary(detection_cov_model)
+summary(detection_cov_model)
 
 
 ## Model only with site covariates
-site_cov_model <-unmarked::occu(~ 1
+site_cov_model <-occu(~ 1
                                     ~ poly(bio1, 2)
                                     + poly(bio3, 2)
                                     + poly(bio12, 2)
@@ -739,13 +756,13 @@ site_cov_model <-unmarked::occu(~ 1
                                     + poly(distance_to_water, 2)
                                     + poly(distance_to_landfill, 2)
                                     , data = occ_um)
-unmarked::summary(site_cov_model)
+summary(site_cov_model)
 
 
 
 
 ## Full model with covariates
-full_model <- unmarked::occu(~ duration_minutes 
+full_model <- occu(~ duration_minutes 
                                  + number_observers
                                  ~ poly(bio1, 2)
                                  + poly(bio3, 2)
@@ -755,7 +772,7 @@ full_model <- unmarked::occu(~ duration_minutes
                                  + poly(bare_soil, 2)
                                  + poly(distance_to_water, 2)
                                  + poly(distance_to_landfill, 2), data = occ_um)
-unmarked::summary(full_model)
+summary(full_model)
 
 re <- ranef(full_model)
 sum(bup(re, stat="mode"))
@@ -769,8 +786,8 @@ models_list <-list(Null = occ_null,
                    site = site_cov_model,
                    full_model = full_model)
 
-un_models <- unmarked::fitList(fits = models_list)
-ModSelect <- unmarked::modSel(un_models, nullmod = "Null")
+un_models <- fitList(fits = models_list)
+ModSelect <- modSel(un_models, nullmod = "Null")
 ModSelect
 
 
@@ -782,54 +799,58 @@ best_model <- full_model
 
 
 
+if (!file.exists('models.rda')) {
 
-# # Goodness of fit test of best model --------------------------------------
-# GOF <-unmarked::parboot(best_model, nsim=999, ncores=11, report=T)
-# GOF
-# 
-# cHat <- GOF@t0 / mean(GOF@t.star)
-# cHat
-# 
-# ### Another goodnes of fit test
-# AICcmodavg::mb.gof.test(best_model, 
-#                         nsim=2, 
-#                         plot.hist = F, 
-#                         parallel=T, 
-#                         ncores=2)
-# 
-# 
-# 
-# ### QAICc 
-# AICcmodavg::aictab(models_list, c.hat = 1)
-# # --> it is the same as above, because the cHat value is below one
+# Goodness of fit test of best model --------------------------------------
+GOF <- parboot(best_model, nsim=500, ncores=8, report=T)
+GOF
+
+cHat <- GOF@t0 / mean(GOF@t.star)
+cHat
+
+### Another goodnes of fit test
+AICcmodavg::mb.gof.test(best_model,
+                        nsim=500,
+                        plot.hist = F,
+                        parallel=T,
+                        ncores=8)
+
+
+
+### QAICc
+GOF1 <- AICcmodavg::aictab(models_list, c.hat = 1)
+# --> it is the same as above, because the cHat value is below one
 
 
 # Build an average model --------------------------------------------------
-## Get the names of the detection covariates
-det_terms <- MuMIn::getAllTerms(best_model) %>% 
-  purrr::discard(stringr::str_detect, pattern = "psi")
+  ## Get the names of the detection covariates
+  det_terms <- MuMIn::getAllTerms(best_model) %>% 
+    purrr::discard(stringr::str_detect, pattern = "psi")
+  
+  ## Get combination of models, detection covariates are always present
+  occ_dredge <- MuMIn::dredge(best_model, fixed = det_terms)
+  
+  ## Get the best models from the model list
+  occ_dredge_95 <- MuMIn::get.models(occ_dredge, 
+                                      subset = cumsum(weight) <  0.95)
+  
+  ## Get the average model based on model weights
+  #occ_avg <- MuMIn::model.avg(occ_dredge, fit = TRUE, revised.var = TRUE)
+  occ_avg <- MuMIn::model.avg(occ_dredge_95, fit=T)
+  
+  ## Calculate the AICc for the average model
+  sum(occ_avg$msTable$AICc * occ_avg$msTable$weight)
+  
+  ## Model coefficients of the average model
+  t(occ_avg$coefficients)
+  
+  MuMIn::importance(occ_avg)
+  
+  save(occ_avg, best_model, GOF, cHat, GOF1, file='models.rda')
+}
 
-## Get combination of models, detection covariates are always present
-occ_dredge <- MuMIn::dredge(best_model, fixed = det_terms)
-
-## Get the best models from the model list
-occ_dredge_95 <- MuMIn::get.models(occ_dredge, 
-                                    subset = cumsum(weight) <  0.95)
-
-## Get the average model based on model weights
-#occ_avg <- MuMIn::model.avg(occ_dredge, fit = TRUE, revised.var = TRUE)
-occ_avg <- MuMIn::model.avg(occ_dredge_95, fit=T)
-
-## Calculate the AICc for the average model
-sum(occ_avg$msTable$AICc * occ_avg$msTable$weight)
-
-## Model coefficients of the average model
-t(occ_avg$coefficients)
-
-MuMIn::importance(occ_avg)
-
-save(occ_avg, best_model, file='models.rda')
-
+# Clean up ----------------------------------------------------------------
+rm(list = ls()) 
 
 
 ##########################################################
@@ -838,8 +859,8 @@ save(occ_avg, best_model, file='models.rda')
 #
 ##########################################################
 
-
-
+library(dplyr)
+library(ggplot2)
 
 # Load data ---------------------------------------------------------------
 load('models.rda')
@@ -900,10 +921,10 @@ pred_actual <- unmarked::predict(occ_avg,
                                                   -x, -y), 
                                  type = "state")
 
-actual_climate <- dplyr::bind_cols(p_variables_std,  
+actual_climate <- bind_cols(p_variables_std,  
                                    probability = pred_actual$fit, # Predicted, fit
                                    SE = pred_actual$se.fit) %>% # SE, se.fit
-  dplyr::select(x, y, probability, SE) %>%
+  select(x, y, probability, SE) %>%
   tidyr::pivot_longer(cols = c(probability, SE)) 
 
 
@@ -915,10 +936,10 @@ pred_future <- unmarked::predict(occ_avg,
                                                   -x, -y), 
                                  type = "state")
 
-future_climate <- dplyr::bind_cols(p_variables_std_future, 
+future_climate <- bind_cols(p_variables_std_future, 
                                    probability = pred_future$fit, # Predicted, fit
                                    SE = pred_future$se.fit) %>% # SE, se.fit
-  dplyr::select(x, y, probability, SE) %>%
+  select(x, y, probability, SE) %>%
   tidyr::pivot_longer(cols = c(probability, SE)) 
 
 # join the data, preparation for plotting
@@ -1180,128 +1201,3 @@ plotting_data %>%
   scale_y_continuous(limits = c(0,1),expand = expansion(mult = c(0.03, 0.03))) +
   facet_wrap(. ~ name, scales="free_x", strip.position = 'bottom', ncol=4)
 ggsave('results/det_covariates.png', width = 6, height = 3)
-library(ggplot2)
-library(ggnewscale)
-library(dplyr)
-
-variables <- raster::stack('data/environmental_data/variables_spain.grd')
-
-
-
-#############################
-spain <- rnaturalearth::ne_countries(country = 'spain',
-                                     scale = 'medium',
-                                     returnclass = 'sf')
-
-
-
-spain_crop <- rmapshaper::ms_filter_islands(spain, 
-                                            min_area = 100000000000, 
-                                            drop_null_geometries=T)
-
-
-##############################
-#############################
-###########################
-
-#' Rotate simple features for 3D layers
-#' Rotates a simple features layer using a shear matrix transformation on the 
-#' \code{geometry} column. This can get nice for visualization and works with
-#' points, lines and polygons.
-#'
-#' @param data an object of class \code{sf}
-#' @param x_add integer; x value to move geometry in space
-#' @param y_add integer; x value to move geometry in space
-#'
-#' #' @importFrom magrittr %>%
-
-rotate_sf <- function(data, x_add = 0, y_add = 0) {
-  
-  shear_matrix <- function (x) { 
-    matrix(c(2, 1.2, 0, 1), 2, 2) 
-  }
-  
-  rotate_matrix <- function(x) { 
-    matrix(c(cos(x), sin(x), -sin(x), cos(x)), 2, 2) 
-  }
-  
-  data %>% 
-    dplyr::mutate(
-      geometry = 
-        .$geometry * shear_matrix() * rotate_matrix(pi / 20) + c(x_add, y_add)
-    )
-}
-
-####################################
-##################################
-###################################
-############################
-### Bird data
-
-mil <-read.csv("results/milmig.csv")
-mil$det_prob <- rowSums(mil[, 2:11], na.rm = T) / mil$n_observations
-
-mil$duration_minutes <- rowSums(mil[, 52:61], na.rm = T)/ mil$n_observations
-
-
-#############################
-mil_sf <- sf::st_as_sf(mil, coords = c('longitude', 'latitude'), crs = sf::st_crs(spain_crop))
-
-observed_raster <- raster::rasterize(mil_sf, variables[[1]], 'det_prob')
-observed_sf <- raster::rasterToPolygons(observed_raster)
-observed_sf <- sf::st_as_sf(observed_sf)
-
-duration_raster  <- raster::rasterize(mil_sf, variables[[1]], 'duration_minutes', 'first')
-duration_sf <- raster::rasterToPolygons(duration_raster)
-duration_sf <- sf::st_as_sf(duration_sf)
-
-water_raster <- raster::rasterize(mil_sf, variables[[1]], 'distance_to_water', 'first')
-water_sf <- raster::rasterToPolygons(water_raster)
-water_sf <- sf::st_as_sf(water_sf)
-
-
-annotation <- data.frame(
-  x = c(59,59,59),
-  y = c(35.8, 28, 19.8),
-  label = c("Detection probability",
-            "Observational covariate:\n Mean duration of observations",
-            "Site covariate:\n Distance to water"))
-
-
-
-ggplot()+
-  
-  geom_segment(aes(x = 38.8, y = 20.3, xend = 38.8, yend = 36.4), size=0.1)+
-  geom_segment(aes(x = 35.25225, y = 16, xend = 35.25225, yend = 32.1), size=0.1)+
-  geom_segment(aes(x = 63.30569, y = 16.9, xend = 63.30569, yend = 32.8), size=0.1)+
-  
-  
-  geom_sf(data=rotate_sf(spain_crop), fill='white', size=0.3)+
-  geom_sf(data=rotate_sf(observed_sf), aes(fill=layer), color=NA)+
-  scale_fill_distiller(palette = "YlGn",
-                       direction = 1,
-                       guide = FALSE) +
-  
-  new_scale_fill() +
-  geom_sf(data=rotate_sf(spain_crop, y_add = -8), fill='white', size=0.3)+
-  geom_sf(data=rotate_sf(duration_sf, y_add = -8), aes(fill=layer), color=NA)+
-  scale_fill_distiller(palette = "Reds",
-                       direction = 1,
-                       guide = FALSE) +
-  
-  new_scale_fill() +
-  geom_sf(data=rotate_sf(spain_crop, y_add = -16), fill='white', size=0.3)+
-  geom_sf(data=rotate_sf(water_sf, y_add = -16), aes(fill=layer), color=NA)+
-  scale_fill_distiller(palette = "Blues",
-                       direction = -1,
-                       guide = FALSE)+
-  
-  geom_label(data=annotation, aes( x=x, y=y, label=label),
-             color="black", 
-             size=9, label.size=0,family="LM Roman 10")+
-  
-  theme(legend.position = "none") +
-  ggsn::blank()
-
-ggsave('results/visualization_occupancy_model.png', width=18, height=15)
-

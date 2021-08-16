@@ -1,0 +1,141 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn} \PYG{k+kn}{import} \PYG{n}{model\PYGZus{}selection}\PYG{p}{,} \PYG{n}{preprocessing}
+\PYG{k+kn}{from} \PYG{n+nn}{imblearn} \PYG{k+kn}{import} \PYG{n}{ensemble}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{rcParams}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}font.family\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}sans\PYGZhy{}serif\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}font.sans\PYGZhy{}serif\PYGZdq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Latin Modern Roman\PYGZdq{}}\PYG{p}{]\PYGZcb{})}
+
+\PYG{n}{data} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}milmig.csv\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} observational covariates}
+\PYG{n}{observational\PYGZus{}covariates} \PYG{o}{=} \PYG{n}{data}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,} \PYG{l+s+s1}{\PYGZsq{}time\PYGZus{}observations\PYGZus{}started.1\PYGZsq{}}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}day\PYGZus{}of\PYGZus{}year.10\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{observational\PYGZus{}covariates}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,}\PYG{l+s+s1}{\PYGZsq{}site\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{data}\PYG{o}{.}\PYG{n}{site}
+\PYG{n}{stubnames} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}time\PYGZus{}observations\PYGZus{}started.\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}duration\PYGZus{}minutes.\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}effort\PYGZus{}distance\PYGZus{}km.\PYGZsq{}}\PYG{p}{,}
+             \PYG{l+s+s1}{\PYGZsq{}number\PYGZus{}observers.\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}day\PYGZus{}of\PYGZus{}year.\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}protocol\PYGZus{}type.\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{obs\PYGZus{}covariates\PYGZus{}long} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{wide\PYGZus{}to\PYGZus{}long}\PYG{p}{(}\PYG{n}{observational\PYGZus{}covariates}\PYG{p}{,}
+                                      \PYG{n}{stubnames}\PYG{p}{,}
+                                      \PYG{n}{i}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}site\PYGZsq{}}\PYG{p}{,}
+                                      \PYG{n}{j}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}observation\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{obs\PYGZus{}covariates\PYGZus{}long} \PYG{o}{=} \PYG{n}{obs\PYGZus{}covariates\PYGZus{}long}\PYG{o}{.}\PYG{n}{rename}\PYG{p}{(}
+    \PYG{n}{columns}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}time\PYGZus{}observations\PYGZus{}started.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}daytime\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}duration\PYGZus{}minutes.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}effort\PYGZus{}distance\PYGZus{}km.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}distance\PYGZus{}km\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}number\PYGZus{}observers.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}n\PYGZus{}observers\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}day\PYGZus{}of\PYGZus{}year.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}day\PYGZus{}of\PYGZus{}year\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}protocol\PYGZus{}type.\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}protocol\PYGZus{}type\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{n}{obs\PYGZus{}covariates\PYGZus{}long}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}protocol\PYGZus{}type\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{preprocessing}\PYG{o}{.}\PYG{n}{LabelEncoder}\PYG{p}{()}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}
+    \PYG{n}{obs\PYGZus{}covariates\PYGZus{}long}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}protocol\PYGZus{}type\PYGZsq{}}\PYG{p}{])}
+\PYG{n}{sc} \PYG{o}{=} \PYG{n}{preprocessing}\PYG{o}{.}\PYG{n}{StandardScaler}\PYG{p}{(}\PYG{n}{with\PYGZus{}mean}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{with\PYGZus{}std}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+\PYG{n}{obs\PYGZus{}covariates\PYGZus{}transformed} \PYG{o}{=} \PYG{n}{sc}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{obs\PYGZus{}covariates\PYGZus{}long}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} site covariates}
+\PYG{n}{site\PYGZus{}covariates} \PYG{o}{=} \PYG{n}{data}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,} \PYG{l+s+s1}{\PYGZsq{}bio1\PYGZsq{}}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}marshes\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{site\PYGZus{}covariates\PYGZus{}long} \PYG{o}{=} \PYG{n}{site\PYGZus{}covariates}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}
+    \PYG{n}{np}\PYG{o}{.}\PYG{n}{tile}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{site\PYGZus{}covariates}\PYG{p}{)),} \PYG{l+m+mi}{10}\PYG{p}{)]}
+
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} join covariates to one table}
+\PYG{n}{covs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{concatenate}\PYG{p}{((}\PYG{n}{site\PYGZus{}covariates\PYGZus{}long}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}
+                       \PYG{n}{obs\PYGZus{}covariates\PYGZus{}transformed}\PYG{p}{),}
+                      \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{column\PYGZus{}names} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{site\PYGZus{}covariates\PYGZus{}long}\PYG{o}{.}\PYG{n}{columns}\PYG{p}{,}
+                         \PYG{n}{obs\PYGZus{}covariates\PYGZus{}long}\PYG{o}{.}\PYG{n}{columns}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} detection}
+\PYG{n}{observed} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{melt}\PYG{p}{(}\PYG{n}{data}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,} \PYG{l+s+s1}{\PYGZsq{}y.1\PYGZsq{}}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}y.10\PYGZsq{}}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} simulation}
+\PYG{n}{n\PYGZus{}sim} \PYG{o}{=} \PYG{l+m+mi}{500}
+
+\PYG{n}{feature\PYGZus{}imp} \PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{pred\PYGZus{}data\PYGZus{}all} \PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n\PYGZus{}sim}\PYG{p}{):}
+
+    \PYG{n}{random\PYGZus{}numbers} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randint}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{data}\PYG{o}{.}\PYG{n}{n\PYGZus{}observations}\PYG{p}{)}
+
+    \PYG{n}{y} \PYG{o}{=} \PYG{n}{observed}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{random\PYGZus{}numbers}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{n}{x} \PYG{o}{=} \PYG{n}{covs}\PYG{p}{[}\PYG{n}{random\PYGZus{}numbers}\PYG{p}{,} \PYG{p}{:]}
+
+    \PYG{n}{x\PYGZus{}train}\PYG{p}{,} \PYG{n}{x\PYGZus{}test}\PYG{p}{,} \PYG{n}{y\PYGZus{}train}\PYG{p}{,} \PYG{n}{y\PYGZus{}test} \PYG{o}{=} \PYG{n}{model\PYGZus{}selection}\PYG{o}{.}\PYG{n}{train\PYGZus{}test\PYGZus{}split}\PYG{p}{(}
+        \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{test\PYGZus{}size}\PYG{o}{=}\PYG{l+m+mf}{0.0001}\PYG{p}{)}
+    \PYG{n}{clf} \PYG{o}{=} \PYG{n}{ensemble}\PYG{o}{.}\PYG{n}{BalancedRandomForestClassifier}\PYG{p}{()}
+
+    \PYG{n}{clf}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{x\PYGZus{}train}\PYG{p}{,} \PYG{n}{y\PYGZus{}train}\PYG{p}{)}
+    \PYG{n}{feature\PYGZus{}imp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{clf}\PYG{o}{.}\PYG{n}{feature\PYGZus{}importances\PYGZus{}}\PYG{p}{)}
+
+    \PYG{n}{predict\PYGZus{}data\PYGZus{}list} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n}{column\PYGZus{}names}\PYG{p}{:}
+        \PYG{n}{mean\PYGZus{}x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{dummy\PYGZus{}data} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{tile}\PYG{p}{(}\PYG{n}{mean\PYGZus{}x}\PYG{p}{[:,} \PYG{k+kc}{None}\PYG{p}{],} \PYG{l+m+mi}{50}\PYG{p}{)}
+        \PYG{n}{covariate} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{)}
+        \PYG{n}{dummy\PYGZus{}data}\PYG{p}{[}\PYG{n}{column\PYGZus{}names} \PYG{o}{==} \PYG{n}{name}\PYG{p}{]} \PYG{o}{=} \PYG{n}{covariate}
+        \PYG{n}{pred} \PYG{o}{=} \PYG{n}{clf}\PYG{o}{.}\PYG{n}{predict\PYGZus{}proba}\PYG{p}{(}\PYG{n}{dummy\PYGZus{}data}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}
+        \PYG{n}{predict\PYGZus{}data\PYGZus{}list}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{pred}\PYG{p}{[:,} \PYG{l+m+mi}{1}\PYG{p}{])}
+
+    \PYG{n}{pred\PYGZus{}data\PYGZus{}all}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{predict\PYGZus{}data\PYGZus{}list}\PYG{p}{)}
+
+
+\PYG{n}{feature\PYGZus{}imp} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{feature\PYGZus{}imp}\PYG{p}{)}
+\PYG{n}{importance} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{feature\PYGZus{}imp}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{importance\PYGZus{}sd} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{feature\PYGZus{}imp}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{n\PYGZus{}sim}\PYG{p}{)}
+
+\PYG{n}{proper\PYGZus{}names} \PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}bio1\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Annual Mean Temperature\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio2\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mean Diurnal Range\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio3\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Isothermality\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio4\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Temperature Seasonality\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio5\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Max Temperature of Warmest Month\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio7\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Temperature Annual Range\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio9\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mean Temperature of Driest Quarter\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio10\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mean Temperature of Warmest Quarter\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio12\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Annual Precipitation\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio17\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Precipitation of Driest Quarter\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}bio18\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Precipitation of Warmest Quarter\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}water\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Distance to closest river or lake\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}landfill\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Distance to closest landfill\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}n\PYGZus{}observers\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Number of observers\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Duration of observation\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{val} \PYG{o+ow}{in} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{proper\PYGZus{}names}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{(),} \PYG{n}{proper\PYGZus{}names}\PYG{o}{.}\PYG{n}{values}\PYG{p}{()):}
+    \PYG{n}{column\PYGZus{}names}\PYG{p}{[}\PYG{n}{key} \PYG{o}{==} \PYG{n}{column\PYGZus{}names}\PYG{p}{]} \PYG{o}{=} \PYG{n}{val}
+
+\PYG{n}{filter\PYGZus{}index} \PYG{o}{=} \PYG{n}{importance} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.02}
+\PYG{n}{selected\PYGZus{}columns} \PYG{o}{=} \PYG{n}{column\PYGZus{}names}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{]}
+\PYG{n}{selected\PYGZus{}columns}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{barh}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{selected\PYGZus{}columns}\PYG{p}{)),} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{importance}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{]),}
+         \PYG{n}{xerr}\PYG{o}{=}\PYG{n}{importance\PYGZus{}sd}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{][}\PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{importance}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{])],}
+         \PYG{n}{align}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}center\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}21918C\PYGZsq{}}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m+mf}{0.7}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{yticks}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{importance}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{])),}
+           \PYG{n}{selected\PYGZus{}columns}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{importance}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{])],} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{12}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Importance of covariates\PYGZsq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{12}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{tight\PYGZus{}layout}\PYG{p}{()}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}importance\PYGZus{}features.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{dpi}\PYG{o}{=}\PYG{l+m+mi}{300}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{n}{pred\PYGZus{}data\PYGZus{}all} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{pred\PYGZus{}data\PYGZus{}all}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{))}
+
+\PYG{k}{for} \PYG{n}{i}\PYG{p}{,} \PYG{n}{name} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}
+        \PYG{n}{selected\PYGZus{}columns}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{importance}\PYG{p}{[}\PYG{n}{filter\PYGZus{}index}\PYG{p}{])][::}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]):}
+    \PYG{k}{if} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{4}\PYG{p}{:}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplot}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{n}{data} \PYG{o}{=} \PYG{n}{pred\PYGZus{}data\PYGZus{}all}\PYG{p}{[:,} \PYG{n}{column\PYGZus{}names} \PYG{o}{==} \PYG{n}{name}\PYG{p}{,} \PYG{p}{:]}
+        \PYG{n}{y\PYGZus{}pred} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)[}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{),} \PYG{n}{y\PYGZus{}pred}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}.\PYGZhy{}k\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{tight\PYGZus{}layout}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}response.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{dpi}\PYG{o}{=}\PYG{l+m+mi}{300}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}

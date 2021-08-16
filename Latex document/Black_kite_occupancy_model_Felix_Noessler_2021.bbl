@@ -57,7 +57,7 @@
       \verb 10.1126/science.1131758
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1396.full.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Ara{\'{u}}jo, Rahbek{\_}2006{\_}How does climate change affect biodiversity.pdf:pdf
       \endverb
     \endentry
     \entry{Barton2020}{manual}{}
@@ -148,7 +148,7 @@
       \verb 10.1111/j.1461-0248.2011.01736.x
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Bellardetal.-2012-Impactsofclimatechangeonthefutureofbiodiversity.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Bellard et al.{\_}2012{\_}Impacts of climate change on the future of biodiversity.pdf:pdf
       \endverb
       \keyw{Biodiversity,Climate change,Species extinctions}
     \endentry
@@ -235,6 +235,7 @@
       \strng{authorbibnamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
       \strng{authornamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
       \strng{authorfullhash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \field{extraname}{1}
       \field{sortinit}{B}
       \field{sortinithash}{8de16967003c7207dae369d874f1456e}
       \field{extradatescope}{labelyear}
@@ -250,9 +251,44 @@
       \field{pages}{242\bibrangedash 245}
       \range{pages}{4}
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/p00242-p00245.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Blanco{\_}1994{\_}Seasonal aboundance of Black kites associated with the rubbish dump of Madrid, Spain.pdf:pdf
       \endverb
       \keyw{black kite,madrid,milvus migrans,rubbish}
+    \endentry
+    \entry{Blanco1997}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8b1534f3a11e99e9bb52c2967405c2ef}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={Guillermo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{fullhash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{bibnamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authorbibnamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authornamehash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \strng{authorfullhash}{8b1534f3a11e99e9bb52c2967405c2ef}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The use of refuse by breeding, floating, and migrating Black Kites (Milvus migrans) was studied near a large garbage dump in Madrid, Spain. Refuse was an important food resource for nonbreeding Black Kites, especially migrants that fed almost exclusively at the garbage dump. The dump was only of secondary and variable importance for kites during the breeding season. Pairs of breeding kites nesting in nearby wooded areas foraged mainly on a wide variety of wild prey and only sporadically ate refuse at the dump. Floaters roosted in nearby wooded areas but, unlike breeding pairs, they foraged mainly by scavenging at the dump. Exploitation of food resources other than refuse by breeding kites may be due to their need for large amounts of prey biomass for brood provisioning. Perhaps dumps augment populations of Black Kites by providing rich foraging areas where large numbers of nonbreeding and migratory kites can scavenge for food. © 1997 The Raptor Research Foundation, Inc.}
+      \field{journaltitle}{Journal of Raptor Research}
+      \field{number}{1}
+      \field{title}{{Role of refuse as food for migrant, floater and breeding Black Kites (Milvus migrans)}}
+      \field{volume}{31}
+      \field{year}{1997}
+      \field{pages}{71\bibrangedash 76}
+      \range{pages}{6}
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Blanco{\_}1997{\_}Role of refuse as food for migrant, floater and breeding Black Kites (Milvus migrans).pdf:pdf
+      \endverb
+      \keyw{Black Kite,Foraging,Garbage dump,Milvus migrans,Refuse}
     \endentry
     \entry{Blas2009}{article}{}
       \name{author}{3}{}{%
@@ -299,7 +335,7 @@
       \verb 10.1111/j.1600-0587.2008.05700.x
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/j.1600-0587.2008.05700.x.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Blas, Sergio, Hiraldo{\_}2009{\_}Age-related improvement in reproductive performance in a long-lived raptor A cross-sectional and longitudinal.pdf:pdf
       \endverb
     \endentry
     \entry{Buchhorn2020}{article}{}
@@ -364,7 +400,7 @@
       \verb 10.3390/rs12061044
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/remotesensing-12-01044.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Buchhorn et al.{\_}2020{\_}Copernicus Global Land Cover Layers Collection 2.pdf:pdf
       \endverb
     \endentry
     \entry{land_cover_data}{dataset}{}
@@ -541,7 +577,7 @@
       \verb 10.3356/JRR-07-09.1
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/JRR-07-09.1.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/De Giacomo, Guerrieri{\_}2008{\_}The feeding behavior of the Black Kite (Milvus migrans) in the rubbish dump of Rome.pdf:pdf
       \endverb
       \keyw{Black Kite,Cleptoparasitism,Dump,Feeding behavior,Milvus migrans,Urban}
     \endentry
@@ -638,7 +674,7 @@
       \verb 10.13157/arla.63.1.2016.rp8
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/arla.63.1.2016.rp8.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Don{\'{a}}zar et al.{\_}2016{\_}Roles of Raptors in a Changing World From Flagships to Providers of Key Ecosystem Services.pdf:pdf
       \endverb
       \keyw{animal ecology,birds of prey,conservation,cultural services,global change,humanwildlife conflicts,pest control,predation,regulating services,rewilding,supporting services,urban habitats}
     \endentry
@@ -681,7 +717,7 @@
       \verb 10.1002/joc.5086
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/joc.5086.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Fick, Hijmans{\_}2017{\_}WorldClim 2 new 1-km spatial resolution climate surfaces for global land areas.pdf:pdf
       \endverb
       \keyw{MODIS,WorldClim,climate surfaces,cloud cover,interpolation,land surface temperature,solar radiation,vapour pressure,wind speed}
     \endentry
@@ -772,8 +808,57 @@
       \verb 10.1126/science.1247579
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1247579.full.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Garcia et al.{\_}2014{\_}Multiple dimensions of climate change and their implications for biodiversity.pdf:pdf
       \endverb
+    \endentry
+    \entry{Green2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=50659b00663b74cf1499ea8d7d4184f7}{%
+           family={Green},
+           familyi={G\bibinitperiod},
+           given={Adam\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b5eb057027f06947764d9b05319b053f}{%
+           family={Pavlacky},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b719629deba342d393809964cbaa436}{%
+           family={George},
+           familyi={G\bibinitperiod},
+           given={T.\bibnamedelimi Luke},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5a160887dcb3437476879cb48c9a5c4b}
+      \strng{fullhash}{50f85411e4f094758b2f758beaa9a200}
+      \strng{bibnamehash}{50f85411e4f094758b2f758beaa9a200}
+      \strng{authorbibnamehash}{50f85411e4f094758b2f758beaa9a200}
+      \strng{authornamehash}{5a160887dcb3437476879cb48c9a5c4b}
+      \strng{authorfullhash}{50f85411e4f094758b2f758beaa9a200}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Distribution models are increasingly being used to understand how landscape and climatic changes are affecting the processes driving spatial and temporal distributions of plants and animals. However, many modeling efforts ignore the dynamic processes that drive distributional patterns at different scales, which may result in misleading inference about the factors influencing species distributions. Current occupancy models allow estimation of occupancy at different scales and, separately, estimation of immigration and emigration. However, joint estimation of local extinction, colonization, and occupancy within a multi-scale model is currently unpublished. We extended multi-scale models to account for the dynamic processes governing species distributions, while concurrently modeling local-scale availability. We fit the model to data for lark buntings and chestnut-collared longspurs in the Great Plains, USA, collected under the Integrated Monitoring in Bird Conservation Regions program. We investigate how the amount of grassland and shrubland and annual vegetation conditions affect bird occupancy dynamics and local vegetation structure affects fine-scale occupancy. Buntings were prevalent and longspurs rare in our study area, but both species were locally prevalent when present. Buntings colonized sites with preferred habitat configurations, longspurs colonized a wider range of landscape conditions, and site persistence of both was higher at sites with greener vegetation. Turnover rates were high for both species, quantifying the nomadic behavior of the species. Our model allows researchers to jointly investigate temporal dynamics of species distributions and hierarchical habitat use. Our results indicate that grassland birds respond to different covariates at landscape and local scales suggesting different conservation goals at each scale. High turnover rates of these species highlight the need to account for the dynamics of nomadic species, and our model can help inform how to coordinate management efforts to provide appropriate habitat configurations at the landscape scale and provide habitat targets for local managers.}
+      \field{journaltitle}{Ecology and Evolution}
+      \field{number}{2}
+      \field{title}{{A dynamic multi-scale occupancy model to estimate temporal dynamics and hierarchical habitat use for nomadic species}}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{pages}{793\bibrangedash 803}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1002/ece3.4822
+      \endverb
+      \verb{file}
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Green, Pavlacky, George{\_}2019{\_}A dynamic multi-scale occupancy model to estimate temporal dynamics and hierarchical habitat use for nomadi.pdf:pdf
+      \endverb
+      \keyw{chestnut-collared longspur,detection,dynamic,grassland,hierarchical habitat selection,lark bunting,multi-scale,occupancy}
     \endentry
     \entry{numpy}{article}{}
       \name{author}{26}{}{%
@@ -1064,7 +1149,7 @@
       \verb 10.1109/ICDAR.1995.598994
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/odt.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Ho{\_}1995{\_}Random decision forests.pdf:pdf
       \endverb
     \endentry
     \entry{matplotlib}{article}{}
@@ -1278,7 +1363,7 @@
       \field{pages}{1\bibrangedash 5}
       \range{pages}{5}
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/16-365.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Lema{\^{i}}tre, Nogueira, Aridas{\_}2017{\_}Imbalanced-learn A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning.pdf:pdf
       \endverb
       \verb{urlraw}
       \verb http://jmlr.org/papers/v18/16-365
@@ -1326,7 +1411,7 @@
       \verb 10.1198/108571104X3361
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/MacKenzie-Bailey2004{\_}Article{\_}AssessingTheFitOfSite-occupanc.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/MacKenzie, Bailey{\_}2004{\_}Assessing the fit of site-occupancy models.pdf:pdf
       \endverb
       \keyw{Goodness-of-fit,Model fit,Patch occupancy,Plethodon glutinosus,Plethodon oconluftee}
     \endentry
@@ -1393,7 +1478,7 @@
       \verb 10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/mackenzie 2002.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/MacKenzie et al.{\_}2002{\_}Estimating site occupancy rates when detection probabilities are less than one.pdf:pdf
       \endverb
       \keyw{Anurans,Bootstrap,Bufo americanus,Detection probability,Maximum likelihood,Metapopulation,Monitoring,Patch occupancy,Pseudacris crucifer,Site occupancy}
     \endentry
@@ -1508,7 +1593,7 @@
       \verb 10.1093/biomet/78.3.691
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/78-3-691.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Nagelkerke{\_}1991{\_}A note on a general definition of the coefficient of determination.pdf:pdf
       \endverb
       \keyw{Log likelihood,Multiple correlation coefficient,Regression model,Residual variation,Some key words: Discrete probability}
     \endentry
@@ -1567,7 +1652,7 @@
       \verb 10.1080/03949370.2013.812147
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Circannual variation in movement patterns of the Black Kite Milvus migrans migrans a review.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Panuccio et al.{\_}2014{\_}Circannual variation in movement patterns of the Black Kite (Milvus migrans migrans) A review.pdf:pdf
       \endverb
       \keyw{Black Kite,Mediterranean Sea,Milvus migrans migrans,dispersal behaviour,migration}
     \endentry
@@ -1689,7 +1774,7 @@
       \field{pages}{2825\bibrangedash 2830}
       \range{pages}{6}
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/pedregosa11a.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Pedregosa et al.{\_}2011{\_}Scikit-learn Machine Learning in Python.pdf:pdf
       \endverb
       \verb{urlraw}
       \verb http://jmlr.org/papers/v12/pedregosa11a.html
@@ -1806,7 +1891,7 @@
       \verb 10.1111/2041-210X.13002
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/2041-210X.13002.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Reich, Pacifici, Stallings{\_}2018{\_}Integrating auxiliary data in optimal spatial design for species distribution modelling.pdf:pdf
       \endverb
       \keyw{Bayesian inference,citizen science,exchange algorithm,geostatistics,imperfect detection,occupancy}
     \endentry
@@ -2115,7 +2200,7 @@
       \verb 10.1016/j.gloenvcha.2016.05.009
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1-s2.0-S0959378016300681-main.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Riahi et al.{\_}2017{\_}The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications An overview.pdf:pdf
       \endverb
       \keyw{Adaptation,Climate change,Community scenarios,Mitigation,RCP,SSP,Shared Socioeconomic Pathways}
     \endentry
@@ -2164,7 +2249,7 @@
       \verb 10.1111/ddi.12698
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ddi.12698.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Robinson, Ruiz-Gutierrez, Fink{\_}2018{\_}Correcting for bias in distribution modelling for rare species using citizen science data.pdf:pdf
       \endverb
       \keyw{citizen science,class imbalance,random forest,spatial bias,species distribution model,tricoloured blackbird}
     \endentry
@@ -2204,7 +2289,7 @@
       \field{pages}{207\bibrangedash 217}
       \range{pages}{11}
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/BlackkitebreedingecologyAlpsJRR1999.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Sergio, Boto{\_}1999{\_}Nest dispersion, diet, and breeding success of Black Kites (Milvus migrans) in the Italian pre-Alps.pdf:pdf
       \endverb
       \keyw{Black Kite,Breeding success,Coloniality,Density,Diet,Italy,Milvus migrans}
     \endentry
@@ -2284,7 +2369,7 @@
       \verb 10.1111/ddi.12985
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ddi.12985.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Steen, Elphick, Tingley{\_}2019{\_}An evaluation of stringent filtering to improve species distribution models from citizen science data.pdf:pdf
       \endverb
       \keyw{citizen science,culling,data filtering,eBird,model evaluation,observer expertise,occurrence data,species distribution models,survey effort}
     \endentry
@@ -2354,7 +2439,7 @@
       \verb 10.1016/j.biocon.2009.05.006
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/22Sullivanetal.2009BiologicalCons.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Sullivan et al.{\_}2009{\_}eBird A citizen-based bird observation network in the biological sciences.pdf:pdf
       \endverb
       \keyw{Bird observations,Citizen-science,Observation network,Scale-dependent analysis,eBird}
     \endentry
@@ -2417,7 +2502,7 @@
       \verb 10.1016/j.biocon.2012.12.031
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/1-s2.0-S0006320712005307-main.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Tanferna et al.{\_}2013{\_}Habitat selection by Black kite breeders and floaters Implications for conservation management of raptor floaters.pdf:pdf
       \endverb
       \keyw{Black kite,Habitat restoration,Habitat selection,Milvus migrans,Non-breeders,Radio-tracking}
     \endentry
@@ -2578,7 +2663,7 @@
       \verb 10.1126/science.aad8466
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/aad8466.full.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Urban et al.{\_}2016{\_}Improving the forecast for biodiversity under climate change.pdf:pdf
       \endverb
     \endentry
     \entry{python}{book}{}
@@ -2657,7 +2742,7 @@
       \verb 10.1111/j.1600-0587.1990.tb00590.x
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/3682346.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Veiga, Hiraldo{\_}1990{\_}Food habits and the survival and growth of nestlings in two sympatric kites (Milvus milvus and Milvus migrans).pdf:pdf
       \endverb
     \endentry
     \entry{Vinuela1992}{article}{}
@@ -2699,7 +2784,7 @@
       \verb 10.2307/3676440
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/3676440.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Vinuela, Veiga{\_}1992{\_}Importance of rabbits in the diet and reproductive success of black kites in southwestern Spain.pdf:pdf
       \endverb
     \endentry
     \entry{Wagenmakers2004}{article}{}
@@ -2740,7 +2825,7 @@
       \verb 10.3758/BF03206482
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/Wagenmakers-Farrell2004{\_}Article{\_}AICModelSelectionUsingAkaikeWe.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Wagenmakers, Farrell{\_}2004{\_}AIC model selection using Akaike weights.pdf:pdf
       \endverb
     \endentry
     \entry{ggplot2}{book}{}
@@ -2936,7 +3021,7 @@
       \verb 10.1111/ecog.04960
       \endverb
       \verb{file}
-      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/black kite latex/lit/ecog.04960.pdf:pdf
+      \verb :home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/Latex document/lit/Zurell et al.{\_}2020{\_}A standard protocol for reporting species distribution models.pdf:pdf
       \endverb
       \keyw{Shiny,biodiversity assessment,ecological niche model,habitat suitability model,reproducibility,transparency}
     \endentry

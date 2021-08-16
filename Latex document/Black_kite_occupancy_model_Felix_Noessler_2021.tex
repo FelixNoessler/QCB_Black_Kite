@@ -10,10 +10,9 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{stfloats}
-%\usepackage{multirow}
 \usepackage{siunitx}
 
-\usepackage{wrapfig}
+\usepackage{tcolorbox}
 
 
 \usepackage{multicol}
@@ -66,7 +65,6 @@
 
 \input{main_text.tex}
 
-\newpage
 % change url of aemet reference at the end
 % shortauthor field aemet
 \printbibliography
@@ -107,16 +105,29 @@ The appendix consists of extra graphics and code for repeating the analysis.
 	\label{fig:avg_map}
 \end{figure}
 
-
+\newpage
 \subsection*{Code}
-The data and the R Code can be found at \\ \url{https://github.com/FelixNoessler/QCB_Black_Kite} \\
+The data and the R and Python Code can be found at \\ \url{https://github.com/FelixNoessler/QCB_Black_Kite} \\
 
-\noindent
-The R-script for running the analysis is also embedded here:
+\noindent The R-scripts for running the analysis are also embedded here (Python script is further down on page \pageref{python-script}):
 
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\small,linenos, bgcolor=mygray]{R}{code/1_prepare_env_data.R}
 
-%\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=mygray,fontsize=\small,linenos]{R}{one_script.R}
+\newpage
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\small,linenos, bgcolor=mygray]{R}{code/2_join_species_env_data.R}
 
+\newpage
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\small,linenos, bgcolor=mygray]{R}{code/3_selection_of_covariates.R}
+
+\newpage
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\small,linenos, bgcolor=mygray]{R}{code/4_run_models.R}
+
+\newpage
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\small,linenos, bgcolor=mygray]{R}{code/5_plotting.R}
+
+\newpage
+\noindent Python script for running the Random Forest model: \label{python-script}
+\inputminted[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=mygray,fontsize=\small,linenos]{Python}{code/rf.py}
 
 
 

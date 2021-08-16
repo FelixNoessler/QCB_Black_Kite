@@ -1,0 +1,386 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Fifth script}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}   Make all plots:}
+\PYG{c+c1}{\PYGZsh{}       \PYGZhy{} Maps}
+\PYG{c+c1}{\PYGZsh{}       \PYGZhy{} response of occupancy due to covariates}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{dplyr}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{ggplot2}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Load data \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nf}{load}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}models.rda\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{change} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{read.csv}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/change\PYGZus{}temp\PYGZus{}prec.csv\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{variables} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{raster}\PYG{o}{::}\PYG{n+nf}{brick}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}data/environmental\PYGZus{}data/variables\PYGZus{}spain.grd\PYGZdq{}}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Prepare data for predictions \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{variables\PYGZus{}selection} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}bio1\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}bio3\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}bio12\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}tree\PYGZus{}cover\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}grass\PYGZus{}cover\PYGZdq{}}\PYG{p}{,} 
+                         \PYG{l+s}{\PYGZdq{}bare\PYGZus{}soil\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}water\PYGZdq{}}\PYG{p}{,}
+                         \PYG{l+s}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}landfill\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{variables.sel} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{variables}\PYG{p}{[[}\PYG{n}{variables\PYGZus{}selection}\PYG{p}{]]}
+
+\PYG{n}{p\PYGZus{}variables} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{n}{raster}\PYG{o}{::}\PYG{n+nf}{rasterToPoints}\PYG{p}{(}\PYG{n}{variables.sel}\PYG{p}{)} \PYG{p}{)}
+\PYG{n}{p\PYGZus{}variables} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{p\PYGZus{}variables} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{drop\PYGZus{}na}\PYG{p}{(}\PYG{n}{tree\PYGZus{}cover}\PYG{p}{,} \PYG{n}{bio1}\PYG{p}{)}
+
+\PYG{n}{change}
+
+
+
+\PYG{n}{change\PYGZus{}joined} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{p\PYGZus{}variables} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+  \PYG{n+nf}{left\PYGZus{}join}\PYG{p}{(}\PYG{n}{change}\PYG{p}{,} \PYG{n}{by} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}y\PYGZsq{}}\PYG{p}{))} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,} \PYG{n}{temperature}\PYG{p}{,} \PYG{n}{precipitation}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{temperature} \PYG{o}{=} \PYG{n}{temperature} \PYG{o}{*} \PYG{l+m}{10}\PYG{p}{,}
+         \PYG{n}{precipitation} \PYG{o}{=} \PYG{l+m}{1} \PYG{o}{+} \PYG{n}{precipitation}\PYG{o}{/}\PYG{l+m}{100}\PYG{p}{)}
+
+\PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{change\PYGZus{}joined}\PYG{o}{\PYGZdl{}}\PYG{n}{temperature}\PYG{p}{,} \PYG{n}{na.rm}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}\PYG{o}{/}\PYG{l+m}{10}
+\PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{change\PYGZus{}joined}\PYG{o}{\PYGZdl{}}\PYG{n}{precipitation}\PYG{p}{,} \PYG{n}{na.rm}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}
+
+
+
+\PYG{n}{p\PYGZus{}variables\PYGZus{}std} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{p\PYGZus{}variables} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+  \PYG{n+nf}{mutate\PYGZus{}at}\PYG{p}{(}\PYG{n}{variables\PYGZus{}selection}\PYG{p}{,} \PYG{o}{\PYGZti{}}\PYG{p}{(}\PYG{n+nf}{scale}\PYG{p}{(}\PYG{n}{.}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} \PYG{n}{as.vector}\PYG{p}{))}
+
+\PYG{n}{sd\PYGZus{}bio1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio1}\PYG{p}{)}
+\PYG{n}{mean\PYGZus{}bio1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio1}\PYG{o}{/} \PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio1}\PYG{p}{))}
+
+\PYG{n}{sd\PYGZus{}bio12} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio12}\PYG{p}{)}
+\PYG{n}{mean\PYGZus{}bio12} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio12}\PYG{o}{/} \PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio12}\PYG{p}{))}
+
+\PYG{n}{p\PYGZus{}variables\PYGZus{}std\PYGZus{}future} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{p\PYGZus{}variables\PYGZus{}std}
+\PYG{n}{p\PYGZus{}variables\PYGZus{}std\PYGZus{}future}\PYG{o}{\PYGZdl{}}\PYG{n}{bio1} \PYG{o}{\PYGZlt{}\PYGZhy{}} 
+  \PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio1} \PYG{o}{+} \PYG{n}{change\PYGZus{}joined}\PYG{o}{\PYGZdl{}}\PYG{n}{temperature}\PYG{p}{)} \PYG{o}{/} \PYG{n}{sd\PYGZus{}bio1} \PYG{o}{\PYGZhy{}} \PYG{n}{mean\PYGZus{}bio1}
+\PYG{n}{p\PYGZus{}variables\PYGZus{}std\PYGZus{}future}\PYG{o}{\PYGZdl{}}\PYG{n}{bio12} \PYG{o}{\PYGZlt{}\PYGZhy{}} 
+  \PYG{p}{(}\PYG{n}{p\PYGZus{}variables}\PYG{o}{\PYGZdl{}}\PYG{n}{bio12} \PYG{o}{*} \PYG{n}{change\PYGZus{}joined}\PYG{o}{\PYGZdl{}}\PYG{n}{precipitation}\PYG{p}{)} \PYG{o}{/} \PYG{n}{sd\PYGZus{}bio12} \PYG{o}{\PYGZhy{}} \PYG{n}{mean\PYGZus{}bio12}
+
+\PYG{c+c1}{\PYGZsh{} Make predictions \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} actual}
+
+\PYG{c+c1}{\PYGZsh{} occ\PYGZus{}avg, best\PYGZus{}model}
+\PYG{n}{pred\PYGZus{}actual} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{unmarked}\PYG{o}{::}\PYG{n+nf}{predict}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{p}{,}
+                                 \PYG{n}{newdata} \PYG{o}{=} \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables\PYGZus{}std}\PYG{p}{,}
+                                                  \PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{),} 
+                                 \PYG{n}{type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}state\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Predicted, fit}
+\PYG{c+c1}{\PYGZsh{} SE, se.fit}
+\PYG{n}{actual\PYGZus{}climate} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bind\PYGZus{}cols}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables\PYGZus{}std}\PYG{p}{,}  
+                                   \PYG{n}{probability} \PYG{o}{=} \PYG{n}{pred\PYGZus{}actual}\PYG{o}{\PYGZdl{}}\PYG{n}{fit}\PYG{p}{,} 
+                                   \PYG{n}{SE} \PYG{o}{=} \PYG{n}{pred\PYGZus{}actual}\PYG{o}{\PYGZdl{}}\PYG{n}{se.fit}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{probability}\PYG{p}{,} \PYG{n}{SE}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{pivot\PYGZus{}longer}\PYG{p}{(}\PYG{n}{cols} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{probability}\PYG{p}{,} \PYG{n}{SE}\PYG{p}{))} 
+
+
+\PYG{c+c1}{\PYGZsh{} future}
+
+\PYG{c+c1}{\PYGZsh{} occ\PYGZus{}avg, best\PYGZus{}model}
+\PYG{n}{pred\PYGZus{}future} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{unmarked}\PYG{o}{::}\PYG{n+nf}{predict}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{p}{,}
+                                 \PYG{n}{newdata} \PYG{o}{=} \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables\PYGZus{}std\PYGZus{}future}\PYG{p}{,}
+                                                  \PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{),} 
+                                 \PYG{n}{type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}state\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Predicted, fit}
+\PYG{n}{v}
+\PYG{n}{future\PYGZus{}climate} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bind\PYGZus{}cols}\PYG{p}{(}\PYG{n}{p\PYGZus{}variables\PYGZus{}std\PYGZus{}future}\PYG{p}{,} 
+                                   \PYG{n}{probability} \PYG{o}{=} \PYG{n}{pred\PYGZus{}future}\PYG{o}{\PYGZdl{}}\PYG{n}{fit}\PYG{p}{,} 
+                                   \PYG{n}{SE} \PYG{o}{=} \PYG{n}{pred\PYGZus{}future}\PYG{o}{\PYGZdl{}}\PYG{n}{se.fit}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+  \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{probability}\PYG{p}{,} \PYG{n}{SE}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{pivot\PYGZus{}longer}\PYG{p}{(}\PYG{n}{cols} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{probability}\PYG{p}{,} \PYG{n}{SE}\PYG{p}{))} 
+
+\PYG{c+c1}{\PYGZsh{} join the data, preparation for plotting}
+\PYG{n}{data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{actual\PYGZus{}climate} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{inner\PYGZus{}join}\PYG{p}{(}\PYG{n}{future\PYGZus{}climate}\PYG{p}{,} \PYG{n}{by} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}x\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}y\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{p}{))} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{rename}\PYG{p}{(}\PYG{n}{actual} \PYG{o}{=} \PYG{n}{value.x}\PYG{p}{,}
+         \PYG{n}{future} \PYG{o}{=} \PYG{n}{value.y}\PYG{p}{,}
+         \PYG{n}{type} \PYG{o}{=} \PYG{n}{name}\PYG{p}{)}  \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{pivot\PYGZus{}longer}\PYG{p}{(}\PYG{n}{cols}\PYG{o}{=}\PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{actual}\PYG{p}{,} \PYG{n}{future}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} results/predictions\PYGZus{}best\PYGZus{}model.csv, or results/predictions\PYGZus{}avg\PYGZus{}model.csv}
+\PYG{n+nf}{write.csv}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}results/predictions\PYGZus{}avg\PYGZus{}model.csv\PYGZsq{}}\PYG{p}{,} \PYG{n}{row.names} \PYG{o}{=} \PYG{n+nb+bp}{F}\PYG{p}{)} 
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} Plotting the map}
+
+
+\PYG{c+c1}{\PYGZsh{} Plot the map \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} or load data:}
+\PYG{c+c1}{\PYGZsh{} data \PYGZlt{}\PYGZhy{} read.csv(\PYGZsq{}results/predictions\PYGZus{}best\PYGZus{}model.csv\PYGZsq{})}
+\PYG{c+c1}{\PYGZsh{} data \PYGZlt{}\PYGZhy{} read.csv(\PYGZsq{}results/predictions\PYGZus{}avg\PYGZus{}model.csv\PYGZsq{})}
+
+\PYG{n}{data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,} \PYG{n}{fill}\PYG{o}{=}\PYG{n}{value}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}raster}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}fill\PYGZus{}viridis\PYGZus{}c}\PYG{p}{(}\PYG{n}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}value\PYGZdq{}}\PYG{p}{,} \PYG{n}{option}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}turbo\PYGZdq{}}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{panel.border}\PYG{o}{=}\PYG{n+nf}{element\PYGZus{}rect}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,}\PYG{n}{fill}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}transparent\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{text} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{20}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Longitude\PYGZdq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Latitude\PYGZdq{}}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{coord\PYGZus{}fixed}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{facet\PYGZus{}grid}\PYG{p}{(}\PYG{o}{\PYGZti{}}\PYG{n}{name} \PYG{o}{\PYGZti{}} \PYG{n}{type}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{text} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{30}\PYG{p}{,} \PYG{n}{family} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}LM Roman 10\PYGZdq{}}\PYG{p}{))}
+\PYG{c+c1}{\PYGZsh{} \PYGZsq{}results/best\PYGZus{}model\PYGZus{}map.png\PYGZsq{} or \PYGZsq{}results/avg\PYGZus{}model\PYGZus{}map.png\PYGZsq{}}
+\PYG{n+nf}{ggsave}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/avg\PYGZus{}model\PYGZus{}map.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{width} \PYG{o}{=} \PYG{l+m}{16}\PYG{p}{,} \PYG{n}{height}\PYG{o}{=}\PYG{l+m}{10}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Mean probabilities}
+\PYG{n}{data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}  
+  \PYG{n+nf}{group\PYGZus{}by}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+  \PYG{n+nf}{filter}\PYG{p}{(}\PYG{n}{type} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}probability\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{summarise}\PYG{p}{(}\PYG{n}{p} \PYG{o}{=} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{value}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} sum of ells occupied}
+\PYG{n}{data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}  
+  \PYG{n+nf}{group\PYGZus{}by}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+  \PYG{n+nf}{filter}\PYG{p}{(}\PYG{n}{type} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}probability\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{occ} \PYG{o}{=} \PYG{n}{value} \PYG{o}{\PYGZgt{}=} \PYG{l+m}{0.5}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{summarise}\PYG{p}{(}\PYG{n}{s} \PYG{o}{=} \PYG{n+nf}{sum}\PYG{p}{(}\PYG{n}{occ}\PYG{p}{))}
+
+\PYG{n}{data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{pivot\PYGZus{}wider}\PYG{p}{(}\PYG{n}{names\PYGZus{}from}\PYG{o}{=}\PYG{n}{name}\PYG{p}{,} \PYG{n}{values\PYGZus{}from} \PYG{o}{=} \PYG{n}{value}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{filter}\PYG{p}{(}\PYG{n}{type} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}probability\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{lower} \PYG{o}{=} \PYG{n}{actual} \PYG{o}{\PYGZgt{}} \PYG{n}{future}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{higher} \PYG{o}{=} \PYG{n}{actual} \PYG{o}{\PYGZlt{}} \PYG{n}{future}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{summarise}\PYG{p}{(}\PYG{n}{lower} \PYG{o}{=} \PYG{n+nf}{sum}\PYG{p}{(}\PYG{n}{lower}\PYG{p}{),} \PYG{n}{higher} \PYG{o}{=} \PYG{n+nf}{sum}\PYG{p}{(}\PYG{n}{higher}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} total grid cells}
+\PYG{n+nf}{nrow}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)} \PYG{o}{/} \PYG{l+m}{4}
+
+\PYG{c+c1}{\PYGZsh{} Prediction of covariates \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{n}{raw\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{readr}\PYG{o}{::}\PYG{n+nf}{read\PYGZus{}csv}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/milmig\PYGZus{}not\PYGZus{}std.csv\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{model\PYGZus{}statistics} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{readr}\PYG{o}{::}\PYG{n+nf}{read\PYGZus{}csv2}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/best\PYGZus{}model.csv\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{model\PYGZus{}labels} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{model\PYGZus{}statistics} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{rename}\PYG{p}{(}\PYG{n}{p} \PYG{o}{=} \PYG{n}{`P(\PYGZgt{}|z|)`}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n}{tidyr}\PYG{o}{::}\PYG{n+nf}{pivot\PYGZus{}wider}\PYG{p}{(}\PYG{n}{values\PYGZus{}from}\PYG{o}{=}\PYG{n}{p}\PYG{p}{,} \PYG{n}{names\PYGZus{}from} \PYG{o}{=} \PYG{n}{coef\PYGZus{}no}\PYG{p}{,} \PYG{n}{id\PYGZus{}cols}\PYG{o}{=}\PYG{n}{name}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{filter}\PYG{p}{(}\PYG{n}{name} \PYG{o}{!=} \PYG{l+s}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{rename}\PYG{p}{(}\PYG{n}{first} \PYG{o}{=} \PYG{n}{`1`}\PYG{p}{,}
+         \PYG{n}{second} \PYG{o}{=} \PYG{n}{`2`}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{first} \PYG{o}{=} \PYG{n+nf}{ifelse}\PYG{p}{(} \PYG{n+nf}{round}\PYG{p}{(}\PYG{n}{first}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)} \PYG{o}{==} \PYG{l+m}{0}\PYG{p}{,} 
+                         \PYG{l+s}{\PYGZsq{}\PYGZlt{}0.00\PYGZsq{}}\PYG{p}{,} 
+                         \PYG{n+nf}{paste}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,} \PYG{n+nf}{round}\PYG{p}{(}\PYG{n}{first}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))),}
+         \PYG{n}{second} \PYG{o}{=} \PYG{n+nf}{ifelse}\PYG{p}{(}\PYG{n+nf}{round}\PYG{p}{(}\PYG{n}{second}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{)} \PYG{o}{==}\PYG{l+m}{0}\PYG{p}{,} 
+                         \PYG{l+s}{\PYGZsq{}\PYGZlt{}0.00\PYGZsq{}}\PYG{p}{,}  
+                         \PYG{n+nf}{paste}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,} \PYG{n+nf}{round}\PYG{p}{(}\PYG{n}{second}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))),}
+         \PYG{n}{p} \PYG{o}{=}  \PYG{n+nf}{paste}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}p = \PYGZsq{}}\PYG{p}{,}\PYG{n}{first}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}, \PYGZsq{}}\PYG{p}{,} \PYG{n}{second}\PYG{p}{,} \PYG{n}{sep}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}\PYGZsq{}}\PYG{p}{))} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} 
+           \PYG{n+nf}{recode}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,}
+                  \PYG{n}{bare\PYGZus{}soil} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Bare soil cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{tree\PYGZus{}cover} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Tree cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{grass\PYGZus{}cover} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Grass cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{bio1} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Annual mean\PYGZbs{}ntemperature (°C)\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{bio3} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Isothermality\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{bio12} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Annual precipitation\PYGZbs{}n(mm)\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{distance\PYGZus{}to\PYGZus{}water} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}n}
+\PYG{l+s}{                  river or lake (km)\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{distance\PYGZus{}to\PYGZus{}landfill} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}n}
+\PYG{l+s}{                  landfill (km)\PYGZdq{}}\PYG{p}{))} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{10}\PYG{p}{,} \PYG{l+m}{38}\PYG{p}{,} \PYG{l+m}{800}\PYG{p}{,} \PYG{l+m}{30}\PYG{p}{,} \PYG{l+m}{30}\PYG{p}{,} \PYG{l+m}{15}\PYG{p}{,} \PYG{l+m}{25}\PYG{p}{,} \PYG{l+m}{45}\PYG{p}{),}
+         \PYG{n}{y} \PYG{o}{=} \PYG{n+nf}{rep}\PYG{p}{(}\PYG{l+m}{0.1}\PYG{p}{,} \PYG{l+m}{8}\PYG{p}{))}
+
+\PYG{n}{variable\PYGZus{}names} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}bio1\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}bio3\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}bio12\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}bare\PYGZus{}soil\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}tree\PYGZus{}cover\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}grass\PYGZus{}cover\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}water\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s}{\PYGZdq{}distance\PYGZus{}to\PYGZus{}landfill\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{rm}\PYG{p}{(}\PYG{n}{old\PYGZus{}data}\PYG{p}{)}
+\PYG{n+nf}{for }\PYG{p}{(}\PYG{n}{i} \PYG{n}{in} \PYG{n+nf}{seq\PYGZus{}along}\PYG{p}{(}\PYG{n}{variable\PYGZus{}names}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+  \PYG{n}{variable\PYGZus{}str} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+  \PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{variable\PYGZus{}str}\PYG{p}{)}
+  
+  
+  \PYG{n}{newdata} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{setNames}\PYG{p}{(}\PYG{n+nf}{data.frame}\PYG{p}{(}
+    \PYG{n+nf}{matrix}\PYG{p}{(}\PYG{n}{ncol} \PYG{o}{=} \PYG{n+nf}{length}\PYG{p}{(}\PYG{n}{variable\PYGZus{}names}\PYG{p}{),} 
+           \PYG{n}{nrow} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{)),} 
+    \PYG{n}{variable\PYGZus{}names}\PYG{p}{)}
+  
+  \PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{seq}\PYG{p}{(}\PYG{n+nf}{min}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]),}
+                      \PYG{n+nf}{max}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]),}
+                      \PYG{n}{length.out} \PYG{o}{=} \PYG{l+m}{100}\PYG{p}{)}
+  
+  \PYG{n}{newdata}\PYG{p}{[}\PYG{n+nf}{is.na}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{)]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{0}
+  
+  \PYG{n}{sd1} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{])}
+  \PYG{n}{mean1}\PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]}\PYG{o}{/}\PYG{n+nf}{sd}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]))}
+  
+  \PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{as.numeric}\PYG{p}{(}\PYG{n+nf}{scale}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{])} \PYG{p}{)}
+  
+  \PYG{c+c1}{\PYGZsh{} best\PYGZus{}model, occ\PYGZus{}avg}
+  \PYG{n}{predict\PYGZus{}newdataset} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{unmarked}\PYG{o}{::}\PYG{n+nf}{predict}\PYG{p}{(}\PYG{n}{occ\PYGZus{}avg}\PYG{p}{,} 
+                                          \PYG{n}{newdata} \PYG{o}{=} \PYG{n}{newdata}\PYG{p}{,}
+                                          \PYG{n}{type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}state\PYGZdq{}}\PYG{p}{)} 
+  \PYG{c+c1}{\PYGZsh{} Predicted, fit}
+  \PYG{c+c1}{\PYGZsh{} SE, se.fit}
+  \PYG{n}{plotting\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bind\PYGZus{}cols}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{,} 
+                             \PYG{n}{occ\PYGZus{}prob} \PYG{o}{=} \PYG{n}{predict\PYGZus{}newdataset}\PYG{o}{\PYGZdl{}}\PYG{n}{fit}\PYG{p}{,}
+                             \PYG{n}{occ\PYGZus{}se} \PYG{o}{=} \PYG{n}{predict\PYGZus{}newdataset}\PYG{o}{\PYGZdl{}}\PYG{n}{se.fit}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+    \PYG{n+nf}{select}\PYG{p}{(}\PYG{n+nf}{matches}\PYG{p}{(}\PYG{n}{variable\PYGZus{}str}\PYG{p}{),} \PYG{n}{occ\PYGZus{}prob}\PYG{p}{,} \PYG{n}{occ\PYGZus{}se}\PYG{p}{)} 
+  
+  \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{p}{(}\PYG{n}{plotting\PYGZus{}data}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}str}\PYG{p}{]} \PYG{o}{+} \PYG{n}{mean1}\PYG{p}{)}\PYG{o}{*} \PYG{n}{sd1}
+  
+  \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{variable\PYGZus{}str} \PYG{o}{\PYGZpc{}in\PYGZpc{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}bio1\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}bio2\PYGZsq{}}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+    \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{/} \PYG{l+m}{10}
+  \PYG{p}{\PYGZcb{}} \PYG{n}{else} \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{variable\PYGZus{}str} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}landfills\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{*} \PYG{l+m}{100}
+  \PYG{p}{\PYGZcb{}} \PYG{n}{else} \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{variable\PYGZus{}str} \PYG{o}{\PYGZpc{}in\PYGZpc{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}distance\PYGZus{}to\PYGZus{}water\PYGZsq{}}\PYG{p}{,} 
+                                 \PYG{l+s}{\PYGZsq{}distance\PYGZus{}to\PYGZus{}landfill\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+    \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{/}\PYG{l+m}{1000}
+  \PYG{p}{\PYGZcb{}}
+  
+  \PYG{n}{new\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{plotting\PYGZus{}data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+    \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{lower\PYGZus{}se} \PYG{o}{=} \PYG{n}{occ\PYGZus{}prob} \PYG{o}{\PYGZhy{}} \PYG{n}{occ\PYGZus{}se}\PYG{p}{,}
+           \PYG{n}{upper\PYGZus{}se} \PYG{o}{=} \PYG{n}{occ\PYGZus{}prob} \PYG{o}{+} \PYG{n}{occ\PYGZus{}se}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+    \PYG{n+nf}{select}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{occ\PYGZus{}prob}\PYG{p}{,} \PYG{n}{lower\PYGZus{}se}\PYG{p}{,} \PYG{n}{upper\PYGZus{}se}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+    \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{n}{variable\PYGZus{}str}\PYG{p}{)}
+  
+  \PYG{n+nf}{if }\PYG{p}{(}\PYG{n}{i} \PYG{o}{==} \PYG{l+m}{1}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{old\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{new\PYGZus{}data}
+  \PYG{p}{\PYGZcb{}} \PYG{n}{else} \PYG{p}{\PYGZob{}}
+    \PYG{n}{old\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{old\PYGZus{}data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}} 
+      \PYG{n+nf}{bind\PYGZus{}rows}\PYG{p}{(}\PYG{n}{new\PYGZus{}data}\PYG{p}{)}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+
+\PYG{n}{old\PYGZus{}data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{n+nf}{recode}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,} 
+         \PYG{n}{bare\PYGZus{}soil} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Bare soil cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{tree\PYGZus{}cover} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Tree cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{grass\PYGZus{}cover} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Grass cover (\PYGZpc{})\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{bio1} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Annual mean\PYGZbs{}ntemperature (°C)\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{bio3} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Isothermality\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{bio12} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Annual precipitation\PYGZbs{}n(mm)\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{distance\PYGZus{}to\PYGZus{}water} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}nriver or lake (km)\PYGZdq{}}\PYG{p}{,}
+         \PYG{n}{distance\PYGZus{}to\PYGZus{}landfill} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}nlandfill (km)\PYGZdq{}}\PYG{p}{))} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{c+c1}{\PYGZsh{}filter(name != \PYGZdq{}Distance to closest\PYGZbs{}nlandfill (km)\PYGZdq{}) \PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{ggplot}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}text}\PYG{p}{(}\PYG{n}{data} \PYG{o}{=} \PYG{n}{model\PYGZus{}labels}\PYG{p}{,} 
+            \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{y}\PYG{p}{,} \PYG{n}{label} \PYG{o}{=} \PYG{n}{p}\PYG{p}{),} 
+            \PYG{n}{family}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}LM Roman 10\PYGZdq{}}\PYG{p}{,} 
+            \PYG{n}{size}\PYG{o}{=}\PYG{l+m}{3.5}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}ribbon}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{ymin} \PYG{o}{=} \PYG{n}{lower\PYGZus{}se}\PYG{p}{,} 
+                  \PYG{n}{ymax} \PYG{o}{=} \PYG{n}{upper\PYGZus{}se}\PYG{p}{,}
+                  \PYG{n}{x} \PYG{o}{=} \PYG{n}{x}\PYG{p}{),}
+              \PYG{n}{fill}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m}{0.7}\PYG{p}{)} \PYG{o}{+} 
+  \PYG{n+nf}{geom\PYGZus{}line}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{n}{occ\PYGZus{}prob}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n+nf}{factor}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)),}
+            \PYG{n}{size}\PYG{o}{=}\PYG{l+m}{0.8}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}color\PYGZus{}manual}\PYG{p}{(}\PYG{n}{values} \PYG{o}{=} 
+                       \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Bare soil cover (\PYGZpc{})\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}grey36\PYGZdq{}}\PYG{p}{,} 
+                        \PYG{l+s}{\PYGZdq{}Annual mean\PYGZbs{}ntemperature (°C)\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}orangered3\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}nriver or lake (km)\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}royalblue2\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}Distance to closest\PYGZbs{}nlandfill (km)\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}chocolate4\PYGZdq{}}\PYG{p}{,} 
+                        \PYG{l+s}{\PYGZdq{}Tree cover (\PYGZpc{})\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}palegreen3\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}Grass cover (\PYGZpc{})\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}chartreuse4\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}Annual precipitation\PYGZbs{}n(mm)\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}steelblue4\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s}{\PYGZdq{}Isothermality\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}orange\PYGZdq{}}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{k+kc}{NULL}\PYG{p}{,} 
+       \PYG{n}{y}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Occupancy Probability\PYGZdq{}}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{theme\PYGZus{}bw}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{legend.position} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}none\PYGZdq{}}\PYG{p}{,}
+        \PYG{n}{panel.border} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}rect}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,}\PYG{n}{fill}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}transparent\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{text} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{10}\PYG{p}{,} \PYG{n}{family}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}LM Roman 10\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{plot.margin}\PYG{o}{=}\PYG{n+nf}{unit}\PYG{p}{(}\PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,} \PYG{l+m}{5}\PYG{p}{,} \PYG{l+m}{\PYGZhy{}5}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{),} \PYG{l+s}{\PYGZdq{}points\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{panel.spacing} \PYG{o}{=} \PYG{n+nf}{unit}\PYG{p}{(}\PYG{l+m}{0.8}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}lines\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{strip.background} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}blank}\PYG{p}{(),}
+        \PYG{n}{strip.placement} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}outside\PYGZdq{}}\PYG{p}{,}
+        \PYG{n}{strip.text} \PYG{o}{=}  \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{12}\PYG{p}{,} \PYG{n}{face}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}plain\PYGZsq{}}\PYG{p}{,}
+                                   \PYG{n}{margin} \PYG{o}{=} \PYG{n+nf}{margin}\PYG{p}{(}\PYG{n}{t} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{l+m}{10}\PYG{p}{,} \PYG{n}{l} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{)),}
+        \PYG{n}{axis.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{12}\PYG{p}{,} \PYG{n}{face}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}plain\PYGZsq{}}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}x\PYGZus{}continuous}\PYG{p}{(}\PYG{n}{expand} \PYG{o}{=} \PYG{n+nf}{expansion}\PYG{p}{(}\PYG{n}{mult} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)))} \PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}y\PYGZus{}continuous}\PYG{p}{(}\PYG{n}{limits} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),}\PYG{n}{expand} \PYG{o}{=} \PYG{n+nf}{expansion}\PYG{p}{(}\PYG{n}{mult} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0.03}\PYG{p}{,} \PYG{l+m}{0.03}\PYG{p}{)))} \PYG{o}{+}
+  \PYG{n+nf}{facet\PYGZus{}wrap}\PYG{p}{(}\PYG{n}{.} \PYG{o}{\PYGZti{}} \PYG{n}{name}\PYG{p}{,} \PYG{n}{scales}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}free\PYGZus{}x\PYGZdq{}}\PYG{p}{,} \PYG{n}{strip.position} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}bottom\PYGZsq{}}\PYG{p}{,} \PYG{n}{ncol}\PYG{o}{=}\PYG{l+m}{4}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} \PYGZsq{}results/avg\PYGZus{}model\PYGZus{}site\PYGZus{}covariates.png\PYGZsq{}, \PYGZsq{}results/site\PYGZus{}covariates.png\PYGZsq{}}
+\PYG{n+nf}{ggsave}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/avg\PYGZus{}model\PYGZus{}site\PYGZus{}covariates.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{width} \PYG{o}{=} \PYG{l+m}{7}\PYG{p}{,} \PYG{n}{height} \PYG{o}{=} \PYG{l+m}{5}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{} detection covariates}
+
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{duration\PYGZus{}minutes}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{number\PYGZus{}observers}\PYG{p}{)}
+
+\PYG{n}{variable\PYGZus{}names} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}number\PYGZus{}observers\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}duration\PYGZus{}minutes\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{newdata} \PYG{o}{=} \PYG{n+nf}{setNames}\PYG{p}{(}\PYG{n+nf}{data.frame}\PYG{p}{(}
+  \PYG{n+nf}{matrix}\PYG{p}{(}\PYG{n}{ncol} \PYG{o}{=} \PYG{n+nf}{length}\PYG{p}{(}\PYG{n}{variable\PYGZus{}names}\PYG{p}{),} 
+         \PYG{n}{nrow} \PYG{o}{=} \PYG{l+m}{2000}\PYG{p}{)),} 
+  \PYG{n}{variable\PYGZus{}names}\PYG{p}{)}
+\PYG{n}{newdata}\PYG{p}{[}\PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{seq}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{5}\PYG{p}{,} \PYG{n}{length.out}\PYG{o}{=}\PYG{l+m}{1000}\PYG{p}{)}
+\PYG{n}{newdata}\PYG{p}{[}\PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{colMeans}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]],} 
+                                               \PYG{n}{na.rm}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}
+
+\PYG{n}{newdata}\PYG{p}{[}\PYG{l+m}{1001}\PYG{o}{:}\PYG{l+m}{2000}\PYG{p}{,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{seq}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{300}\PYG{p}{,} \PYG{n}{length.out}\PYG{o}{=}\PYG{l+m}{1000}\PYG{p}{)}
+\PYG{n}{newdata}\PYG{p}{[}\PYG{l+m}{1001}\PYG{o}{:}\PYG{l+m}{2000}\PYG{p}{,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{colMeans}\PYG{p}{(}\PYG{n}{raw\PYGZus{}data}\PYG{p}{[,} \PYG{n}{variable\PYGZus{}names}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]],} 
+                                                  \PYG{n}{na.rm}\PYG{o}{=}\PYG{n+nb+bp}{T}\PYG{p}{)}
+
+\PYG{n}{best\PYGZus{}model}
+
+\PYG{n}{predict\PYGZus{}labels} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}
+  \PYG{n}{name} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Number of observers\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Duration of observation (min)\PYGZsq{}}\PYG{p}{),}
+  \PYG{n}{p} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}p = 0.22\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}p = 0.01\PYGZsq{}}\PYG{p}{),}
+  \PYG{n}{x} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{3}\PYG{p}{,} \PYG{l+m}{150}\PYG{p}{),}
+  \PYG{n}{y} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0.1}\PYG{p}{,} \PYG{l+m}{0.1}\PYG{p}{))}
+
+
+\PYG{n}{predict\PYGZus{}newdataset} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{unmarked}\PYG{o}{::}\PYG{n+nf}{predict}\PYG{p}{(}\PYG{n}{best\PYGZus{}model}\PYG{p}{,}
+                                        \PYG{n}{newdata} \PYG{o}{=} \PYG{n}{newdata}\PYG{p}{,}
+                                        \PYG{n}{type} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}det\PYGZdq{}}\PYG{p}{)} 
+
+\PYG{n}{plotting\PYGZus{}data} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bind\PYGZus{}cols}\PYG{p}{(}\PYG{n}{newdata}\PYG{p}{,} 
+                           \PYG{n}{occ\PYGZus{}prob} \PYG{o}{=} \PYG{n}{predict\PYGZus{}newdataset}\PYG{o}{\PYGZdl{}}\PYG{n}{Predicted}\PYG{p}{,}
+                           \PYG{n}{occ\PYGZus{}se} \PYG{o}{=} \PYG{n}{predict\PYGZus{}newdataset}\PYG{o}{\PYGZdl{}}\PYG{n}{SE}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{mutate}\PYG{p}{(}\PYG{n}{lower\PYGZus{}se} \PYG{o}{=} \PYG{n}{occ\PYGZus{}prob} \PYG{o}{\PYGZhy{}} \PYG{n}{occ\PYGZus{}se}\PYG{p}{,}
+         \PYG{n}{upper\PYGZus{}se} \PYG{o}{=} \PYG{n}{occ\PYGZus{}prob} \PYG{o}{+} \PYG{n}{occ\PYGZus{}se}\PYG{p}{,}
+         \PYG{n}{name} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n+nf}{rep}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Number of observers\PYGZsq{}}\PYG{p}{,} \PYG{l+m}{1000}\PYG{p}{),} 
+                  \PYG{n+nf}{rep}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Duration of observation (min)\PYGZsq{}}\PYG{p}{,} \PYG{l+m}{1000}\PYG{p}{)))}
+
+\PYG{n}{plotting\PYGZus{}data}\PYG{o}{\PYGZdl{}}\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{plotting\PYGZus{}data}\PYG{p}{[}\PYG{l+m}{1}\PYG{o}{:}\PYG{l+m}{1000}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}number\PYGZus{}observers\PYGZsq{}}\PYG{p}{],} 
+                     \PYG{n}{plotting\PYGZus{}data}\PYG{p}{[}\PYG{l+m}{1001}\PYG{o}{:}\PYG{l+m}{2000}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}duration\PYGZus{}minutes\PYGZsq{}}\PYG{p}{])}
+
+\PYG{n}{plotting\PYGZus{}data} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+  \PYG{n+nf}{ggplot}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}text}\PYG{p}{(}\PYG{n}{data} \PYG{o}{=} \PYG{n}{predict\PYGZus{}labels}\PYG{p}{,} 
+            \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{y}\PYG{p}{,} \PYG{n}{label} \PYG{o}{=} \PYG{n}{p}\PYG{p}{),} 
+            \PYG{n}{family}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}LM Roman 10\PYGZdq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+m}{5}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}ribbon}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{ymin} \PYG{o}{=} \PYG{n}{lower\PYGZus{}se}\PYG{p}{,} 
+                  \PYG{n}{ymax} \PYG{o}{=} \PYG{n}{upper\PYGZus{}se}\PYG{p}{,}
+                  \PYG{n}{x} \PYG{o}{=} \PYG{n}{x}\PYG{p}{),}
+              \PYG{n}{fill}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}gray\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m}{0.7}\PYG{p}{)} \PYG{o}{+} 
+  \PYG{n+nf}{geom\PYGZus{}line}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{n}{occ\PYGZus{}prob}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n+nf}{factor}\PYG{p}{(}\PYG{n}{name}\PYG{p}{)),}
+            \PYG{n}{size}\PYG{o}{=}\PYG{l+m}{0.8}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}color\PYGZus{}manual}\PYG{p}{(}\PYG{n}{values} \PYG{o}{=} 
+                       \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Number of observers\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}orange\PYGZdq{}}\PYG{p}{,} 
+                         \PYG{l+s}{\PYGZdq{}Duration of observation (min)\PYGZdq{}} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}orangered3\PYGZdq{}}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{k+kc}{NULL}\PYG{p}{,} 
+       \PYG{n}{y}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Occupancy Probability\PYGZdq{}}\PYG{p}{)}\PYG{o}{+}
+  \PYG{n+nf}{theme\PYGZus{}bw}\PYG{p}{()}\PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{legend.position} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}none\PYGZdq{}}\PYG{p}{,}
+        \PYG{n}{panel.border} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}rect}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,}\PYG{n}{fill}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}transparent\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{text} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{10}\PYG{p}{,} \PYG{n}{family}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}LM Roman 10\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{plot.margin}\PYG{o}{=}\PYG{n+nf}{unit}\PYG{p}{(}\PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,} \PYG{l+m}{5}\PYG{p}{,} \PYG{l+m}{\PYGZhy{}5}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{),} \PYG{l+s}{\PYGZdq{}points\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{panel.spacing} \PYG{o}{=} \PYG{n+nf}{unit}\PYG{p}{(}\PYG{l+m}{0.8}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}lines\PYGZdq{}}\PYG{p}{),}
+        \PYG{n}{strip.background} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}blank}\PYG{p}{(),}
+        \PYG{n}{strip.placement} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}outside\PYGZdq{}}\PYG{p}{,}
+        \PYG{n}{strip.text} \PYG{o}{=}  \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{12}\PYG{p}{,} \PYG{n}{face}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}plain\PYGZsq{}}\PYG{p}{,}
+                                   \PYG{n}{margin} \PYG{o}{=} \PYG{n+nf}{margin}\PYG{p}{(}\PYG{n}{t} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{,} \PYG{n}{r} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{,} 
+                                                   \PYG{n}{b} \PYG{o}{=} \PYG{l+m}{10}\PYG{p}{,} \PYG{n}{l} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{)),}
+        \PYG{n}{axis.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{size}\PYG{o}{=}\PYG{l+m}{12}\PYG{p}{,} \PYG{n}{face}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}plain\PYGZsq{}}\PYG{p}{))}\PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}x\PYGZus{}continuous}\PYG{p}{(}\PYG{n}{expand} \PYG{o}{=} \PYG{n+nf}{expansion}\PYG{p}{(}\PYG{n}{mult} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)))} \PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}y\PYGZus{}continuous}\PYG{p}{(}\PYG{n}{limits} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{),} \PYG{n}{expand} \PYG{o}{=} 
+                       \PYG{n+nf}{expansion}\PYG{p}{(}\PYG{n}{mult} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{0.03}\PYG{p}{,} \PYG{l+m}{0.03}\PYG{p}{)))} \PYG{o}{+}
+  \PYG{n+nf}{facet\PYGZus{}wrap}\PYG{p}{(}\PYG{n}{.} \PYG{o}{\PYGZti{}} \PYG{n}{name}\PYG{p}{,} \PYG{n}{scales}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}free\PYGZus{}x\PYGZdq{}}\PYG{p}{,} \PYG{n}{strip.position} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}bottom\PYGZsq{}}\PYG{p}{,} \PYG{n}{ncol}\PYG{o}{=}\PYG{l+m}{4}\PYG{p}{)}
+\PYG{n+nf}{ggsave}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}results/det\PYGZus{}covariates.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{width} \PYG{o}{=} \PYG{l+m}{6}\PYG{p}{,} \PYG{n}{height} \PYG{o}{=} \PYG{l+m}{3}\PYG{p}{)}
+\end{Verbatim}

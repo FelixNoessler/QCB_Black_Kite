@@ -1,0 +1,2 @@
+precipitation - CMIP6 - Total precipitation (PR) Change % - Long Term (2081-2100) SSP2 4.5 (rel. to 1995-2014) - Annual (32 models)
+temperature - CMIP6 - Mean temperature (T) deg C - Long Term (2081-2100) SSP2 4.5 (rel. to 1995-2014) - Annual (34 models)

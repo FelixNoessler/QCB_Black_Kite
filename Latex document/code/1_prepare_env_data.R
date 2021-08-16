@@ -115,27 +115,34 @@ if (!file.exists('data/environmental_data/lc_tree.grd')) {
 
 if (!file.exists('data/environmental_data/lc_herbs.grd')) {
   
-  lc_herbs1 <- raster::raster('data/environmental_data/herbaceous_vegetation1.tif')
+  lc_herbs1 <- raster::raster(
+    'data/environmental_data/herbaceous_vegetation1.tif')
   lc_herbs1 <- raster::crop(lc_herbs1, spain_crop)
   lc_herbs1 <- raster::mask(lc_herbs1, spain_crop)
   
-  lc_herbs2 <- raster::raster('data/environmental_data/herbaceous_vegetation2.tif')
+  lc_herbs2 <- raster::raster(
+    'data/environmental_data/herbaceous_vegetation2.tif')
   lc_herbs2 <- raster::crop(lc_herbs2, spain_crop)
   lc_herbs2 <- raster::mask(lc_herbs2, spain_crop)
   
-  lc_herbs3 <- raster::raster('data/environmental_data/herbaceous_vegetation3.tif')
+  lc_herbs3 <- raster::raster(
+    'data/environmental_data/herbaceous_vegetation3.tif')
   lc_herbs3 <- raster::crop(lc_herbs3, spain_crop)
   lc_herbs3 <- raster::mask(lc_herbs3, spain_crop)
   
-  lc_herbs4 <- raster::raster('data/environmental_data/herbaceous_vegetation4.tif')
+  lc_herbs4 <- raster::raster(
+    'data/environmental_data/herbaceous_vegetation4.tif')
   lc_herbs4 <- raster::crop(lc_herbs4, spain_crop)
   lc_herbs4 <- raster::mask(lc_herbs4, spain_crop)
   
-  lc_herbs <- raster::merge(lc_herbs1, lc_herbs2, lc_herbs3, lc_herbs4)
+  lc_herbs <- raster::merge(lc_herbs1, lc_herbs2, 
+                            lc_herbs3, lc_herbs4)
   
   # raster::plot(lc_herbs)
   
-  lc_herb_cover <- raster::resample(lc_herbs, clim, method = 'bilinear')
+  lc_herb_cover <- raster::resample(lc_herbs, 
+                                    clim, 
+                                    method = 'bilinear')
   names(lc_herb_cover) <- 'grass_cover'
   
   raster::writeRaster(lc_herb_cover, 
@@ -188,88 +195,6 @@ if (!file.exists('data/environmental_data/lc_bare_soil.grd')) {
   
   lc_bare_soil <- raster::raster('data/environmental_data/lc_bare_soil.grd')  
 }
-
-# ######## Dump sites / Landfills
-# 
-# 
-# if (!file.exists('data/environmental_data/clc2018_raster/landfills.grd')){
-#   clc <- raster::raster('data/environmental_data/clc2018_raster/clc_reproject.tif')
-#   
-#   clc <- raster::crop(clc, spain_crop)
-#   clc <- raster::mask(clc, spain_crop)
-#   
-#   raster::plot(clc)
-#   
-#   
-#   dump_sites <- clc == 8
-#   raster::plot(dump_sites)
-#   
-#   dump_sites_agg <- raster::aggregate(dump_sites, 
-#                                       fact = 32, 
-#                                       fun = mean)
-#   dump_sites_agg
-#   raster::plot(dump_sites_agg)
-#   
-#   dump_sites_rs <- raster::resample(dump_sites_agg, clim, method = 'bilinear')
-#   names(dump_sites_rs) <- 'landfills'
-#   
-#   raster::writeRaster(dump_sites_rs, 
-#                       'data/environmental_data/clc2018_raster/landfills.grd',
-#                       format = 'raster', 
-#                       options = 'INTERLEAVE=BAND',
-#                       overwrite = TRUE)
-#   
-#   rm(dump_sites, dump_sites_agg, clc)
-# } else {
-#   
-#   dump_sites_rs <- raster::raster('data/environmental_data/clc2018_raster/landfills.grd')
-# }
-
-# if (!file.exists('data/environmental_data/marshes.grd')) {
-#   marshes <- sf::st_read('data/environmental_data/clc2018_vector/clc2018.gpkg',
-#                          query = "SELECT * FROM clc2018 
-#                       WHERE Code_18 == 411
-#                       OR Code_18 == 421
-#                       OR Code_18 == 511
-#                       OR Code_18 == 512
-#                       OR Code_18 == 521
-#                       OR Code_18 == 522
-#                       OR Code_18 == 523")
-#   
-#   plot(sf::st_geometry(marshes),  axes = TRUE)
-#   
-#   clim <- raster::brick('data/environmental_data/clim.grd')
-#   
-#   ########## Method 1
-#   out <- raster::rasterize(marshes, clim[[1]], getCover = T)
-#   out <- raster::mask(out, clim[[1]])
-#   raster::plot(out)
-#   
-#   ########## Method 2
-#   fractions <- exactextractr::coverage_fraction(clim[[1]], marshes)
-#   
-#   marshes_raster <- raster::raster(clim[[1]])
-#   
-#   for (i in 1:length(fractions)) {
-#     marshes_raster <- raster::mosaic(
-#       marshes_raster, 
-#       fractions[[i]], 
-#       fun=sum)
-#   }
-#   marshes_raster <- raster::mask(marshes_raster, clim[[1]])
-#   raster::plot(marshes_raster)
-#   
-#   names(marshes_raster) <- 'marshes'
-#   
-#   raster::writeRaster(marshes_raster, 
-#                       'data/environmental_data/marshes.grd',
-#                       format = 'raster', 
-#                       options = 'INTERLEAVE=BAND',
-#                       overwrite = TRUE)
-# } else {
-#   marshes_raster <- raster::raster('data/environmental_data/marshes.grd')
-# }
-
 
 
 
@@ -332,11 +257,13 @@ if (!file.exists('data/environmental_data/distance_to_water.grd')) {
   min_distances <- c(apply(dist1,2,min),apply(dist2,2,min),apply(dist3,2,min)) 
   data.frame(min_distances)
   
-  raster_points_df <- sp::SpatialPointsDataFrame(raster_points, data=data.frame(min_distances))
+  raster_points_df <- sp::SpatialPointsDataFrame(raster_points, 
+                                                 data=data.frame(min_distances))
   
   
   crs2 <- raster::projection(clim)
-  raster_points_df_backtransformed <- sp::spTransform(raster_points_df, crs2)
+  raster_points_df_backtransformed <- sp::spTransform(raster_points_df, 
+                                                      crs2)
   
   dist_raster <- raster::rasterFromXYZ(raster_points_df_backtransformed)
   
@@ -354,17 +281,19 @@ if (!file.exists('data/environmental_data/distance_to_water.grd')) {
   
   distance_to_water <- dist_raster
 }else {
-  distance_to_water <- raster::raster('data/environmental_data/distance_to_water.grd')
+  distance_to_water <- raster::raster(
+    'data/environmental_data/distance_to_water.grd')
 }
 
 
 
-# Calculate distance to closest landifll ----------------------------------
+# Calculate distance to closest landfill ----------------------------------
 
 if (!file.exists('data/environmental_data/distance_to_landfill.grd')) {
-  landfills <- sf::st_read('data/environmental_data/clc2018_vector/clc2018.gpkg',
-                           query = "SELECT * FROM clc2018 
-                          WHERE Code_18 == 132")
+  landfills <- sf::st_read(
+    'data/environmental_data/clc2018_vector/clc2018.gpkg',
+    query = "SELECT * FROM clc2018 
+    WHERE Code_18 == 132")
   
   plot(sf::st_geometry(landfills),  axes = TRUE)
   landfills
@@ -415,14 +344,19 @@ if (!file.exists('data/environmental_data/distance_to_landfill.grd')) {
   
   
   
-  min_distances <- c(apply(dist1,2,min),apply(dist2,2,min),apply(dist3,2,min)) 
+  min_distances <- c(apply(dist1,2,min),
+                     apply(dist2,2,min),
+                     apply(dist3,2,min)) 
   data.frame(min_distances)
   
-  raster_points_df <- sp::SpatialPointsDataFrame(raster_points, data=data.frame(min_distances))
+  raster_points_df <- sp::SpatialPointsDataFrame(
+    raster_points, 
+    data=data.frame(min_distances))
   
   
   crs2 <- raster::projection(clim)
-  raster_points_df_backtransformed <- sp::spTransform(raster_points_df, crs2)
+  raster_points_df_backtransformed <- sp::spTransform(raster_points_df, 
+                                                      crs2)
   
   dist_raster <- raster::rasterFromXYZ(raster_points_df_backtransformed)
   
@@ -442,7 +376,8 @@ if (!file.exists('data/environmental_data/distance_to_landfill.grd')) {
   
   distance_to_landfill <- dist_raster
 } else {
-  distance_to_landfill <- raster::raster('data/environmental_data/distance_to_landfill.grd')
+  distance_to_landfill <- raster::raster(
+    'data/environmental_data/distance_to_landfill.grd')
 }
 
 
@@ -472,8 +407,10 @@ raster::writeRaster(variables,
 
 
 # Changes in temperature and precipitation --------------------------------
-prec_change <- raster::raster('data/environmental_data/climate_change/precipitation.tiff')
-temp_change <- raster::raster('data/environmental_data/climate_change/temperature.tiff')
+prec_change <- raster::raster(
+  'data/environmental_data/climate_change/precipitation.tiff')
+temp_change <- raster::raster(
+  'data/environmental_data/climate_change/temperature.tiff')
 
 
 ### Precipitation
@@ -481,7 +418,10 @@ prec_change <- raster::crop(prec_change, raster::extent(c(-12,5,30,50)))
 
 
 #### edge length of one raster cell in km
-prec_change_crs_m <- raster::projectRaster(prec_change, crs = '+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs') 
+prec_change_crs_m <- raster::projectRaster(
+  prec_change, 
+  crs = '+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000
+  +y_0=3210000 +ellps=GRS80 +units=m +no_defs') 
 poly1 <- raster::rasterToPolygons(prec_change_crs_m)
 sqrt(raster::area(poly1[1,])) / 1000
 
@@ -520,7 +460,8 @@ par(mfrow=c(1,1))
 
 
 # Save file as csv --------------------------------------------------------
-points <- raster::rasterToPoints(raster::brick(temp_change_rs, prec_change_rs))
+points <- raster::rasterToPoints(raster::brick(temp_change_rs, 
+                                               prec_change_rs))
 change <- data.frame(points)
 
 # avoid precision loss when saving the data frame
