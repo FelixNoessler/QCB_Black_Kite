@@ -4,8 +4,5 @@
 clc2018_vector/
 wc2-5/
 
-# But not these files...
-!.gitignore
-!*.grd
-!*.gri
+
 

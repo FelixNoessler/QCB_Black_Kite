@@ -12,8 +12,7 @@
 #
 ##########################################################
 
-# 
-setwd("/home/felix/Dokumente/studium/Potsdam/Module/Biogeography/Black kite/R")
+
 
 # Load packages -----------------------------------------------------------
 library(dplyr)
@@ -95,15 +94,15 @@ best_model <- full_model
 if (!file.exists('models.rda')) {
 
 # Goodness of fit test of best model --------------------------------------
-GOF <- parboot(best_model, nsim=500, ncores=8, report=T)
+GOF <- parboot(best_model, nsim=5, ncores=8, report=T)
 GOF
 
 cHat <- GOF@t0 / mean(GOF@t.star)
 cHat
 
-### Another goodnes of fit test
+### Another goodness of fit test
 AICcmodavg::mb.gof.test(best_model,
-                        nsim=500,
+                        nsim=5,
                         plot.hist = F,
                         parallel=T,
                         ncores=8)
